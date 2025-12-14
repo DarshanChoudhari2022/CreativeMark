@@ -99,7 +99,7 @@ const Political = () => {
       </section>
 
       {/* Services Grid Section */}
-      <section className="w-full py-20 md:py-28">
+      <section className="w-full py-20 md:py-28" bg-foreground text-primary-foreground>
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ const Political = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="w-full py-20 md:py-28 bg-secondary">
+      <section className="w-full py-20 md:py-28 bg-foreground text-primary-foreground>
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <motion.div
