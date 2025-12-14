@@ -103,7 +103,7 @@ const Political = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {politicalServices.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -111,13 +111,17 @@ const Political = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 border border-border rounded-2xl hover:border-accent transition-colors group"
+                className="p-8 border border-border rounded-2xl hover:border-accent hover:shadow-lg transition-all duration-300 group hover:scale-105"
               >
-                <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 transform group-hover:scale-110">
                   <service.icon size={28} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -127,27 +131,39 @@ const Political = () => {
       {/* Why Choose Us */}
       <section className="section-padding bg-secondary">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="heading-lg mb-6">
+              <h2 className="heading-lg mb-8">
                 Why Leaders <span className="text-accent">Choose Us</span>
               </h2>
-              <p className="text-body mb-8">
+              <p className="text-body mb-10 leading-relaxed">
                 With years of experience in political campaign management, we understand the unique challenges of electoral politics and deliver strategies that win.
               </p>
               <ul className="space-y-4">
                 {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-3">
-                    <CheckCircle size={24} className="text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-lg">{benefit}</span>
-                  </li>
+                  <motion.li
+                    key={benefit}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <CheckCircle
+                      size={24}
+                      className="text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <span className="text-lg group-hover:text-accent transition-colors duration-300">
+                      {benefit}
+                    </span>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -155,22 +171,37 @@ const Political = () => {
               transition={{ delay: 0.2 }}
               className="grid grid-cols-2 gap-6"
             >
-              <div className="bg-foreground text-primary-foreground p-8 rounded-2xl text-center">
-                <div className="text-5xl font-bold mb-2">50+</div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-foreground text-primary-foreground p-8 rounded-2xl text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="text-5xl font-bold mb-2 text-accent">50+</div>
                 <div className="text-sm text-primary-foreground/70">Campaigns Managed</div>
-              </div>
-              <div className="bg-accent text-accent-foreground p-8 rounded-2xl text-center">
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-accent text-accent-foreground p-8 rounded-2xl text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
                 <div className="text-5xl font-bold mb-2">85%</div>
                 <div className="text-sm text-accent-foreground/70">Success Rate</div>
-              </div>
-              <div className="bg-accent text-accent-foreground p-8 rounded-2xl text-center">
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-accent text-accent-foreground p-8 rounded-2xl text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
                 <div className="text-5xl font-bold mb-2">10+</div>
                 <div className="text-sm text-accent-foreground/70">States Covered</div>
-              </div>
-              <div className="bg-foreground text-primary-foreground p-8 rounded-2xl text-center">
-                <div className="text-5xl font-bold mb-2">24/7</div>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-foreground text-primary-foreground p-8 rounded-2xl text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="text-5xl font-bold mb-2 text-accent">24/7</div>
                 <div className="text-sm text-primary-foreground/70">War Room Support</div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -193,7 +224,7 @@ const Political = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="btn-pill bg-accent text-accent-foreground hover:bg-primary-foreground hover:text-foreground inline-flex items-center gap-2"
+                className="btn-pill bg-accent text-accent-foreground hover:bg-primary-foreground hover:text-foreground inline-flex items-center gap-2 transition-all duration-300 hover:shadow-lg"
               >
                 Get Started
                 <ArrowRight size={18} />
@@ -202,7 +233,7 @@ const Political = () => {
                 href="https://wa.me/917447332829"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pill border border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
+                className="btn-pill border border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-foreground transition-all duration-300 hover:shadow-lg"
               >
                 WhatsApp Us
               </a>
