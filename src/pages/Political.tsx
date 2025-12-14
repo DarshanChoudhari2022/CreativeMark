@@ -48,8 +48,8 @@ const benefits = [
 const Political = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="w-full py-24 md:py-32 bg-foregroun pt-20 md:pt-24d text-primary-foreground">
+      {/* Hero Section - Fixed with dark gradient background */}
+      <section className="w-full py-24 md:py-32 bg-gradient-to-br from-slate-900 via-purple-900/50 to-blue-900/80 pt-20 md:pt-24 text-white">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -61,23 +61,23 @@ const Political = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-block text-sm font-medium text-accent uppercase tracking-widest mb-4"
+              className="inline-block text-blue-400 text-sm font-medium uppercase tracking-widest mb-4"
             >
-            
+              Political Campaign Management
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
             >
-              Winning Elections Is About <span className="text-accent">Trust</span>
+              Winning Elections Is About <span className="text-blue-400">Trust</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed"
             >
               We provide complete political campaign management services including strategy, digital outreach, ground campaigns, branding, war-room operations, and voter engagement.
             </motion.p>
@@ -88,7 +88,7 @@ const Political = () => {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-full hover:bg-accent/90 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105 shadow-lg"
               >
                 Launch Your Campaign
                 <ArrowRight size={20} />
@@ -99,7 +99,7 @@ const Political = () => {
       </section>
 
       {/* Services Grid Section */}
-      <section className="w-full py-20 md:py-28 bg-foreground text-primary-foreground">
+      <section className="w-full py-20 md:py-28 bg-white text-gray-900">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -108,12 +108,10 @@ const Political = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
-            >
-              Our <span className="text-accent">Political Services</span>
+            <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              Our <span className="text-blue-600">Political Services</span>
             </motion.h2>
-            <motion.p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <motion.p className="text-xl text-gray-600 max-w-2xl mx-auto">
               End-to-end solutions for winning campaigns at every level of government.
             </motion.p>
           </motion.div>
@@ -127,18 +125,18 @@ const Political = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -8 }}
-                className="p-6 md:p-8 border border-border rounded-2xl bg-card hover:border-accent hover:shadow-xl transition-all duration-300 group"
+                className="p-6 md:p-8 border border-gray-200 hover:border-blue-300 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300 group hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50"
               >
                 <motion.div
-                  className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300"
+                  className="w-14 h-14 rounded-xl bg-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 flex items-center justify-center mb-6"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   <service.icon size={28} />
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">
+                <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                   {service.description}
                 </p>
               </motion.div>
@@ -148,7 +146,7 @@ const Political = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="w-full py-20 md:py-28 bg-foreground text-primary-foreground">
+      <section className="w-full py-20 md:py-28 bg-gray-900 text-white">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <motion.div
@@ -157,13 +155,11 @@ const Political = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
-              >
-                Why Leaders <span className="text-accent">Choose Us</span>
+              <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                Why Leaders <span className="text-blue-400">Choose Us</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-muted-foreground mb-8 leading-relaxed"
+                className="text-xl text-gray-300 mb-8 leading-relaxed"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -184,9 +180,9 @@ const Political = () => {
                     <motion.div
                       whileHover={{ scale: 1.2 }}
                     >
-                      <CheckCircle size={24} className="text-accent flex-shrink-0 mt-1" />
+                      <CheckCircle size={24} className="text-blue-400 flex-shrink-0 mt-1" />
                     </motion.div>
-                    <span className="text-base md:text-lg group-hover:text-accent transition-colors duration-300">
+                    <span className="text-lg group-hover:text-blue-400 transition-colors duration-300">
                       {benefit}
                     </span>
                   </motion.li>
@@ -202,10 +198,10 @@ const Political = () => {
               className="grid grid-cols-2 gap-4 md:gap-6"
             >
               {[
-                { number: "50+", label: "Campaigns Managed", bgColor: "bg-foreground text-primary-foreground" },
-                { number: "85%", label: "Success Rate", bgColor: "bg-accent text-accent-foreground" },
-                { number: "10+", label: "States Covered", bgColor: "bg-accent text-accent-foreground" },
-                { number: "24/7", label: "War Room Support", bgColor: "bg-foreground text-primary-foreground" },
+                { number: "50+", label: "Campaigns Managed", bgColor: "bg-gray-800 text-white" },
+                { number: "85%", label: "Success Rate", bgColor: "bg-blue-600 text-white" },
+                { number: "10+", label: "States Covered", bgColor: "bg-blue-600 text-white" },
+                { number: "24/7", label: "War Room Support", bgColor: "bg-gray-800 text-white" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -214,10 +210,10 @@ const Political = () => {
                   whileHover={{ scale: 1.05, y: -8 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className={`p-6 md:p-8 rounded-2xl text-center font-bold shadow-md hover:shadow-lg transition-all duration-300 ${stat.bgColor}`}
+                  className={`p-6 md:p-8 rounded-2xl text-center font-bold shadow-xl hover:shadow-2xl transition-all duration-300 ${stat.bgColor}`}
                 >
                   <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-xs md:text-sm opacity-80">{stat.label}</div>
+                  <div className="text-sm opacity-90 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -226,7 +222,7 @@ const Political = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 md:py-28 bg-foreground text-primary-foreground">
+      <section className="w-full py-20 md:py-28 bg-white text-gray-900">
         <div className="w-full max-w-4xl mx-auto px-4 md:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -234,13 +230,11 @@ const Political = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
-            >
-              Ready to <span className="text-accent">Win</span>?
+            <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              Ready to <span className="text-blue-600">Win</span>?
             </motion.h2>
             <motion.p
-              className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10"
+              className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -255,12 +249,10 @@ const Political = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-full hover:bg-accent/90 transition-all duration-300 hover:shadow-xl"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl shadow-lg"
                 >
                   Get Started
                   <ArrowRight size={20} />
@@ -270,7 +262,7 @@ const Political = () => {
                 href="https://wa.me/917447332829"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-full hover:border-primary-foreground hover:bg-primary-foreground/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-gray-300 hover:border-blue-600 text-gray-900 hover:text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 WhatsApp Us
