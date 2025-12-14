@@ -77,59 +77,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* About Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="heading-lg mb-6">
-                Creative Mark – Your Strategic <span className="text-accent">Partner</span>
-              </h2>
-              <p className="text-body mb-6">
-                Creative Mark is a full-service advertising and digital marketing agency specializing in branding, multimedia, printing, and political campaign management. We deliver end-to-end solutions for businesses, leaders, and organizations across India.
-              </p>
-              <p className="text-body mb-8">
-                Our team combines creativity with strategic thinking to craft campaigns that resonate, influence, and deliver measurable results.
-              </p>
-              <Link to="/about" className="btn-pill-outline inline-flex items-center gap-2">
-                Learn More About Us
-                <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="bg-foreground text-primary-foreground p-8 rounded-2xl">
-                <div className="text-4xl font-bold mb-2">10+</div>
-                <div className="text-sm text-primary-foreground/70">Years Experience</div>
-              </div>
-              <div className="bg-accent text-accent-foreground p-8 rounded-2xl">
-                <div className="text-4xl font-bold mb-2">500+</div>
-                <div className="text-sm text-accent-foreground/70">Projects Completed</div>
-              </div>
-              <div className="bg-accent text-accent-foreground p-8 rounded-2xl">
-                <div className="text-4xl font-bold mb-2">50+</div>
-                <div className="text-sm text-accent-foreground/70">Political Campaigns</div>
-              </div>
-              <div className="bg-foreground text-primary-foreground p-8 rounded-2xl">
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-sm text-primary-foreground/70">Client Satisfaction</div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
+{/* 
+     
       {/* Services Section */}
       <section className="section-padding">
         <div className="container-wide">
