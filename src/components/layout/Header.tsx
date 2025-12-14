@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoIcon from "@/assets/logo-icon.png";
-
+import creativeMarkLogo from "@/assets/logo-full.png";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
@@ -39,10 +38,7 @@ const Header = () => {
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoIcon} alt="Creative Mark" className="h-10 w-10" />
-          <span className="font-bold text-xl tracking-tight">
-            Creative<span className="text-accent">Mark</span>
-          </span>
+            <img src={creativeMarkLogo} alt="CreativeMark advertising and digital marketing agency logo" className="h-8 md:h-10 w-auto object-contain" />42
         </Link>
 
         {/* Desktop Navigation */}
