@@ -39,6 +39,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
             <img src={creativeMarkLogo} alt="CreativeMark advertising and digital marketing agency logo" className="h-16 sm:h-16 md:h-20 lg:h-24 w-auto object-contain" />
+                      </Link>
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
