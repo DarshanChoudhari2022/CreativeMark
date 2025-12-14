@@ -49,7 +49,7 @@ const Political = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="w-full py-24 md:py-32 bg-foreground text-primary-foreground">
+      <section className="w-full py-24 md:py-32 bg-foregroun pt-20 md:pt-24d text-primary-foreground">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
