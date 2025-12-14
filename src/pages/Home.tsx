@@ -28,7 +28,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">
-                Advertising • Branding • Political Campaigns
+                 Advertising • Branding • Political Campaigns •Digital Marketing •Multimedia
               </span>
             </motion.div>
 
