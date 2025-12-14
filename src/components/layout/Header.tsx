@@ -38,8 +38,7 @@ const Header = () => {
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-            <img src={creativeMarkLogo} alt="CreativeMark advertising and digital marketing agency logo" className="h-8 md:h-10 w-auto object-contain" />42
-        </Link>
+            <img src={creativeMarkLogo} alt="CreativeMark advertising and digital marketing agency logo" className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain" />        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
