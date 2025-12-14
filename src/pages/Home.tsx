@@ -44,13 +44,16 @@ const Home = () => {
 </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-body text-xl max-w-2xl mb-10"
-            >
-              We help businesses and political leaders build trust, visibility, and winning narratives through strategic advertising, digital marketing, and campaign execution.
-            </motion.p>
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="text-body-sm text-lg max-w-2xl mb-10 text-gray-600" // Added text-gray-600 for hierarchy
+>
+  At Creative Mark Advertising, we don't just offer digital marketing services—
+  we create strategies that drive results! Whether you're looking to build your
+  online presence, increase website traffic, or boost sales, our expert team is
+  here to help you succeed.
+</motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
