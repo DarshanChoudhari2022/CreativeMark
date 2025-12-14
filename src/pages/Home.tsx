@@ -55,25 +55,7 @@ const Home = () => {
   here to help you succeed.
 </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Link to="/contact" className="btn-pill-primary inline-flex items-center gap-2">
-                Start Your Project
-                <ArrowRight size={18} />
-              </Link>
-              <a
-                href="https://wa.me/917447332829"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill-outline"
-              >
-                WhatsApp Us
-              </a>
-            </motion.div>
+           
           </div>
         </div>
       </section>
