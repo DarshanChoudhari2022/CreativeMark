@@ -19,8 +19,7 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-    <section className="pt-16 md:pt-20 py-12 sm:py-16 md:py-20 lg:py-16 flex items-center lg:min-h-[calc(100vh-80px)]">          <div className="max-w-4xl">
-            <motion.div
+    <section className="py-12 sm:py-16 md:py-20 lg:py-16 flex items-center lg:min-h-[calc(100vh-80px)]">            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
