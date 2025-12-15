@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-    <section className="pt-16 md:pt-20 py-12 sm:py-16 md:py-20 lg:py-16 flex items-center lg:min-h-[calc(100vh-80px)]">            <motion.div
+    <section className="pt-8 lg:pt-12 py-12 lg:py-16 flex items-center">            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -59,7 +59,7 @@ const Home = () => {
 {/* 
      
       {/* Services Section */}
-    <section className="pt-16 md:pt-20 py-12 sm:py-16 md:py-20 lg:py-16">        <div className="container-wide">
+    <section className="pt-12 lg:pt-10 py-8 lg:py-12">        <div className="container-wide">
           <SectionHeading
             eyebrow="What We Do"
             title={<>Our <span className="text-accent">Services</span></>}
@@ -91,7 +91,7 @@ const Home = () => {
       </section>
 
       {/* Political CTA Section */}
-    <section className="pt-16 md:pt-20 py-12 sm:py-16 md:py-20 lg:py-16 bg-foreground text-primary-foreground">        <div className="container-wide text-center">
+    <section className="pt-12 lg:pt-10 py-8 lg:py-12 bg-foreground text-primary-foreground">        <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-    <section className="pt-16 md:pt-20 py-12 sm:py-16 md:py-20 lg:py-16">        <div className="container-wide text-center">
+    <section className="pt-12 lg:pt-10 py-8 lg:py-12">        <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
