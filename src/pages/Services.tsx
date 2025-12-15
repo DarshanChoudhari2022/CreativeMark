@@ -9,107 +9,134 @@ import {
   Printer,
   ArrowRight,
   CheckCircle,
+  ChevronRight,
 } from "lucide-react";
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const servicesData = [
   {
     icon: Megaphone,
-    title: "Advertising",
-    description: "Strategic advertising campaigns that capture attention and drive results.",
-    image: "https://images.unsplash.com/photo-1460925895917-adf4e9e5e1c2?w=400&h=400&fit=crop",
-    features: [
-      "Print & Outdoor Advertising",
-      "Hoardings, Banners, Flex",
-      "Campaign Planning & Execution",
-      "Media Buying & Placement",
-    ],
-  },
-  {
-    icon: Globe,
     title: "Digital Marketing",
-    description: "Data-driven digital strategies to grow your online presence.",
+    slug: "digital-marketing",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop",
-    features: [
-      "Social Media Management",
-      "Paid Ads (Meta & Google)",
-      "SEO & Lead Generation",
-      "Email Marketing Campaigns",
+    description: "Comprehensive digital marketing solutions to grow your online presence.",
+    subServices: [
+      { name: "Social Media Marketing (SMM)", description: "Build strong brand presence across Instagram, Facebook, LinkedIn & YouTube" },
+      { name: "Search Engine Optimization (SEO)", description: "Rank higher on Google. Get organic traffic that converts" },
+      { name: "Performance Marketing (Paid Ads)", description: "Maximize ROI with highly targeted ad campaigns" },
+      { name: "Content Marketing", description: "Content that speaks, sells, and builds trust" },
     ],
   },
   {
     icon: Palette,
-    title: "Branding",
-    description: "Create a powerful brand identity that resonates with your audience.",
+    title: "Creative & Branding",
+    slug: "creative-branding",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop",
-    features: [
-      "Business Branding",
-      "Product Branding",
-      "Visual Identity Design",
-      "Brand Strategy & Guidelines",
+    description: "Make your brand visually unforgettable.",
+    subServices: [
+      { name: "Logo & Brand Identity", description: "Professional logo and brand identity design" },
+      { name: "Posters, Banners & Creatives", description: "High-impact visual creatives for marketing" },
+      { name: "Video Editing & Reels", description: "Professional video content for social media" },
+      { name: "Motion Graphics", description: "Animated graphics and visual effects" },
     ],
   },
   {
     icon: PenTool,
-    title: "Designing",
-    description: "Creative designs that communicate your message effectively.",
+    title: "Website Design & Development",
+    slug: "web-design",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=400&fit=crop",
-    features: [
-      "Logo Design",
-      "Brochures & Flyers",
-      "Ad Creatives",
-      "Social Media Graphics",
-    ],
-  },
-  {
-    icon: Video,
-    title: "Multimedia",
-    description: "Engaging video content that tells your story.",
-    image: "https://images.unsplash.com/photo-1533050487297-3b1ce256679c?w=400&h=400&fit=crop",
-    features: [
-      "Video Editing & Production",
-      "Promotional Videos",
-      "Reels & Motion Graphics",
-      "Documentary Production",
-    ],
-  },
-  {
-    icon: Printer,
-    title: "Printing",
-    description: "High-quality printing solutions for all your business needs.",
-    image: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?w=400&h=400&fit=crop",
-    features: [
-      "Visiting Cards",
-      "Posters & Banners",
-      "Corporate Printing",
-      "Packaging Design",
+    description: "Your website is your digital office — make it powerful.",
+    subServices: [
+      { name: "Business & Portfolio Websites", description: "Professional websites for your business" },
+      { name: "Landing Pages for Ads", description: "High-converting landing pages" },
+      { name: "Mobile-friendly & Fast Loading", description: "Responsive design for all devices" },
+      { name: "SEO-optimized Structure", description: "Built for search engine visibility" },
     ],
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+const ServiceSubItem = ({ service, index }: { service: typeof servicesData[0]["subServices"][0]; index: number }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: index * 0.05 }}
+      className="p-4 bg-gray-50 rounded-lg hover:bg-accent/10 cursor-pointer transition-all duration-300 group border border-gray-200 hover:border-accent"
+    >
+      <div className="flex items-start justify-between">
+        <div className="flex-1">
+          <h4 className="font-semibold text-gray-900 group-hover:text-accent transition-colors">
+            {service.name}
+          </h4>
+          <p className="text-sm text-gray-600 mt-1">{service.description}</p>
+        </div>
+        <ChevronRight className="flex-shrink-0 text-gray-400 group-hover:text-accent transition-colors mt-1" size={20} />
+      </div>
+    </motion.div>
+  );
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
+const ServiceCategory = ({ service, index }: { service: typeof servicesData[0]; index: number }) => {
+  const [expanded, setExpanded] = useState(false);
+  const ServiceIcon = service.icon;
 
-const headingVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ delay: index * 0.1 }}
+      className=""
+    >
+      {/* Main Service Card */}
+      <div
+        onClick={() => setExpanded(!expanded)}
+        className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+      >
+        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-30"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <ServiceIcon size={80} className="text-accent opacity-20" />
+          </div>
+        </div>
+
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-2xl font-bold group-hover:text-accent transition-colors">
+              {service.title}
+            </h3>
+            <motion.div
+              animate={{ rotate: expanded ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ChevronRight className="text-accent" size={24} />
+            </motion.div>
+          </div>
+          <p className="text-gray-600 mb-4">{service.description}</p>
+        </div>
+      </div>
+
+      {/* Sub Services */}
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={expanded ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden"
+      >
+        <div className="mt-4 space-y-3">
+          {service.subServices.map((subService, idx) => (
+            <ServiceSubItem key={subService.name} service={subService} index={idx} />
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
 };
 
 const Services = () => {
@@ -129,14 +156,14 @@ const Services = () => {
             </span>
             <motion.h1
               className="text-4xl md:text-5xl font-bold mb-4"
-              variants={headingVariants}
-              initial="hidden"
-              animate="visible"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
               Comprehensive <span className="text-accent">Solutions</span> for Your Success
             </motion.h1>
             <p className="text-base text-gray-400 text-lg">
-              From advertising to political campaigns, we offer end-to-end services designed to elevate your brand and achieve measurable results.
+              From advertising to political campaigns, we offer end-to-end services designed to elevate your brand and achieve measurable results. Click on any service to explore our detailed offerings.
             </p>
           </motion.div>
         </div>
@@ -146,79 +173,14 @@ const Services = () => {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            className="space-y-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            {servicesData.map((service) => {
-              const ServiceIcon = service.icon;
-              return (
-                <motion.div
-                  key={service.title}
-                  variants={itemVariants}
-                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                  className="group"
-                >
-                  <Link
-                    to={`/services/${service.title.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="block h-full cursor-pointer"
-                  >
-                    <div className="bg-gray-900 rounded-2xl overflow-hidden h-full flex flex-col hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300">
-                      {/* Image Section */}
-                      <div className="relative h-40 overflow-hidden bg-secondary">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
-                      </div>
-
-                      {/* Content Section */}
-                      <div className="p-5 flex-1 flex flex-col">
-                        {/* Icon */}
-                        <div className="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mb-3 flex-shrink-0">
-                          <ServiceIcon size={24} />
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
-                          {service.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-sm text-gray-400 mb-4 flex-grow">
-                          {service.description}
-                        </p>
-
-                        {/* Features */}
-                        <ul className="space-y-2">
-                          {service.features.slice(0, 2).map((feature) => (
-                            <li
-                              key={feature}
-                              className="flex items-start gap-2 text-xs text-gray-300"
-                            >
-                              <CheckCircle
-                                size={16}
-                                className="text-accent flex-shrink-0 mt-0.5"
-                              />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        {/* View More */}
-                        <div className="flex items-center gap-2 text-accent text-sm font-semibold mt-4 pt-4 border-t border-gray-800 group-hover:gap-3 transition-all">
-                          View More <ArrowRight size={16} />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+            {servicesData.map((service, index) => (
+              <ServiceCategory key={service.title} service={service} index={index} />
+            ))}
           </motion.div>
         </div>
       </section>
