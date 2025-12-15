@@ -61,8 +61,7 @@ const Home = () => {
 {/* 
      
       {/* Services Section */}
-      <section className="section-padding">
-        <div className="container-wide">
+<section className="pt-12 pb-20">        <div className="container-wide">
           <SectionHeading
             eyebrow="What We Do"
             title={<>Our <span className="text-accent">Services</span></>}
