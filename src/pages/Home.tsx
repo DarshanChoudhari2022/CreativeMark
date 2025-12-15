@@ -19,8 +19,7 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20">
-        <div className="container-wide">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-16 flex items-center lg:min-h-[calc(100vh-80px)]">        <div className="container-wide">
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -62,8 +61,7 @@ const Home = () => {
 {/* 
      
       {/* Services Section */}
-      <section className="section-padding">
-        <div className="container-wide">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-16">        <div className="container-wide">
           <SectionHeading
             eyebrow="What We Do"
             title={<>Our <span className="text-accent">Services</span></>}
@@ -95,8 +93,7 @@ const Home = () => {
       </section>
 
       {/* Political CTA Section */}
-      <section className="section-padding bg-foreground text-primary-foreground">
-        <div className="container-wide text-center">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-16 bg-foreground text-primary-foreground">        <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -124,8 +121,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding">
-        <div className="container-wide text-center">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-16">        <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
