@@ -1,10 +1,34 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
 const Contact = () => {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "Select Your Service Interest",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, phone, email, service, message } = formData;
+
+    // Construct WhatsApp Message
+    const text = `*New Inquiry from Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Service:* ${service}%0A*Message:* ${message}`;
+
+    const whatsappUrl = `https://wa.me/917447332829?text=${text}`;
+
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <Layout>
       <section className="bg-background min-h-screen pt-32 pb-20">
@@ -39,28 +63,56 @@ const Contact = () => {
             </div>
 
             {/* Right Form */}
-            <div className="bg-secondary p-10 md:p-16 rounded-lg border border-border">
-              <form className="space-y-8">
+            <div className="bg-secondary p-8 md:p-16 rounded-lg border border-border">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-foreground">Name</label>
-                    <input type="text" className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none" placeholder="Your Name" />
+                    <input
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      type="text"
+                      className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none"
+                      placeholder="Your Name"
+                    />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-foreground">Phone</label>
-                    <input type="tel" className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none" placeholder="+91 - 10 digit number" />
+                    <input
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      type="tel"
+                      className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none"
+                      placeholder="+91 - 10 digit number"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-foreground">Email</label>
-                  <input type="email" className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none" placeholder="your@email.com" />
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none"
+                    placeholder="your@email.com"
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-foreground">Service Interest</label>
-                  <select className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none appearance-none">
-                    <option disabled selected>Select Your Service Interest</option>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none appearance-none"
+                  >
+                    <option disabled>Select Your Service Interest</option>
                     <option>Digital Marketing</option>
                     <option>Advertising</option>
                     <option>Political Campaign</option>
@@ -74,7 +126,15 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-foreground">Message</label>
-                  <textarea rows={4} className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none resize-none" placeholder="Tell us about your project requirements, timeline & budget..."></textarea>
+                  <textarea
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-4 focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none resize-none"
+                    placeholder="Tell us about your project requirements, timeline & budget..."
+                  ></textarea>
                 </div>
 
                 <button type="submit" className="w-full btn-primary py-5 text-lg shadow-lg hover:shadow-xl">
