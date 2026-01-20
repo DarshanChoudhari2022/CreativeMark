@@ -58,7 +58,7 @@ const Home = () => {
             {/* Massive Hero Title - "Framer" Style Reveal */}
             <div className="mb-10 text-center w-full">
               <h1 className="text-[10vw] md:text-[8rem] lg:text-[10rem] font-bold leading-[0.9] tracking-tight text-foreground flex flex-col items-center w-full">
-                <span className="block overflow-hidden w-full">
+                <span className="inline-block overflow-hidden px-4">
                   <motion.span
                     initial={{ y: "110%" }}
                     animate={{ y: "0%" }}
@@ -68,7 +68,7 @@ const Home = () => {
                     YOUR GROWTH
                   </motion.span>
                 </span>
-                <span className="block overflow-hidden w-full text-accent -mt-2 md:-mt-6">
+                <span className="inline-block overflow-hidden text-accent -mt-2 md:-mt-6 px-4">
                   <motion.span
                     initial={{ y: "110%" }}
                     animate={{ y: "0%" }}
