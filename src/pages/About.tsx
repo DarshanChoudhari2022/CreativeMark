@@ -1,179 +1,127 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import logoIcon from "@/assets/logo-icon.png";
-
-const values = [
-  {
-    icon: Target,
-    title: "Strategic Focus",
-    description: "Every project begins with understanding your goals and crafting a strategy to achieve them.",
-  },
-  {
-    icon: Eye,
-    title: "Clarity & Transparency",
-    description: "Clear communication and transparent processes at every stage of the project.",
-  },
-  {
-    icon: Heart,
-    title: "Commitment to Excellence",
-    description: "We're dedicated to delivering exceptional results that exceed expectations.",
-  },
-];
 
 const About = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-secondary">
+      <section className="bg-background min-h-screen pt-32 pb-20">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
-              About Us
-            </span>
-            <h1 className="heading-xl mb-6">
-              Building Brands. <span className="text-accent">Shaping Leadership.</span>
-            </h1>
-            <p className="text-body text-xl">
-              Creative Mark is a creative and strategic agency delivering advertising, branding, digital marketing, and political communication services. Our focus is clarity, consistency, and measurable results.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Story Section */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="heading-lg mb-6">
-                Our <span className="text-accent">Story</span>
-              </h2>
-              <div className="space-y-4 text-body">
-                <p>
-                  Creative Mark was founded with a simple mission: to help businesses and leaders communicate their vision with clarity and impact.
+          {/* Header - Split Layout */}
+          <div className="grid lg:grid-cols-2 gap-16 mb-32 items-end">
+            <div>
+              <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">Who We Are</span>
+              <h1 className="heading-xl">
+                Strategy First.<br />
+                Creativity <span className="text-accent">Always.</span>
+              </h1>
+            </div>
+            <div>
+              <div>
+                <p className="text-xl text-muted-foreground leading-relaxed font-light mb-6">
+                  Creative Mark is a strategic advertising and digital agency founded on the belief that clarity wins. We don't just make things look good; we make them work. From corporate boardrooms to election war rooms, we drive results.
                 </p>
-                <p>
-                  Over the years, we have grown into a full-service agency offering comprehensive advertising, branding, digital marketing, and political campaign management services.
-                </p>
-                <p>
-                  Our team combines creative thinking with strategic expertise to deliver campaigns that resonate with audiences and achieve measurable results.
-                </p>
-                <p>
-                  Today, we serve clients across India, from growing businesses to established brands and political leaders seeking to connect with their constituents.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex justify-center"
-            >
-              <div className="w-64 h-64 bg-secondary rounded-full flex items-center justify-center">
-                <img src={logoIcon} alt="Creative Mark" className="w-40 h-40" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="heading-lg mb-4">
-              Our <span className="text-accent">Values</span>
-            </h2>
-            <p className="text-body max-w-2xl mx-auto">
-              The principles that guide everything we do.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-background p-8 rounded-2xl text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-foreground text-primary-foreground flex items-center justify-center mx-auto mb-6">
-                  <value.icon size={28} />
+                <div className="flex gap-4">
+                  <div className="px-4 py-2 bg-secondary rounded text-sm font-bold">50+ Campaigns</div>
+                  <div className="px-4 py-2 bg-secondary rounded text-sm font-bold">85% Win Rate</div>
+                  <div className="px-4 py-2 bg-secondary rounded text-sm font-bold">10+ Years Exp</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-foreground text-primary-foreground">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Image / Banner */}
+          <div className="w-full h-[60vh] bg-secondary rounded-lg mb-32 relative overflow-hidden">
+            {/* Placeholder for Team/Office Image */}
+            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-bold text-4xl">
+              AGENCY CULTURE
+            </div>
+          </div>
+
+          {/* Story / Timeline */}
+          <div className="max-w-4xl mx-auto mb-32">
+            <div className="border-l-2 border-border pl-8 md:pl-16 py-4 space-y-24">
+              {[
+                { year: "2015", title: "The Beginning", text: "Founded in Pune with a small team and a big vision to revolutionize political advertising. Revenue: ₹0", type: "launch" },
+                { year: "2018", title: "Expansion Phase", text: "Expanded services to include digital marketing and corporate branding. Crossed ₹50L Turnover.", type: "growth" },
+                { year: "2020", title: "Statewide Dominance", text: "Managed campaigns across Maharashtra. Established 85% election win rate. Revenue grew to ₹2Cr.", type: "milestone" },
+                { year: "2024", title: "National Powerhouse", text: "Evolved into a 360-degree agency serving national brands. Targeting ₹10Cr+ valuation.", type: "current" }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <span className="absolute -left-[41px] md:-left-[73px] top-0 w-5 h-5 bg-background border-4 border-accent rounded-full" />
+                  <span className="text-accent font-bold text-lg block mb-2">{item.year}</span>
+                  <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-xl text-muted-foreground leading-relaxed">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Values Grid */}
+          <div className="grid md:grid-cols-3 gap-8 bg-secondary p-16 rounded-lg">
             {[
-              { number: "10+", label: "Years of Experience" },
-              { number: "500+", label: "Projects Delivered" },
-              { number: "50+", label: "Political Campaigns" },
-              { number: "100+", label: "Happy Clients" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-primary-foreground/70">{stat.label}</div>
-              </motion.div>
+              { title: "Clarity", desc: "We simplify the complex. Your message should be understood instantly." },
+              { title: "Consistency", desc: "Brands are built on repetition. We ensure you show up correctly, every time." },
+              { title: "Impact", desc: "We focus on metrics that matter. Does it sell? Does it convince? Did we win?" }
+            ].map((val, i) => (
+              <div key={i}>
+                <span className="text-5xl font-bold text-border block mb-4">0{i + 1}</span>
+                <h4 className="text-xl font-bold mb-3">{val.title}</h4>
+                <p className="text-muted-foreground">{val.desc}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="section-padding">
-        <div className="container-wide text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="heading-lg mb-6">
-              Let's Work <span className="text-accent">Together</span>
-            </h2>
-            <p className="text-body max-w-xl mx-auto mb-10">
-              Ready to start your project? We'd love to hear from you.
-            </p>
-            <Link to="/contact" className="btn-pill-primary inline-flex items-center gap-2">
-              Get In Touch
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+          {/* Team Section (CRITICAL FIX) */}
+          <div className="mb-32 mt-32">
+            <div className="text-center mb-16">
+              <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">The Minds Behind The Strategies</span>
+              <h2 className="heading-lg">Our Leadership</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { name: "Darshan Choudhari", role: "Founder & Chief Strategist", exp: "15+ Years Exp", bio: "The visionary behind Creative Mark's political dominance." },
+                { name: "Creative Director", role: "Head of Design", exp: "12+ Years Exp", bio: "Award-winning designer crafting visual narratives." },
+                { name: "Campaign Lead", role: "Political Strategy Head", exp: "50+ Campaigns", bio: "Mastermind of ground-level election engineering." }
+              ].map((member, i) => (
+                <div key={i} className="group">
+                  <div className="aspect-[3/4] bg-secondary rounded-lg mb-6 overflow-hidden relative">
+                    {/* Placeholder for real photo */}
+                    <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center text-white/20 font-bold text-6xl group-hover:bg-neutral-700 transition-colors">
+                      {member.name.charAt(0)}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold">{member.name}</h3>
+                  <p className="text-accent font-medium mb-2">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{member.exp}</p>
+                  <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Awards & Recognition */}
+          <div className="bg-black text-white p-16 rounded-2xl text-center mb-20">
+            <h2 className="heading-md mb-12">Industry Recognition</h2>
+            <div className="grid md:grid-cols-4 gap-8">
+              {["Best Political Campaign 2022", "Top Digital Agency Pune", "Excellence in Brandy Identity", "Media Innovation Award"].map((award, i) => (
+                <div key={i} className="border border-white/20 p-6 rounded-lg hover:bg-white/5 transition-colors">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">★</div>
+                  <p className="font-bold">{award}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </Layout>

@@ -1,139 +1,78 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import SectionHeading from "@/components/ui/SectionHeading";
 
-const portfolioItems = [
-  {
-    category: "Branding",
-    projects: [
-      { title: "Corporate Identity Design", description: "Complete visual identity for a leading manufacturing company", type: "Branding" },
-      { title: "Restaurant Brand Launch", description: "Logo, packaging, and menu design for a new restaurant chain", type: "Branding" },
-      { title: "Healthcare Brand Refresh", description: "Modernizing the visual identity of a hospital network", type: "Branding" },
-    ],
-  },
-  {
-    category: "Digital Campaigns",
-    projects: [
-      { title: "E-commerce Growth Campaign", description: "300% increase in online sales through targeted ads", type: "Digital Marketing" },
-      { title: "Real Estate Lead Generation", description: "Generated 1000+ qualified leads in 3 months", type: "Digital Marketing" },
-      { title: "App Launch Campaign", description: "50,000+ downloads in the first month", type: "Digital Marketing" },
-    ],
-  },
-  {
-    category: "Advertising",
-    projects: [
-      { title: "Outdoor Billboard Campaign", description: "City-wide visibility for a new product launch", type: "Advertising" },
-      { title: "Festival Season Campaign", description: "Multi-platform advertising for retail client", type: "Advertising" },
-      { title: "Corporate Event Promotion", description: "Complete event marketing and collateral", type: "Advertising" },
-    ],
-  },
-  {
-    category: "Political Campaigns",
-    projects: [
-      { title: "State Election Campaign", description: "Complete campaign management for state elections", type: "Political" },
-      { title: "Municipal Campaign", description: "Ground campaign and digital strategy", type: "Political" },
-      { title: "Leadership Branding", description: "Personal brand building for political leaders", type: "Political" },
-    ],
-  },
+const projects = [
+  { id: "01", client: "TechFlow", category: "Branding", title: "Corporate Identity Refresh", results: ["40% Brand Recall", "25% Rev Growth"] },
+  { id: "02", client: "City Council", category: "Political", title: "Election Victory Campaign", results: ["15% Voter Swing", "Won by 12k Votes"] },
+  { id: "03", client: "GreenEarth", category: "Digital", title: "Sustainability Awareness", results: ["2M+ Reach", "150% Engagement"] },
+  { id: "04", client: "SpiceRoute", category: "Advertising", title: "Product Launch Strategy", results: ["Sold Out in 3 Days", "10x ROAS"] },
+  { id: "05", client: "UrbanHomes", category: "Web Design", title: "Real Estate Portal", results: ["300% Lead Gen", "40% Bounce Rate Drop"] },
+  { id: "06", client: "HealthPlus", category: "Multimedia", title: "Patient Care Video Series", results: ["500k Views", "Trust Score Incr."] }
 ];
 
 const Work = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-secondary">
+      <section className="bg-background min-h-screen pt-32 pb-20">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
-              Our Portfolio
-            </span>
-            <h1 className="heading-xl mb-6">
-              Our Work <span className="text-accent">Speaks</span>
-            </h1>
-            <p className="text-body text-xl">
-              Explore our portfolio of successful projects across branding, digital marketing, advertising, and political campaigns.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          <div className="mb-20">
+            <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">Portfolio</span>
+            <h1 className="heading-xl mb-6">Success Stories That Shaped Industries</h1>
+          </div>
 
-      {/* Portfolio Sections */}
-      <section className="section-padding">
-        <div className="container-wide space-y-24">
-          {portfolioItems.map((section, sectionIndex) => (
-            <div key={section.category}>
-              <motion.h2
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="heading-md mb-8 flex items-center gap-3"
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <span className="text-accent">0{sectionIndex + 1}</span>
-                {section.category}
-              </motion.h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {section.projects.map((project, projectIndex) => (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: projectIndex * 0.1 }}
-                    className="group bg-secondary rounded-2xl overflow-hidden card-hover"
-                  >
-                    <div className="aspect-[4/3] bg-foreground/5 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-foreground/10">
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                    <div className="p-6">
-                      <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                        {project.type}
-                      </span>
-                      <h3 className="font-semibold text-lg mt-2 mb-2 group-hover:text-accent transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {project.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+                {/* Image Placeholder */}
+                <div className="aspect-[4/3] bg-secondary rounded-lg mb-6 overflow-hidden border border-border relative">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                  <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="btn-primary py-3 px-6 text-xs">View Case Study</span>
+                  </div>
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/20 font-bold text-9xl select-none">
+                    {project.id}
+                  </div>
+                </div>
 
-      {/* CTA */}
-      <section className="section-padding bg-foreground text-primary-foreground">
-        <div className="container-wide text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="heading-lg mb-6">
-              Let's Create Your <span className="text-accent">Success Story</span>
-            </h2>
-            <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto mb-10">
-              Ready to start your project? We'd love to hear about your goals and how we can help achieve them.
-            </p>
-            <Link
-              to="/contact"
-              className="btn-pill bg-accent text-accent-foreground hover:bg-primary-foreground hover:text-foreground inline-flex items-center gap-2"
-            >
-              Start Your Project
-              <ArrowRight size={18} />
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xs font-bold uppercase tracking-widest px-2 py-1 border border-border rounded text-muted-foreground">
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold group-hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">
+                      {project.title}
+                    </h3>
+                    <div className="flex gap-4 mt-3">
+                      {project.results.map((res, i) => (
+                        <div key={i} className="text-xs font-bold bg-secondary px-2 py-1 rounded text-foreground/80">
+                          {res}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <ArrowUpRight className="text-muted-foreground group-hover:text-foreground transition-colors" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-32 text-center">
+            <Link to="/contact" className="btn-secondary">
+              Let's Create Your Success Story
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>

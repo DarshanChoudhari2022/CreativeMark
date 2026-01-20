@@ -23,7 +23,7 @@ const SectionHeading = ({
       className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}
     >
       {eyebrow && (
-        <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-3">
+        <span className="inline-block text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
           {eyebrow}
         </span>
       )}
