@@ -51,7 +51,7 @@ export const RevealText = ({ text, className = "", delay = 0, tag = "div" }: Rev
             style={{ display: className.includes('hidden') ? 'none' : 'flex' }}
         >
             {words.map((word, i) => (
-                <span key={i} className="inline-block overflow-hidden py-[0.35em] -my-[0.35em] align-top px-[0.1em] -mx-[0.1em]">
+                <span key={i} className="inline-block overflow-hidden py-[0.5em] -my-[0.5em] align-top px-[0.1em] -mx-[0.1em]">
                     <motion.span
                         variants={wordVariants}
                         className="inline-block will-change-transform"
