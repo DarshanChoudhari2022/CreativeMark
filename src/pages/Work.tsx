@@ -1,78 +1,102 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-
-const projects = [
-  { id: "01", client: "TechFlow", category: "Branding", title: "Corporate Identity Refresh", results: ["40% Brand Recall", "25% Rev Growth"] },
-  { id: "02", client: "City Council", category: "Political", title: "Election Victory Campaign", results: ["15% Voter Swing", "Won by 12k Votes"] },
-  { id: "03", client: "GreenEarth", category: "Digital", title: "Sustainability Awareness", results: ["2M+ Reach", "150% Engagement"] },
-  { id: "04", client: "SpiceRoute", category: "Advertising", title: "Product Launch Strategy", results: ["Sold Out in 3 Days", "10x ROAS"] },
-  { id: "05", client: "UrbanHomes", category: "Web Design", title: "Real Estate Portal", results: ["300% Lead Gen", "40% Bounce Rate Drop"] },
-  { id: "06", client: "HealthPlus", category: "Multimedia", title: "Patient Care Video Series", results: ["500k Views", "Trust Score Incr."] }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const Work = () => {
+  const { t } = useLanguage();
+
+  const projects = t('work.items');
+
   return (
     <Layout>
-      <section className="bg-background min-h-screen pt-32 pb-20">
+      <section className="bg-background min-h-screen pt-40 pb-20">
         <div className="container-wide">
-          <div className="mb-20">
-            <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">Portfolio</span>
-            <h1 className="heading-xl mb-6">Success Stories That Shaped Industries</h1>
+          <div className="max-w-4xl mb-20">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block"
+            >
+              {t('work.tag')}
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="heading-xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70"
+            >
+              {t('work.title')}
+            </motion.h1>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
-            {projects.map((project, index) => (
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-24">
+            {projects.map((project: any, i: number) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
+                transition={{ delay: i * 0.1 }}
+                className="group cursor-pointer"
               >
-                {/* Image Placeholder */}
-                <div className="aspect-[4/3] bg-secondary rounded-lg mb-6 overflow-hidden border border-border relative">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-                  <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="btn-primary py-3 px-6 text-xs">View Case Study</span>
-                  </div>
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/20 font-bold text-9xl select-none">
-                    {project.id}
-                  </div>
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8 bg-secondary">
+                  <img
+                    src={`https://images.unsplash.com/photo-${i === 0 ? '1460925895917-afdab827c52f' : i === 1 ? '1573167101669-476636b96cea' : i === 2 ? '1542601906990-b4d3fb778b09' : i === 3 ? '1551288049-bebda4e38f71' : i === 4 ? '1560518883-ce09059eeffa' : '1504868584819-f8e90526354c'}?auto=format&fit=crop&q=80&w=1200`}
+                    alt={project.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                <div className="flex justify-between items-start">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-bold uppercase tracking-widest px-2 py-1 border border-border rounded text-muted-foreground">
-                        {project.category}
+                <div className="flex flex-col gap-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-accent font-bold text-xs uppercase tracking-widest mb-2 block">
+                        {project.client} / {project.category}
                       </span>
+                      <h3 className="text-3xl font-bold group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
                     </div>
-                    <h3 className="text-2xl font-bold group-hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">
-                      {project.title}
-                    </h3>
-                    <div className="flex gap-4 mt-3">
-                      {project.results.map((res, i) => (
-                        <div key={i} className="text-xs font-bold bg-secondary px-2 py-1 rounded text-foreground/80">
-                          {res}
-                        </div>
-                      ))}
+                    <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-300 transform group-hover:-translate-y-1 group-hover:rotate-12">
+                      <ArrowUpRight size={20} />
                     </div>
                   </div>
-                  <ArrowUpRight className="text-muted-foreground group-hover:text-foreground transition-colors" />
+
+                  {/* Project Results Display (From Audit) */}
+                  <div className="flex gap-6 mt-2 pt-6 border-t border-border/50">
+                    {project.results.map((result: string, idx: number) => (
+                      <div key={idx}>
+                        <span className="block text-2xl font-bold text-foreground">{result.split(' ')[0]}</span>
+                        <span className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">{result.split(' ').slice(1).join(' ')}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors mt-4">
+                    {t('work.view_case')}
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-32 text-center">
-            <Link to="/contact" className="btn-secondary">
-              Let's Create Your Success Story
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-40 text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-10">
+              {t('work.cta')}
+            </h2>
+            <Link to="/contact" className="btn-primary px-12 py-5 text-lg">
+              {t('header.contact')}
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </Layout>

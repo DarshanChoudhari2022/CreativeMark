@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Home = () => {
   const targetRef = useRef(null);
@@ -11,6 +12,7 @@ const Home = () => {
     target: targetRef,
     offset: ["start start", "end start"],
   });
+  const { t } = useLanguage();
 
   const yText = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
@@ -26,7 +28,7 @@ const Home = () => {
           transition={{ delay: 1, duration: 1 }}
           className="absolute top-32 left-8 md:left-12 hidden md:block"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Est. 2015</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{t('hero.est')}</span>
         </motion.div>
 
         <motion.div
@@ -35,7 +37,7 @@ const Home = () => {
           transition={{ delay: 1, duration: 1 }}
           className="absolute top-32 right-8 md:right-12 hidden md:block"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">AGENCY</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{t('hero.agency')}</span>
         </motion.div>
 
         <div className="container-wide relative z-10">
@@ -51,7 +53,7 @@ const Home = () => {
               className="mb-8"
             >
               <span className="px-4 py-2 rounded-full border border-black/10 text-xs font-bold uppercase tracking-widest text-muted-foreground bg-white/50 backdrop-blur-sm">
-                VICTORY, STRATEGICALLY DESIGNED.
+                {t('hero.tagline')}
               </span>
             </motion.div>
 
@@ -65,7 +67,7 @@ const Home = () => {
                     transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
                     className="block whitespace-nowrap"
                   >
-                    YOUR GROWTH
+                    {t('hero.title1')}
                   </motion.span>
                 </span>
                 <span className="inline-block overflow-hidden text-accent md:-mt-6 px-2 md:px-4">
@@ -75,7 +77,7 @@ const Home = () => {
                     transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.25 }}
                     className="block whitespace-nowrap"
                   >
-                    OUR POWER
+                    {t('hero.title2')}
                   </motion.span>
                 </span>
               </h1>
@@ -84,7 +86,7 @@ const Home = () => {
             <div className="max-w-xl mx-auto mb-12 flex justify-center">
               <div className="flex justify-center w-full"> {/* Wrap RevealText in flex center */}
                 <RevealText
-                  text="We create strategy-driven campaigns that deliver measurable results—from brand dominance to election victories."
+                  text={t('hero.subtitle')}
                   className="text-xl md:text-2xl text-muted-foreground justify-center text-center leading-relaxed font-light"
                   delay={0.6}
                   tag="p" // Ensure it renders as P
@@ -99,7 +101,7 @@ const Home = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
               <Link to="/contact" className="btn-primary w-full sm:w-auto px-10 py-5 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                Start Winning Today
+                {t('hero.cta_primary')}
               </Link>
             </motion.div>
           </motion.div>
@@ -112,10 +114,10 @@ const Home = () => {
             className="mt-24 pt-12 border-t border-border/60 grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-5xl mx-auto"
           >
             {[
-              { val: "85%", lab: "Win Ratio", sub: "Across 50+ Campaigns" },
-              { val: "50+", lab: "Campaigns", sub: "Managed Successfully" },
-              { val: "24/7", lab: "War Room", sub: "Real-time Monitoring" },
-              { val: "10+", lab: "States", sub: "Pan-India Presence" }
+              { val: "85%", lab: t('stats.winRatio'), sub: t('stats.winRatioSub') },
+              { val: "50+", lab: t('stats.campaigns'), sub: t('stats.campaignsSub') },
+              { val: "24/7", lab: t('stats.warRoom'), sub: t('stats.warRoomSub') },
+              { val: "10+", lab: t('stats.states'), sub: t('stats.statesSub') }
             ].map((stat, i) => (
               <div key={i} className="group cursor-default">
                 <span className="block text-5xl font-bold text-foreground mb-2 tracking-tight group-hover:scale-110 transition-transform duration-300 ease-out">{stat.val}</span>
@@ -132,7 +134,7 @@ const Home = () => {
         <div className="container-wide">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 space-y-6 md:space-y-0">
             <div className="max-w-2xl">
-              <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">Our Arsenal</span>
+              <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">{t('services.intro_tag')}</span>
               <h2 className="heading-lg text-foreground overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -141,25 +143,25 @@ const Home = () => {
                   viewport={{ once: true }}
                   className="block"
                 >
-                  Comprehensive<br />Capabilities
+                  {t('services.intro_title')}
                 </motion.span>
               </h2>
             </div>
             <div className="max-w-md">
               <p className="text-muted-foreground font-medium text-lg leading-relaxed">
-                Expert solutions designed to elevate your brand and ensure victory.
+                {t('services.intro_desc')}
               </p>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { id: "advertising", icon: Megaphone, title: "Advertising", desc: "Print, outdoor, and data-driven ad campaigns." },
-              { id: "digital-marketing", icon: Globe, title: "Digital Marketing", desc: "SEO, Social Media, and Performance Marketing." },
-              { id: "branding", icon: Palette, title: "Branding", desc: "Identity, strategy, and visual storytelling." },
-              { id: "multimedia", icon: Video, title: "Multimedia", desc: "Video production, reels, and motion graphics." },
-              { id: "printing", icon: Printer, title: "Printing", desc: "High-quality corporate and campaign printing." },
-              { id: "designing", icon: PenTool, title: "Designing", desc: "Creative graphic design for all mediums." }
+              { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc') },
+              { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc') },
+              { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc') },
+              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc') },
+              { id: "printing", icon: Printer, title: t('services.items.printing.title'), desc: t('services.items.printing.desc') },
+              { id: "designing", icon: PenTool, title: t('services.items.designing.title'), desc: t('services.items.designing.desc') }
             ].map((service, i) => (
               <Link to={`/services/${service.id}`} key={i} className="block h-full perspective-1000">
                 <motion.div
@@ -177,7 +179,7 @@ const Home = () => {
                     <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
                   </div>
                   <div className="mt-8 flex justify-between items-center text-sm font-bold border-t border-gray-100 pt-6">
-                    <span className="text-foreground group-hover:text-accent transition-colors">Explore</span>
+                    <span className="text-foreground group-hover:text-accent transition-colors">{t('services.explore')}</span>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center bg-transparent group-hover:bg-accent group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1 group-hover:translate-x-1">
                       <ArrowUpRight size={16} />
                     </div>
@@ -201,14 +203,14 @@ const Home = () => {
           >
             <div className="grid lg:grid-cols-2 min-h-[600px]">
               <div className="p-10 md:p-20 flex flex-col justify-center order-2 lg:order-1 relative z-10 bg-white">
-                <span className="text-accent font-bold tracking-widest uppercase text-xs mb-6 block">Specialization</span>
-                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-none tracking-tight">Election<br />War Room</h2>
+                <span className="text-accent font-bold tracking-widest uppercase text-xs mb-6 block">{t('political_preview.tag')}</span>
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-none tracking-tight">{t('political_preview.title')}</h2>
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed font-light">
-                  End-to-end election management. We combine ground intelligence with digital dominance to ensure victory.
+                  {t('political_preview.desc')}
                 </p>
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
-                  {["Voter Analytics", "Ground Campaigns", "Crisis Management", "Candidate Branding"].map((item, i) => (
+                  {t('political_preview.list').map((item: string, i: number) => (
                     <motion.li
                       key={item}
                       initial={{ opacity: 0, x: -20 }}
@@ -226,7 +228,7 @@ const Home = () => {
                 </ul>
 
                 <Link to="/political" className="btn-primary self-start px-8 py-4">
-                  Discover Strategy
+                  {t('political_preview.btn')}
                 </Link>
               </div>
 
@@ -252,7 +254,7 @@ const Home = () => {
                   className="absolute bottom-8 left-8 bg-white px-8 py-4 rounded-lg shadow-2xl border border-border"
                 >
                   <span className="block text-4xl font-black text-accent text-center">85%</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-foreground">Win Rate</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-foreground">{t('political_preview.float_badge')}</span>
                 </motion.div>
               </div>
             </div>
@@ -264,15 +266,11 @@ const Home = () => {
       <section className="py-32 bg-secondary border-t border-border">
         <div className="container-wide">
           <div className="mb-16 max-w-2xl">
-            <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">Client Voices</span>
-            <h2 className="heading-lg">Trusted By Leaders</h2>
+            <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>
+            <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { quote: "Creative Mark didn't just run ads; they built a movement. Our voter turnout increased by 15%.", author: "Rajesh S.", role: "MLA Candidate", type: "Political" },
-              { quote: "The rebrand transformed our perception. We moved from a local vendor to a national player in 6 months.", author: "Anjali K.", role: "CEO, TechFlow", type: "Corporate" },
-              { quote: "Their digital strategy is surgical. Every rupee spent brought measurable returns. Highly recommended.", author: "Vikram D.", role: "Director, SpiceRoute", type: "Advertising" }
-            ].map((t, i) => (
+            {t('testimonials.items').map((t: any, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -308,11 +306,11 @@ const Home = () => {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="container-wide text-center"
         >
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 tracking-tighter">Ready to Win?</h2>
+          <h2 className="text-6xl md:text-8xl font-bold mb-8 tracking-tighter">{t('cta_section.title')}</h2>
 
           <div className="flex justify-center w-full mb-12">
             <RevealText
-              text="Your growth strategy begins here. Let's build something extraordinary together."
+              text={t('cta_section.text')}
               className="text-2xl text-muted-foreground max-w-2xl text-center leading-relaxed font-light justify-center"
               tag="p"
             />
@@ -320,10 +318,10 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link to="/contact" className="btn-primary w-full sm:w-auto px-12 py-5 text-lg shadow-2xl hover:shadow-accent/50 hover:-translate-y-1 transition-transform">
-              Start a Project
+              {t('cta_section.btn_primary')}
             </Link>
             <Link to="/work" className="btn-secondary w-full sm:w-auto px-12 py-5 text-lg">
-              View Success Stories
+              {t('cta_section.btn_secondary')}
             </Link>
           </div>
         </motion.div>
