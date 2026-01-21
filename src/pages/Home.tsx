@@ -59,7 +59,7 @@ const Home = () => {
 
             {/* Massive Hero Title - "Framer" Style Reveal */}
             <div className="mb-10 text-center w-full">
-              <h1 className="text-[11vw] md:text-[8rem] lg:text-[10rem] font-bold leading-tight md:leading-normal tracking-tighter text-foreground flex flex-col items-center w-full uppercase gap-2 md:gap-0">
+              <h1 className="text-[11vw] md:text-[8rem] lg:text-[10rem] font-bold leading-tight md:leading-[1.1] tracking-tighter text-foreground flex flex-col items-center w-full uppercase gap-2 md:gap-0">
                 <span className="inline-block overflow-hidden px-2 md:px-4 py-4">
                   <motion.span
                     initial={{ y: "110%" }}
@@ -70,7 +70,7 @@ const Home = () => {
                     {t('hero.title1')}
                   </motion.span>
                 </span>
-                <span className="inline-block overflow-hidden text-accent px-2 md:px-4 py-4">
+                <span className="inline-block overflow-hidden text-accent px-2 md:px-4 py-4 md:-mt-8">
                   <motion.span
                     initial={{ y: "110%" }}
                     animate={{ y: "0%" }}
