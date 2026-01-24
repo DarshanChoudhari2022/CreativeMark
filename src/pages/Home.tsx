@@ -252,9 +252,9 @@ const Home = () => {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1595079676339-1534802ad6cf?auto=format&fit=crop&q=80&w=1200"
+                  src="https://images.unsplash.com/photo-1512428559083-a400a3b8463a?auto=format&fit=crop&q=80&w=1200"
                   alt="Magic QR Code Sample"
-                  className="w-full h-auto"
+                  className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
