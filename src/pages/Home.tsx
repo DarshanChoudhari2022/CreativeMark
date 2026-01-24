@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode } from "lucide-react";
+import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode, Loader2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
 import { useLanguage } from "@/context/LanguageContext";
@@ -16,6 +16,7 @@ import brandingImg from "@/assets/service-branding.png";
 
 const Home = () => {
   const targetRef = useRef(null);
+  const [isRedirecting, setIsRedirecting] = useState(false);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end start"],
@@ -32,8 +33,46 @@ const Home = () => {
     multimedia: projectMultimedia
   };
 
+  const handleExternalRedirect = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setIsRedirecting(true);
+
+    // Smooth buffer before opening in new tab
+    setTimeout(() => {
+      window.open(href, '_blank', 'noopener,noreferrer');
+      setIsRedirecting(false);
+    }, 1200);
+  };
+
   return (
     <Layout>
+      <AnimatePresence>
+        {isRedirecting && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center text-white"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center gap-8"
+            >
+              <div className="relative">
+                <Loader2 className="w-20 h-20 text-accent animate-spin" strokeWidth={1} />
+                <div className="absolute inset-0 bg-accent/30 blur-3xl rounded-full" />
+              </div>
+              <div className="text-center">
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-3">Initializing Experience</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Magic QR Code</h2>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* 2. HERO SECTION */}
       <section ref={targetRef} className="relative min-h-screen flex flex-col bg-background pt-36 md:pt-44 lg:pt-48 pb-12 overflow-hidden">
 
@@ -317,8 +356,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-6">
                 <a
                   href="https://creative-mark-magic-qrcode.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={(e) => handleExternalRedirect(e, "https://creative-mark-magic-qrcode.vercel.app/")}
                   className="btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg group"
                 >
                   {t('products.btn')}
