@@ -28,7 +28,7 @@ export const translations = {
             title1: "YOUR GROWTH",
             title2: "OUR CREATIVE POWER",
             subtitle: "We create strategy-driven campaigns that deliver measurable results—from brand dominance to election victories.",
-            cta_primary: "Get Started"
+            cta_primary: "Get in Touch"
         },
         stats: {
             winRatio: "Win Ratio",
@@ -112,7 +112,7 @@ export const translations = {
             },
             cta: {
                 title: "Ready to dominate your market?",
-                btn: "Get Started Now"
+                btn: "Get in Touch"
             }
         },
         political_preview: {
@@ -135,7 +135,7 @@ export const translations = {
         cta_section: {
             title: "Ready to Win?",
             text: "Your growth strategy begins here. Let's build something extraordinary together.",
-            btn_primary: "Start a Project",
+            btn_primary: "Get in Touch",
             btn_secondary: "View Success Stories"
         },
         work: {
@@ -311,7 +311,7 @@ export const translations = {
             title1: "तुमची प्रगती",
             title2: "आमची सर्जनशील शक्ती",
             subtitle: "आम्ही रणनीतीवर आधारित मोहिमा तयार करतो ज्या ब्रँड वर्चस्वापासून निवडणुकीतील विजयापर्यंत मोजण्यायोग्य परिणाम देतात.",
-            cta_primary: "सुरुवात करा"
+            cta_primary: "संपर्क साधा"
         },
         stats: {
             winRatio: "विजय दर",
@@ -395,7 +395,7 @@ export const translations = {
             },
             cta: {
                 title: "तुम्ही बाजारात वर्चस्व गाजवायला तयार आहात?",
-                btn: "आताच सुरुवात करा"
+                btn: "संपर्क साधा"
             }
         },
         political_preview: {
@@ -418,7 +418,7 @@ export const translations = {
         cta_section: {
             title: "जिंकायला तयार आहात?",
             text: "तुमची वाढीची रणनीती इथून सुरू होते. चला काहीतरी असाधारण तयार करूया.",
-            btn_primary: "प्रकल्प सुरू करा",
+            btn_primary: "संपर्क साधा",
             btn_secondary: "यशस्वी कथा पहा"
         },
         work: {
