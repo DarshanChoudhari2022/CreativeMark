@@ -13,7 +13,7 @@ import heroMarathi from "@/assets/hero-marathi.png";
 import projectDigital from "@/assets/project-digital.png";
 import projectMultimedia from "@/assets/project-multimedia.png";
 import brandingImg from "@/assets/service-branding.png";
-import magicQRStandee from "@/assets/magic-qr-standee.png";
+import garageStandee from "@/assets/product-garage-standee.png";
 
 const Home = () => {
   const targetRef = useRef(null);
@@ -290,17 +290,17 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white group-hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)] transition-shadow duration-700">
                 <img
-                  src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?auto=format&fit=crop&q=80&w=1200"
-                  alt="Magic QR Code Tabletop Stand"
-                  className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
+                  src={garageStandee}
+                  alt="Magic QR Tabletop Standee - Surajit Auto Garage"
+                  className="w-full h-auto transform hover:scale-110 transition-transform duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 backdrop-blur-md bg-black/40 p-4 rounded-2xl border border-white/20">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_#4ade80]" />
                   <span className="text-white text-[10px] font-black uppercase tracking-widest leading-none">
-                    Professional Hardware • Tabletop Standee
+                    Real-World Setup • Counter Standee
                   </span>
                 </div>
               </div>
