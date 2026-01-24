@@ -19,6 +19,7 @@ const Footer = () => {
     { name: t('header.work'), path: "/work" },
     { name: t('header.services'), path: "/services" },
     { name: t('header.political'), path: "/political" },
+    { name: t('header.products'), path: "/#products" },
     { name: t('header.contact'), path: "/contact" }
   ];
 

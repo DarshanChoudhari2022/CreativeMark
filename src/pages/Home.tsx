@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight } from "lucide-react";
+import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
 import { useLanguage } from "@/context/LanguageContext";
@@ -235,6 +235,78 @@ const Home = () => {
                 </motion.div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. PRODUCTS SECTION - "MAGIC QR" */}
+      <section id="products" className="py-24 md:py-32 lg:py-40 bg-white overflow-hidden">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1595079676339-1534802ad6cf?auto=format&fit=crop&q=80&w=1200"
+                  alt="Magic QR Code Sample"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-[80px]" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px]" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-1 lg:order-2"
+            >
+              <span className="text-accent font-bold tracking-widest uppercase text-sm mb-6 block">
+                {t('products.tag')}
+              </span>
+              <h2 className="heading-lg mb-8 tracking-tighter">
+                {t('products.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed font-light mb-12">
+                {t('products.desc')}
+              </p>
+
+              <div className="space-y-6 mb-12">
+                {[
+                  "AI-Generated Artistic Patterns",
+                  "Perfect Scannability Guaranteed",
+                  "Brand-Integrated Designs",
+                  "Unlimited Customization"
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                      <Check size={16} />
+                    </div>
+                    <span className="font-bold text-foreground/80">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://creative-mark-magic-qrcode.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-3 px-10 py-5 text-lg group"
+              >
+                {t('products.btn')}
+                <QrCode className="group-hover:rotate-12 transition-transform" />
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>

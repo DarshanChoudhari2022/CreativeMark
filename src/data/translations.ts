@@ -6,7 +6,14 @@ export const translations = {
             work: "Work",
             political: "Political Campaigns",
             about: "About",
+            products: "Products",
             contact: "Let's Talk"
+        },
+        products: {
+            tag: "Next-Gen Tools",
+            title: "Magic QR Code",
+            desc: "Transform your brand with artistic, AI-generated QR codes that blend seamlessly with your design while maintaining perfect scannability.",
+            btn: "Try Magic QR"
         },
         hero: {
             est: "Est. 2015",
@@ -276,7 +283,14 @@ export const translations = {
             work: "कार्य",
             political: "राजकीय मोहिमा",
             about: "आमच्याबद्दल",
+            products: "उत्पादने",
             contact: "संपर्क साधा"
+        },
+        products: {
+            tag: "नेक्स्ट-जेन साधने",
+            title: "मॅजिक क्यूआर कोड",
+            desc: "कलात्मक, एआय-व्युत्पन्न क्यूआर कोडसह तुमचा ब्रँड बदला जो तुमच्या डिझाइनमध्ये अखंडपणे मिसळतो आणि उत्तम स्कॅनेबिलिटी राखतो.",
+            btn: "मॅजिक क्यूआर वापरून पहा"
         },
         hero: {
             est: "स्थापना २०१५",

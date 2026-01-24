@@ -11,6 +11,7 @@ const navLinks = [
   { key: "work", href: "/work" },
   { key: "political", href: "/political" },
   { key: "about", href: "/about" },
+  { key: "products", href: "/#products" },
 ];
 
 const Header = () => {
@@ -38,8 +39,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 shadow-sm ${isScrolled
-          ? "bg-white py-3 border-b border-gray-100"
-          : "bg-white py-4 sm:py-6 border-b border-transparent"
+        ? "bg-white py-3 border-b border-gray-100"
+        : "bg-white py-4 sm:py-6 border-b border-transparent"
         }`}
     >
       <div className="container-wide flex items-center justify-between">
