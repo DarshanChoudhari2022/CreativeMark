@@ -14,6 +14,7 @@ import projectDigital from "@/assets/project-digital.png";
 import projectMultimedia from "@/assets/project-multimedia.png";
 import brandingImg from "@/assets/service-branding.png";
 import garageStandee from "@/assets/surajit-garage-standee-hd.png";
+import magicQrProduct from "@/assets/magic-qr-product.png";
 
 const Home = () => {
   const targetRef = useRef(null);
@@ -319,83 +320,59 @@ const Home = () => {
       </section>
 
       {/* 4. PRODUCTS SECTION - "MAGIC QR" */}
-      <section id="products" className="py-24 md:py-32 lg:py-40 bg-white overflow-hidden">
+      <section id="products" className="py-16 md:py-24 lg:py-40 bg-white overflow-hidden">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Mobile: Stack vertically, show image first */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+
+            {/* Content - Shows first on mobile */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative order-2 lg:order-1"
+              className="order-2 lg:order-2"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-white/20 bg-white hover:border-accent/40 transition-all duration-700">
-                <img
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=100&w=2500"
-                  alt="Ultra-HD Magic QR Hardware Solution"
-                  className="w-full h-auto transform hover:scale-105 transition-transform duration-[2000ms] ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8 flex items-center gap-4 backdrop-blur-xl bg-black/40 p-5 rounded-2xl border border-white/20 shadow-2xl">
-                  <div className="w-3 h-3 rounded-full bg-accent animate-pulse shadow-[0_0_15px_#ff0000]" />
-                  <span className="text-white text-xs font-black uppercase tracking-[0.2em] leading-none">
-                    Premium Hardware • Professional Setup
-                  </span>
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-[80px]" />
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px]" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="order-1 lg:order-2"
-            >
-              <span className="text-accent font-bold tracking-widest uppercase text-sm mb-6 block">
+              <span className="text-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block">
                 {t('products.tag')}
               </span>
-              <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-none">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-8 tracking-tighter leading-[1.1]">
                 {t('products.title')}
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed font-light mb-12">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed font-light mb-8 md:mb-12">
                 {t('products.desc')}
               </p>
 
               {/* How It Works - Mobile: Horizontal Scroll, Desktop: Vertical */}
-              <div className="mb-12">
-                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-6">{t('products.how_it_works.title')}</h3>
+              <div className="mb-8 md:mb-12">
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-4 md:mb-6">{t('products.how_it_works.title')}</h3>
 
                 {/* Mobile: Horizontal Scroll */}
                 <div className="lg:hidden">
-                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-3 snap-x snap-mandatory scrollbar-hide">
                     {[
                       { step: "01", ...t('products.how_it_works.step1') },
                       { step: "02", ...t('products.how_it_works.step2') },
                       { step: "03", ...t('products.how_it_works.step3') }
                     ].map((s, idx) => (
-                      <div key={idx} className="min-w-[75vw] sm:min-w-[50vw] snap-center flex-shrink-0 bg-white p-5 rounded-2xl shadow-md border border-border/50">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                            <span className="text-accent font-bold text-sm">{s.step}</span>
+                      <div key={idx} className="min-w-[70vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-4 rounded-xl border border-border/30">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                            <span className="text-accent font-bold text-xs">{s.step}</span>
                           </div>
-                          <h4 className="font-bold text-base text-foreground">{s.title}</h4>
+                          <h4 className="font-bold text-sm text-foreground">{s.title}</h4>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
                       </div>
                     ))}
                   </div>
                   <div className="flex justify-center mt-2">
-                    <span className="text-xs text-muted-foreground font-medium">← Swipe →</span>
+                    <span className="text-[10px] text-muted-foreground font-medium">← Swipe →</span>
                   </div>
                 </div>
 
                 {/* Desktop: Vertical Steps */}
-                <div className="hidden lg:block relative pl-8 space-y-12">
+                <div className="hidden lg:block relative pl-8 space-y-8">
                   <div className="absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
                   {[
                     { step: "01", ...t('products.how_it_works.step1') },
@@ -404,9 +381,9 @@ const Home = () => {
                   ].map((s, idx) => (
                     <div key={idx} className="relative group">
                       <div className="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-white border-2 border-accent shadow-sm group-hover:scale-125 transition-transform" />
-                      <div className="bg-secondary/30 p-6 rounded-2xl border border-transparent group-hover:border-accent/20 group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
-                        <span className="text-[10px] font-black text-accent uppercase tracking-widest mb-2 block">{s.step}</span>
-                        <h4 className="font-bold text-lg text-foreground mb-1">{s.title}</h4>
+                      <div className="bg-secondary/30 p-5 rounded-xl border border-transparent group-hover:border-accent/20 group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
+                        <span className="text-[10px] font-black text-accent uppercase tracking-widest mb-1 block">{s.step}</span>
+                        <h4 className="font-bold text-base text-foreground mb-1">{s.title}</h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                       </div>
                     </div>
@@ -414,21 +391,42 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6">
+              <div className="flex">
                 <a
                   href="https://creative-mark-magic-qrcode.vercel.app/"
                   onClick={(e) => handleExternalRedirect(e, "https://creative-mark-magic-qrcode.vercel.app/")}
-                  className="btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg group"
+                  className="btn-primary inline-flex items-center justify-center gap-2 px-6 md:px-10 py-4 md:py-5 text-base md:text-lg group w-full sm:w-auto"
                 >
                   {t('products.btn')}
-                  <QrCode className="group-hover:rotate-12 transition-transform" />
+                  <QrCode size={20} className="group-hover:rotate-12 transition-transform" />
                 </a>
               </div>
             </motion.div>
+
+            {/* Image - Shows second on mobile, first on desktop */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-1 lg:order-1 w-full"
+            >
+              <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6 max-w-md mx-auto lg:max-w-none">
+                <img
+                  src={magicQrProduct}
+                  alt="Magic QR Standee for Google Reviews"
+                  className="w-full h-auto rounded-xl object-cover"
+                />
+              </div>
+
+              {/* Decorative elements - hide on mobile */}
+              <div className="hidden md:block absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-[80px]" />
+              <div className="hidden md:block absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px]" />
+            </motion.div>
+
           </div>
         </div>
       </section>
-
 
 
       {/* NEW TESTIMONIALS SECTION */}
@@ -439,7 +437,7 @@ const Home = () => {
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
           <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 snap-x snap-mandatory scrollbar-hide">
-            {t('testimonials.items').map((t: any, i: number) => (
+            {t('testimonials.items').map((item: any, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -449,16 +447,16 @@ const Home = () => {
                 className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all min-w-[85vw] md:min-w-0 snap-center"
               >
                 <div className="text-accent text-5xl md:text-6xl font-serif leading-none mb-4 md:mb-6 opacity-30">"</div>
-                <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-foreground/90">{t.quote}</p>
+                <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-foreground/90">{item.quote}</p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-foreground text-sm md:text-base">
-                    {t.author.charAt(0)}
+                    {item.author.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-base md:text-lg">{t.author}</h4>
-                    <span className="text-xs md:text-sm text-muted-foreground block">{t.role}</span>
+                    <h4 className="font-bold text-base md:text-lg">{item.author}</h4>
+                    <span className="text-xs md:text-sm text-muted-foreground block">{item.role}</span>
                   </div>
-                  <span className="ml-auto text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground">{t.type}</span>
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground">{item.type}</span>
                 </div>
               </motion.div>
             ))}
@@ -466,35 +464,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. CTA SECTION */}
-      <section className="py-40 bg-background border-t border-border">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="container-wide text-center"
-        >
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 tracking-tighter">{t('cta_section.title')}</h2>
-
-          <div className="flex justify-center w-full mb-12">
-            <RevealText
-              text={t('cta_section.text')}
-              className="text-2xl text-muted-foreground max-w-2xl text-center leading-relaxed font-light justify-center"
-              tag="p"
-            />
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link to="/contact" className="btn-primary w-full sm:w-auto px-12 py-5 text-lg shadow-2xl hover:shadow-accent/50 hover:-translate-y-1 transition-transform">
-              {t('cta_section.btn_primary')}
-            </Link>
-            <Link to="/services" className="btn-secondary w-full sm:w-auto px-12 py-5 text-lg">
-              {t('cta_section.btn_secondary')}
-            </Link>
-          </div>
-        </motion.div>
-      </section>
     </Layout>
   );
 };
