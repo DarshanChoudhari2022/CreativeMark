@@ -199,11 +199,10 @@ const Home = () => {
             ].map((service, i) => (
               <Link to={`/services/${service.id}`} key={i} className="block h-full perspective-1000">
                 <motion.div
-                  initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: "-5%" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{
-                    delay: i * 0.15,
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }}
@@ -253,11 +252,17 @@ const Home = () => {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
                 <img
-                  src={brandingImg}
-                  alt="Magic QR Code Sample"
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200"
+                  alt="Magic QR Code Standee"
                   className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 backdrop-blur-md bg-black/40 p-4 rounded-2xl border border-white/20">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-white text-[10px] font-black uppercase tracking-widest leading-none">
+                    Hardware Ready • Acrylic Counter Stand
+                  </span>
+                </div>
               </div>
 
               {/* Decorative elements */}
@@ -275,38 +280,51 @@ const Home = () => {
               <span className="text-accent font-bold tracking-widest uppercase text-sm mb-6 block">
                 {t('products.tag')}
               </span>
-              <h2 className="heading-lg mb-8 tracking-tighter">
+              <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-none">
                 {t('products.title')}
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed font-light mb-12">
                 {t('products.desc')}
               </p>
 
-              <div className="space-y-6 mb-12">
-                {[
-                  "AI-Generated Artistic Patterns",
-                  "Perfect Scannability Guaranteed",
-                  "Brand-Integrated Designs",
-                  "Unlimited Customization"
-                ].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                      <Check size={16} />
+              {/* How It Works - Visual Process Flow */}
+              <div className="mb-12 space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-6">{t('products.how_it_works.title')}</h3>
+
+                <div className="relative pl-8 space-y-12">
+                  {/* Vertical Line Connector */}
+                  <div className="absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
+
+                  {[
+                    { step: "01", ...t('products.how_it_works.step1') },
+                    { step: "02", ...t('products.how_it_works.step2') },
+                    { step: "03", ...t('products.how_it_works.step3') }
+                  ].map((s, idx) => (
+                    <div key={idx} className="relative group">
+                      {/* Step Indicator Dot */}
+                      <div className="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-white border-2 border-accent shadow-sm group-hover:scale-125 transition-transform" />
+
+                      <div className="bg-secondary/30 p-6 rounded-2xl border border-transparent group-hover:border-accent/20 group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
+                        <span className="text-[10px] font-black text-accent uppercase tracking-widest mb-2 block">{s.step}</span>
+                        <h4 className="font-bold text-lg text-foreground mb-1">{s.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                      </div>
                     </div>
-                    <span className="font-bold text-foreground/80">{feature}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              <a
-                href="https://creative-mark-magic-qrcode.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center gap-3 px-10 py-5 text-lg group"
-              >
-                {t('products.btn')}
-                <QrCode className="group-hover:rotate-12 transition-transform" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <a
+                  href="https://creative-mark-magic-qrcode.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg group"
+                >
+                  {t('products.btn')}
+                  <QrCode className="group-hover:rotate-12 transition-transform" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>

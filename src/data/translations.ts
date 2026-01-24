@@ -13,7 +13,13 @@ export const translations = {
             tag: "Next-Gen Tools",
             title: "Magic QR Code",
             desc: "Transform your brand with artistic, AI-generated QR codes that blend seamlessly with your design while maintaining perfect scannability.",
-            btn: "Try Magic QR"
+            btn: "Try Magic QR",
+            how_it_works: {
+                title: "How it Works",
+                step1: { title: "Scan & Discover", desc: "User scans the artistic Magic QR standee placed at your location." },
+                step2: { title: "Select & Copy", desc: "A smart landing page opens with pre-written, high-quality reviews in multiple languages." },
+                step3: { title: "Fast Redirect", desc: "The selected review is copied automatically, and the user is redirected to your Google page in one tap." }
+            }
         },
         hero: {
             est: "Est. 2015",
@@ -290,7 +296,13 @@ export const translations = {
             tag: "नेक्स्ट-जेन साधने",
             title: "मॅजिक क्यूआर कोड",
             desc: "कलात्मक, एआय-व्युत्पन्न क्यूआर कोडसह तुमचा ब्रँड बदला जो तुमच्या डिझाइनमध्ये अखंडपणे मिसळतो आणि उत्तम स्कॅनेबिलिटी राखतो.",
-            btn: "मॅजिक क्यूआर वापरून पहा"
+            btn: "मॅजिक क्यूआर वापरून पहा",
+            how_it_works: {
+                title: "हे कसे कार्य करते",
+                step1: { title: "स्कॅन आणि शोध", desc: "वापरकर्ता तुमच्या ठिकाणी ठेवलेला कलात्मक मॅजिक क्यूआर स्टँडी स्कॅन करतो." },
+                step2: { title: "निवडा आणि कॉपी करा", desc: "एकाधिक भाषांमध्ये पूर्व-लिखित, उच्च-गुणवत्तेच्या पुनरावलोकनांसह एक स्मार्ट लँडिंग पृष्ठ उघडते." },
+                step3: { title: "जलद पुनर्निर्देशन", desc: "निवडलेले पुनरावलोकन स्वयंचलितपणे कॉपी केले जाते आणि वापरकर्त्याला एका टॅपमध्ये तुमच्या Google पृष्ठावर पुनर्निर्देशित केले जाते." }
+            }
         },
         hero: {
             est: "स्थापना २०१५",
