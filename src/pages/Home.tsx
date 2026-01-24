@@ -13,7 +13,7 @@ import heroMarathi from "@/assets/hero-marathi.png";
 import projectDigital from "@/assets/project-digital.png";
 import projectMultimedia from "@/assets/project-multimedia.png";
 import brandingImg from "@/assets/service-branding.png";
-import garageStandee from "@/assets/product-garage-standee.png";
+import garageStandee from "@/assets/surajit-garage-standee-hd.png";
 
 const Home = () => {
   const targetRef = useRef(null);
