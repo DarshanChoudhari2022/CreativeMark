@@ -9,7 +9,6 @@ import { Loader2 } from "lucide-react";
 const navLinks = [
   { key: "home", href: "/" },
   { key: "services", href: "/services" },
-  { key: "work", href: "/work" },
   { key: "political", href: "/political" },
   { key: "about", href: "/about" },
   { key: "products", href: "https://creative-mark-magic-qrcode.vercel.app/", isExternal: true },

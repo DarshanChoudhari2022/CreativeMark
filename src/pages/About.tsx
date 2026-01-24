@@ -53,7 +53,32 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center gap-12">
+            {/* Mobile: Horizontal scroll for values */}
+            <div className="lg:hidden">
+              <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                {t('about.values').map((value: any, i: number) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="min-w-[80vw] snap-center bg-white rounded-2xl p-6 shadow-lg border-l-4 border-accent flex-shrink-0"
+                  >
+                    <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {value.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="flex justify-center mt-2">
+                <span className="text-xs text-muted-foreground font-medium">← Swipe →</span>
+              </div>
+            </div>
+
+            {/* Desktop: Original vertical layout */}
+            <div className="hidden lg:flex flex-col justify-center gap-12">
               {t('about.values').map((value: any, i: number) => (
                 <motion.div
                   key={i}
@@ -74,11 +99,38 @@ const About = () => {
 
           {/* Timeline Section */}
           <div className="mb-40">
-            <div className="flex justify-between items-end mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-4">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Our Evolution</h2>
               <div className="hidden md:block w-1/3 h-[1px] bg-border mb-4" />
             </div>
-            <div className="grid md:grid-cols-4 gap-8">
+
+            {/* Mobile: Horizontal scroll for timeline */}
+            <div className="md:hidden">
+              <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                {t('about.timeline').map((event: any, i: number) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="min-w-[75vw] snap-center bg-white rounded-2xl p-6 shadow-lg border border-border/50 flex-shrink-0"
+                  >
+                    <span className="text-5xl font-black text-accent/20 block mb-4">{event.year}</span>
+                    <h4 className="text-lg font-bold mb-3">{event.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {event.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="flex justify-center mt-2">
+                <span className="text-xs text-muted-foreground font-medium">← Swipe through timeline →</span>
+              </div>
+            </div>
+
+            {/* Desktop: Grid layout */}
+            <div className="hidden md:grid md:grid-cols-4 gap-8">
               {t('about.timeline').map((event: any, i: number) => (
                 <motion.div
                   key={i}
@@ -100,11 +152,42 @@ const About = () => {
 
           {/* Team Section (NEW) */}
           <div className="mb-40">
-            <div className="mb-16">
+            <div className="mb-12 md:mb-16">
               <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('about.team.tag')}</span>
               <h2 className="heading-lg">{t('about.team.title')}</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-12">
+
+            {/* Mobile: Horizontal scroll for team */}
+            <div className="md:hidden">
+              <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                {t('about.team.members').map((member: any, i: number) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="min-w-[75vw] snap-center flex-shrink-0 group"
+                  >
+                    <div className="aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-4 relative">
+                      <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <span className="px-2 py-0.5 bg-white/90 backdrop-blur-sm text-[9px] font-bold uppercase tracking-widest rounded-full">{member.exp}</span>
+                      </div>
+                    </div>
+                    <h4 className="text-xl font-bold mb-1">{member.name}</h4>
+                    <span className="text-muted-foreground font-medium text-sm block mb-3">{member.role}</span>
+                    <p className="text-xs text-muted-foreground line-clamp-3">{member.bio}</p>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="flex justify-center mt-2">
+                <span className="text-xs text-muted-foreground font-medium">← Meet the team →</span>
+              </div>
+            </div>
+
+            {/* Desktop: Grid layout */}
+            <div className="hidden md:grid md:grid-cols-3 gap-12">
               {t('about.team.members').map((member: any, i: number) => (
                 <motion.div
                   key={i}

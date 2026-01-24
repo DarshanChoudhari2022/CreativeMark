@@ -229,8 +229,52 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Mobile: Single Column, Tablet: 2 Columns, Desktop: 4 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-stretch">
+          {/* Mobile: Horizontal Scroll, Tablet: 2 Columns, Desktop: 4 Columns */}
+          <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide md:hidden">
+            {[
+              { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
+              { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
+              { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
+              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" }
+            ].map((service, i) => (
+              <Link to={`/services/${service.id}`} key={i} className="block min-w-[80vw] sm:min-w-[60vw] snap-center flex-shrink-0">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="card-minimal group h-full flex flex-col justify-between bg-white p-6 rounded-2xl shadow-lg border border-border/50 relative overflow-hidden"
+                >
+                  <span className="absolute -top-4 -right-2 text-7xl font-black text-black/[0.03] pointer-events-none">
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
+                      <service.icon size={24} strokeWidth={1.5} />
+                    </div>
+                    <span className="inline-block px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-bold uppercase tracking-widest rounded-full mb-3">
+                      {service.tag}
+                    </span>
+                    <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm font-medium line-clamp-3">{service.desc}</p>
+                  </div>
+                  <div className="mt-5 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-4">
+                    <span className="text-foreground/70 uppercase tracking-widest text-[10px]">{t('services.explore')}</span>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-secondary">
+                      <ArrowUpRight size={14} />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+          {/* Mobile Scroll Indicator */}
+          <div className="md:hidden flex justify-center mt-2">
+            <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
+          </div>
+
+          {/* Tablet & Desktop: Grid Layout */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-stretch">
             {[
               { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
               { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
@@ -248,24 +292,19 @@ const Home = () => {
                   }}
                   className="card-minimal group h-full flex flex-col justify-between bg-white p-7 md:p-9 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
                 >
-                  {/* Background Number for 'Understandability' */}
                   <span className="absolute -top-4 -right-2 text-8xl font-black text-black/[0.03] group-hover:text-accent/[0.05] transition-colors pointer-events-none">
                     0{i + 1}
                   </span>
-
                   <div>
                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 md:mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
                       <service.icon size={28} strokeWidth={1.5} className="md:w-8 md:h-8" />
                     </div>
-
                     <span className="inline-block px-3 py-1 bg-accent/5 text-accent text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
                       {service.tag}
                     </span>
-
                     <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
                     <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-medium">{service.desc}</p>
                   </div>
-
                   <div className="mt-8 md:mt-10 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-6">
                     <span className="text-foreground/70 group-hover:text-accent transition-colors uppercase tracking-widest text-[11px]">{t('services.explore')}</span>
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-secondary group-hover:bg-accent group-hover:text-white transition-all duration-300 transform group-hover:translate-x-1">
@@ -327,23 +366,44 @@ const Home = () => {
                 {t('products.desc')}
               </p>
 
-              {/* How It Works - Visual Process Flow */}
-              <div className="mb-12 space-y-6">
+              {/* How It Works - Mobile: Horizontal Scroll, Desktop: Vertical */}
+              <div className="mb-12">
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-6">{t('products.how_it_works.title')}</h3>
 
-                <div className="relative pl-8 space-y-12">
-                  {/* Vertical Line Connector */}
-                  <div className="absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
+                {/* Mobile: Horizontal Scroll */}
+                <div className="lg:hidden">
+                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                    {[
+                      { step: "01", ...t('products.how_it_works.step1') },
+                      { step: "02", ...t('products.how_it_works.step2') },
+                      { step: "03", ...t('products.how_it_works.step3') }
+                    ].map((s, idx) => (
+                      <div key={idx} className="min-w-[75vw] sm:min-w-[50vw] snap-center flex-shrink-0 bg-white p-5 rounded-2xl shadow-md border border-border/50">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                            <span className="text-accent font-bold text-sm">{s.step}</span>
+                          </div>
+                          <h4 className="font-bold text-base text-foreground">{s.title}</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex justify-center mt-2">
+                    <span className="text-xs text-muted-foreground font-medium">← Swipe →</span>
+                  </div>
+                </div>
 
+                {/* Desktop: Vertical Steps */}
+                <div className="hidden lg:block relative pl-8 space-y-12">
+                  <div className="absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
                   {[
                     { step: "01", ...t('products.how_it_works.step1') },
                     { step: "02", ...t('products.how_it_works.step2') },
                     { step: "03", ...t('products.how_it_works.step3') }
                   ].map((s, idx) => (
                     <div key={idx} className="relative group">
-                      {/* Step Indicator Dot */}
                       <div className="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-white border-2 border-accent shadow-sm group-hover:scale-125 transition-transform" />
-
                       <div className="bg-secondary/30 p-6 rounded-2xl border border-transparent group-hover:border-accent/20 group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
                         <span className="text-[10px] font-black text-accent uppercase tracking-widest mb-2 block">{s.step}</span>
                         <h4 className="font-bold text-lg text-foreground mb-1">{s.title}</h4>
@@ -429,7 +489,7 @@ const Home = () => {
             <Link to="/contact" className="btn-primary w-full sm:w-auto px-12 py-5 text-lg shadow-2xl hover:shadow-accent/50 hover:-translate-y-1 transition-transform">
               {t('cta_section.btn_primary')}
             </Link>
-            <Link to="/work" className="btn-secondary w-full sm:w-auto px-12 py-5 text-lg">
+            <Link to="/services" className="btn-secondary w-full sm:w-auto px-12 py-5 text-lg">
               {t('cta_section.btn_secondary')}
             </Link>
           </div>

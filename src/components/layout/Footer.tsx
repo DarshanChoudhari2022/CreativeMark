@@ -28,7 +28,6 @@ const Footer = () => {
 
   const quickLinks = [
     { name: t('header.about'), path: "/about" },
-    { name: t('header.work'), path: "/work" },
     { name: t('header.services'), path: "/services" },
     { name: t('header.political'), path: "/political" },
     { name: t('header.products'), path: "https://creative-mark-magic-qrcode.vercel.app/", isExternal: true },

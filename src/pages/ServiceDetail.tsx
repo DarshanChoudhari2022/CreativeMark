@@ -107,7 +107,46 @@ const ServiceDetail = () => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    {/* Mobile: Horizontal scroll for sub-services */}
+                    <div className="md:hidden">
+                        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                            {service.sub_services?.map((sub: any, index: number) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="min-w-[85vw] snap-center bg-white p-6 rounded-xl border border-border shadow-lg flex-shrink-0"
+                                >
+                                    <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">
+                                        {index + 1}
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3">{sub.title}</h3>
+                                    <p className="text-muted-foreground text-sm mb-5 pb-5 border-b border-gray-100">
+                                        {sub.desc}
+                                    </p>
+                                    <ul className="space-y-2">
+                                        {sub.details?.slice(0, 4).map((detail: string, i: number) => (
+                                            <li key={i} className="flex items-start gap-2 text-xs font-medium text-foreground/80">
+                                                <CheckCircle2 size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                                                <span className="line-clamp-1">{detail}</span>
+                                            </li>
+                                        ))}
+                                        {sub.details?.length > 4 && (
+                                            <li className="text-xs text-accent font-medium">+{sub.details.length - 4} more</li>
+                                        )}
+                                    </ul>
+                                </motion.div>
+                            ))}
+                        </div>
+                        <div className="flex justify-center mt-2">
+                            <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
+                        </div>
+                    </div>
+
+                    {/* Desktop: Grid layout */}
+                    <div className="hidden md:grid md:grid-cols-2 gap-8">
                         {service.sub_services?.map((sub: any, index: number) => (
                             <motion.div
                                 key={index}

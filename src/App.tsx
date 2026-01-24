@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Work from "./pages/Work";
+
 import Political from "./pages/Political";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -28,7 +28,7 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
-            <Route path="/work" element={<Work />} />
+
             <Route path="/political" element={<Political />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

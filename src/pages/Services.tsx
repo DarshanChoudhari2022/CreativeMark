@@ -119,11 +119,51 @@ const Services = () => {
 
                     {/* Right Column: Detailed Capabilities */}
                     <div className="lg:col-span-7 pt-8 lg:pt-32">
-                      <h3 className="text-2xl font-bold mb-12 border-b border-border pb-6">
+                      <h3 className="text-2xl font-bold mb-8 lg:mb-12 border-b border-border pb-6">
                         {section.introTitle}
                       </h3>
 
-                      <div className="space-y-4">
+                      {/* Mobile: Horizontal Scroll Cards */}
+                      <div className="lg:hidden">
+                        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                          {section.items.map((item: any, itemIndex: number) => (
+                            <motion.div
+                              key={itemIndex}
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: itemIndex * 0.1 }}
+                              className="min-w-[80vw] sm:min-w-[60vw] snap-center bg-white rounded-2xl p-6 shadow-lg border border-border/50 flex-shrink-0"
+                            >
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                  <span className="text-accent font-bold text-sm">0{itemIndex + 1}</span>
+                                </div>
+                                <h4 className="text-lg font-bold text-foreground">{item.title}</h4>
+                              </div>
+                              <p className="text-muted-foreground mb-5 text-sm leading-relaxed">{item.desc}</p>
+                              <div className="space-y-2">
+                                {item.details.slice(0, 4).map((detail: string, dIndex: number) => (
+                                  <div key={dIndex} className="flex items-center gap-2 text-xs font-medium text-foreground/70">
+                                    <Disc size={8} className="text-accent flex-shrink-0" />
+                                    <span className="truncate">{detail}</span>
+                                  </div>
+                                ))}
+                                {item.details.length > 4 && (
+                                  <span className="text-xs text-accent font-medium">+{item.details.length - 4} more</span>
+                                )}
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                        {/* Scroll Indicator */}
+                        <div className="flex justify-center gap-2 mt-2">
+                          <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
+                        </div>
+                      </div>
+
+                      {/* Desktop: Accordion Style */}
+                      <div className="hidden lg:block space-y-4">
                         {section.items.map((item: any, itemIndex: number) => {
                           const id = `${section.id}-${itemIndex}`;
                           const isOpen = activeAccordion === id;
