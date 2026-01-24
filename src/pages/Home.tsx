@@ -291,15 +291,15 @@ const Home = () => {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=1200"
-                  alt="Magic QR Code Floor Standee"
+                  src="https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&q=80&w=1200"
+                  alt="Magic QR Code Rollup Banner"
                   className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 backdrop-blur-md bg-black/40 p-4 rounded-2xl border border-white/20">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   <span className="text-white text-[10px] font-black uppercase tracking-widest leading-none">
-                    Professional Hardware • Floor Standee Ready
+                    Hardware Solution • Magic QR Banner
                   </span>
                 </div>
               </div>
