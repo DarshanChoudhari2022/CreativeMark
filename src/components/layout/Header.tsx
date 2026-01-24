@@ -11,7 +11,7 @@ const navLinks = [
   { key: "work", href: "/work" },
   { key: "political", href: "/political" },
   { key: "about", href: "/about" },
-  { key: "products", href: "/#products" },
+  { key: "products", href: "https://creative-mark-magic-qrcode.vercel.app/", isExternal: true },
 ];
 
 const Header = () => {
@@ -56,14 +56,26 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.key}
-              to={link.href}
-              className={`text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase ${location.pathname === link.href ? "text-black" : "text-gray-500 hover:text-black"
-                }`}
-            >
-              {t(`header.${link.key}`)}
-            </Link>
+            link.isExternal ? (
+              <a
+                key={link.key}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase text-gray-500 hover:text-black"
+              >
+                {t(`header.${link.key}`)}
+              </a>
+            ) : (
+              <Link
+                key={link.key}
+                to={link.href}
+                className={`text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase ${location.pathname === link.href ? "text-black" : "text-gray-500 hover:text-black"
+                  }`}
+              >
+                {t(`header.${link.key}`)}
+              </Link>
+            )
           ))}
 
           <Link to="/contact" className="ml-2 xl:ml-4 btn-primary px-4 xl:px-6 py-2 xl:py-2.5 text-[10px] xl:text-xs uppercase tracking-widest whitespace-nowrap">
@@ -109,13 +121,24 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.08 }}
                 >
-                  <Link
-                    to={link.href}
-                    className={`block text-4xl font-black tracking-tighter ${location.pathname === link.href ? "text-accent" : "text-black"
-                      }`}
-                  >
-                    {t(`header.${link.key}`)}
-                  </Link>
+                  {link.isExternal ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-4xl font-black tracking-tighter text-black"
+                    >
+                      {t(`header.${link.key}`)}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={`block text-4xl font-black tracking-tighter ${location.pathname === link.href ? "text-accent" : "text-black"
+                        }`}
+                    >
+                      {t(`header.${link.key}`)}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               <motion.div
