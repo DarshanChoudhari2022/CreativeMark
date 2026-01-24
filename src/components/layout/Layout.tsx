@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
+import FloatingLanguageToggle from "../ui/FloatingLanguageToggle";
 
 interface LayoutProps {
   children: ReactNode;
@@ -40,6 +41,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </motion.main>
       <Footer />
+      <FloatingLanguageToggle />
       <WhatsAppButton />
     </div>
   );

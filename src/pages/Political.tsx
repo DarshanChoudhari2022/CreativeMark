@@ -25,7 +25,7 @@ const Political = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold mb-10 leading-[1.1] tracking-tight"
+              className="heading-xl mb-10"
             >
               {t('political_page.title')}
             </motion.h1>
@@ -40,32 +40,43 @@ const Political = () => {
           </div>
 
           {/* War Room Section */}
-          <div className="grid lg:grid-cols-2 gap-20 mb-40 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-40 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="aspect-square bg-white rounded-3xl border border-border p-12 relative overflow-hidden group shadow-2xl"
+              className="aspect-square bg-black rounded-3xl border border-border p-12 relative overflow-hidden group shadow-2xl"
             >
-              <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <h3 className="text-3xl font-bold mb-8 relative z-10">{t('political_page.war_room.title')}</h3>
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed relative z-10">
-                {t('political_page.war_room.desc')}
-              </p>
-              <ul className="space-y-6 relative z-10">
-                {t('political_page.war_room.list').map((item: string, i: number) => (
-                  <motion.li
-                    key={item}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4 font-bold text-foreground"
-                  >
-                    <CheckCircle2 className="text-accent" size={24} />
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
+              {/* Background 'Real' Image for Political */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200"
+                  className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-700"
+                  alt="Political War Room"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-8 text-white">{t('political_page.war_room.title')}</h3>
+                <p className="text-lg text-gray-300 mb-12 leading-relaxed font-medium">
+                  {t('political_page.war_room.desc')}
+                </p>
+                <ul className="space-y-6">
+                  {t('political_page.war_room.list').map((item: string, i: number) => (
+                    <motion.li
+                      key={item}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-center gap-4 font-bold text-white"
+                    >
+                      <CheckCircle2 className="text-accent" size={24} />
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
 
             <div className="grid grid-cols-2 gap-8">
@@ -119,9 +130,9 @@ const Political = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-accent rounded-3xl p-12 md:p-24 text-center text-white"
+            className="bg-accent rounded-3xl p-8 md:p-24 text-center text-white"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">{t('political_page.cta.title')}</h2>
+            <h2 className="heading-lg tracking-tight mb-8">{t('political_page.cta.title')}</h2>
             <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-2xl mx-auto font-light">
               {t('political_page.cta.desc')}
             </p>

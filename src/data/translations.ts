@@ -11,11 +11,11 @@ export const translations = {
         hero: {
             est: "Est. 2015",
             agency: "AGENCY",
-            tagline: "VICTORY, STRATEGICALLY DESIGNED.",
+            tagline: "VICTORY CREATIVELY MARKED",
             title1: "YOUR GROWTH",
-            title2: "OUR POWER",
+            title2: "OUR CREATIVE POWER",
             subtitle: "We create strategy-driven campaigns that deliver measurable results—from brand dominance to election victories.",
-            cta_primary: "Start Winning Today"
+            cta_primary: "Get Started"
         },
         stats: {
             winRatio: "Win Ratio",
@@ -68,15 +68,15 @@ export const translations = {
                 branding: {
                     id: "branding",
                     title: "Branding",
-                    desc: "Identity, strategy, and visual storytelling.",
+                    desc: "Identity, strategy, and high-quality brand collateral.",
                     full_title: "We Don’t Just Create Brands — We Create Powerful Impressions.",
                     full_desc: "Your brand is more than a logo. It’s how people recognize you, trust you, and remember you. At Creative Mark, we craft strong, consistent, and meaningful brand identities that connect emotionally with your audience and stand out in crowded markets.",
                     sub_services: [
                         { title: "Brand Strategy & Positioning", desc: "Clear vision. Strong direction.", details: ["Brand discovery & research", "Brand positioning & messaging", "Target audience & market analysis", "Brand voice & tone development", "Long-term brand roadmap"] },
                         { title: "Visual Identity Design", desc: "Make your brand instantly recognizable.", details: ["Logo design & rebranding", "Color palette & typography", "Brand style guide", "Business cards & stationery", "Social media brand kits"] },
-                        { title: "Brand Communication", desc: "Speak with clarity and confidence.", details: ["Brand storytelling", "Taglines & slogans", "Brand content & copywriting", "Website & campaign messaging", "Political & leadership branding"] },
+                        { title: "Brand Collateral & Printing", desc: "High-quality corporate and campaign printing.", details: ["Brochures & catalogues", "Business cards & stationery", "Flyers & promotional leaflets", "Posters & banners", "Customized brand merchandise"] },
                         { title: "Digital Brand Presence", desc: "Consistency across all digital platforms.", details: ["Social media branding", "Website branding & UI direction", "Profile optimization", "Visual consistency across platforms", "Online reputation building"] },
-                        { title: "Offline Branding", desc: "Strong presence beyond the digital space.", details: ["Office branding", "Storefront & signage branding", "Vehicle branding", "Event & campaign branding", "Print branding materials"] },
+                        { title: "Offline Branding & Signage", desc: "Strong presence beyond the digital space.", details: ["Office branding", "Storefront & signage branding", "Vehicle branding", "Event & campaign branding", "Large-format printing"] },
                         { title: "Rebranding & Brand Refresh", desc: "Evolve without losing identity.", details: ["Brand audits", "Logo & identity refresh", "Messaging realignment", "Market repositioning", "Modern brand transformation"] }
                     ]
                 },
@@ -95,61 +95,7 @@ export const translations = {
                         { title: "Photography & Visual Content", desc: "Professional imagery that builds credibility.", details: ["Product & brand photography", "Event & campaign photography", "Corporate & profile shoots", "Social media photoshoots", "Creative & lifestyle photography"] }
                     ]
                 },
-                printing: {
-                    id: "printing",
-                    title: "Printing",
-                    desc: "High-quality corporate and campaign printing.",
-                    full_title: "Printing That Makes Your Brand Tangible & Trustworthy.",
-                    full_desc: "In a digital world, print still holds power. At Creative Mark Advertising, we deliver high-quality printing solutions that enhance brand credibility, strengthen visibility, and leave a lasting impression.",
-                    sub_services: [
-                        { title: "Commercial Printing", desc: "Professional prints for business growth.", details: ["Business cards & visiting cards", "Letterheads & envelopes", "Brochures & catalogues", "Flyers & pamphlets", "Company profiles"] },
-                        { title: "Promotional Printing", desc: "Marketing materials that drive attention.", details: ["Posters & standees", "Banners & flex printing", "Danglers & tent cards", "Stickers & labels", "Promotional leaflets"] },
-                        { title: "Corporate & Office Printing", desc: "Consistency across all brand materials.", details: ["ID cards & lanyards", "Files & folders", "Notepads & diaries", "Certificates & reports", "Customized stationery"] },
-                        { title: "Political & Campaign Printing", desc: "High-impact printing for mass outreach.", details: ["Election posters & banners", "Pamphlets & manifesto printing", "Booth-level materials", "Flags, caps & campaign merchandise", "Area-wise distribution support"] },
-                        { title: "Creative & Custom Printing", desc: "Prints tailored to your brand identity.", details: ["Custom designs & layouts", "Special finishes (lamination, UV, embossing)", "Large-format printing", "Eco-friendly printing options", "Personalized print solutions"] }
-                    ]
-                },
-                designing: {
-                    id: "designing",
-                    title: "Designing",
-                    desc: "Creative graphic design for all mediums.",
-                    full_title: "Design That Speaks Before You Do.",
-                    full_desc: "Great design is not just about looks; it's about communication. In today's visual-first world, your brand needs to stand out with professional, high-impact designs that convey your message instantly and effectively.",
-                    sub_services: [
-                        { title: "Graphic Design", desc: "Visuals that captivate and communicate.", details: ["Social media creatives", "Ad banners & posters", "Infographics", "E-book & magazine design", "Custom illustrations"] },
-                        { title: "Website UI/UX Design", desc: "User-centric interface design for better engagement.", details: ["Wireframing & prototyping", "Mobile-first responsive layouts", "User journey mapping", "Conversion-focused landing pages", "Modern web aesthetics"] },
-                        { title: "Editorial & Layout Design", desc: "Professional layouts for publications.", details: ["Magazines & newsletters", "Annual reports", "Company profiles", "Catalogues & brochures", "Book covers & typesetting"] },
-                        { title: "Printing Design", desc: "Designs optimized for physical production.", details: ["Business cards & stationery", "Brochure & flyer layouts", "Large format hoarding designs", "Packaging & label design", "Standard-compliant print files"] }
-                    ]
-                }
-            },
-            pricing: {
-                tag: "Transparent Investment",
-                title: "Growth Packages",
-                desc: "Choose the tier that matches your ambition. We deliver value at every level.",
-                starter: {
-                    name: "Starter",
-                    sub: "For emerging brands",
-                    price: "₹50k - ₹1L",
-                    btn: "Get Started",
-                    features: ["Social Media Management", "Basic SEO Setup", "2 Blog Posts/Month", "Monthly Performance Report"]
-                },
-                professional: {
-                    name: "Professional",
-                    sub: "For aggressive growth",
-                    price: "₹1L - ₹2L",
-                    popular: "Popular",
-                    btn: "Scale Now",
-                    features: ["Everything in Starter", "Paid Ad Management", "Content Marketing Strategy", "Video Reels Production", "Bi-Weekly Strategy Calls"]
-                },
-                enterprise: {
-                    name: "Enterprise",
-                    sub: "Dominate your industry",
-                    price: "₹2L+",
-                    btn: "Contact Sales",
-                    features: ["Full-Service War Room", "Custom Web Development", "PR & Media Management", "Dedicated Account Manager", "24/7 Priority Support"]
-                },
-                per_month: "/month"
+
             },
             cta: {
                 title: "Ready to dominate your market?",
@@ -166,7 +112,7 @@ export const translations = {
         },
         testimonials: {
             tag: "Client Voices",
-            title: "Trusted By Leaders",
+            title: "Trusted By Our Customers",
             items: [
                 { quote: "Creative Mark didn't just run ads; they built a movement. Our voter turnout increased by 15%.", author: "Rajesh S.", role: "MLA Candidate", type: "Political" },
                 { quote: "The rebrand transformed our perception. We moved from a local vendor to a national player in 6 months.", author: "Anjali K.", role: "CEO, TechFlow", type: "Corporate" },
@@ -238,7 +184,7 @@ export const translations = {
             title_1: "Strategy First.",
             title_2: "Creativity",
             title_3: "Always.",
-            desc: "Creative Mark is a strategic advertising and digital agency founded on the belief that clarity wins. We don't just make things look good; we make them work. From corporate boardrooms to election war rooms, we drive results.",
+            desc: "Creative Mark is a premier digital agency that transforms brands through strategic innovation. We combine data-driven insights with world-class creativity to deliver growth. From startups to national leaders, we engineer success stories.",
             stats_badges: ["50+ Campaigns", "85% Win Rate", "10+ Years Exp"],
             culture_badge: "AGENCY CULTURE",
             timeline: [
@@ -289,7 +235,8 @@ export const translations = {
                     name: "Your Name",
                     phone: "+91 - 10 digit number",
                     email: "your@email.com",
-                    message: "Tell us about your project requirements, timeline & budget..."
+                    message: "Tell us about your project requirements, timeline & budget...",
+                    service: "Select Your Service Interest"
                 },
                 services_opt: {
                     default: "Select Your Service Interest",
@@ -334,11 +281,11 @@ export const translations = {
         hero: {
             est: "स्थापना २०१५",
             agency: "एजन्सी",
-            tagline: "विजय, रणनीतिकरित्या आखलेला.",
+            tagline: "VICTORY CREATIVELY MARKED",
             title1: "तुमची प्रगती",
-            title2: "आमची ताकद",
+            title2: "आमची सर्जनशील शक्ती",
             subtitle: "आम्ही रणनीतीवर आधारित मोहिमा तयार करतो ज्या ब्रँड वर्चस्वापासून निवडणुकीतील विजयापर्यंत मोजण्यायोग्य परिणाम देतात.",
-            cta_primary: "आजच जिंकायला सुरुवात करा"
+            cta_primary: "सुरुवात करा"
         },
         stats: {
             winRatio: "विजय दर",
@@ -391,15 +338,15 @@ export const translations = {
                 branding: {
                     id: "branding",
                     title: "ब्रँडिंग",
-                    desc: "ओळख, रणनीती आणि व्हिज्युअल स्टोरीटेलिंग.",
+                    desc: "ओळख, रणनीती आणि उच्च-गुणवत्तेचे ब्रँड कोलेटरल.",
                     full_title: "आम्ही फक्त ब्रँड तयार करत नाही — आम्ही शक्तिशाली छाप निर्माण करतो.",
                     full_desc: "तुमचा ब्रँड लोगोपेक्षा जास्त आहे. लोक तुम्हाला कसे ओळखतात आणि तुमच्यावर विश्वास ठेवतात हे महत्त्वाचे आहे. क्रिएटिव्ह मार्कवर, आम्ही मजबूत आणि अर्थपूर्ण ब्रँड ओळख तयार करतो.",
                     sub_services: [
                         { title: "ब्रँड रणनीती आणि पोझिशनिंग", desc: "स्पष्ट दृष्टी. मजबूत दिशा.", details: ["ब्रँड डिस्कव्हरी आणि संशोधन", "ब्रँड पोझिशनिंग आणि मेसेजिंग", "लक्ष्य प्रेक्षक आणि बाजार विश्लेषण", "ब्रँड व्हॉइस आणि टोन विकास", "दीर्घकालीन ब्रँड रोडमॅप"] },
                         { title: "व्हिज्युअल आयडेंटिटी डिझाइन", desc: "तुमचा ब्रँड त्वरित ओळखण्यायोग्य बनवा.", details: ["लोगो डिझाइन आणि रिब्रँडिंग", "रंग पॅलेट आणि टायपोग्राफी", "ब्रँड स्टाईल गाईड", "बिझनेस कार्ड्स आणि स्टेशनरी", "सोशल मीडिया ब्रँड किट्स"] },
-                        { title: "ब्रँड कम्युनिकेशन", desc: "स्पष्टतेने आणि आत्मविश्वासाने बोला.", details: ["ब्रँड स्टोरीटेलिंग", "टॅगलाइन आणि स्लोगन्स", "ब्रँड कंटेंट आणि कॉपीरायटिंग", "वेबसाइट आणि मोहीम मेसेजिंग", "राजकीय आणि नेतृत्व ब्रँडिंग"] },
+                        { title: "ब्रँड कोलेटरल आणि प्रिंटिंग", desc: "उच्च-गुणवत्तेचे कॉर्पोरेट आणि मोहीम प्रिंटिंग.", details: ["ब्रोशर्स आणि कॅटलॉग", "बिझनेस कार्ड्स आणि स्टेशनरी", "फ्लायर्स आणि जाहिरातपत्रके", "पोस्टर्स आणि बॅनर्स", "कस्टमाइज्ड ब्रँड मर्चंडाईज"] },
                         { title: "डिजिटल ब्रँड उपस्थिती", desc: "सर्व डिजिटल प्लॅटफॉर्मवर सातत्य.", details: ["सोशल मीडिया ब्रँडिंग", "वेबसाइट ब्रँडिंग आणि यूआय दिशा", "प्रोफाइल ऑप्टिमायझेशन", "व्हिज्युअल सातत्य", "ऑनलाइन प्रतिष्ठा निर्माण"] },
-                        { title: "ऑफलाइन ब्रँडिंग", desc: "डिजिटल जागेच्या पलीकडे मजबूत उपस्थिती.", details: ["ऑफिस ब्रँडिंग", "स्टोरफ्रंट आणि साइनेज ब्रँडिंग", "वाहन ब्रँडिंग", "इव्हेंट आणि मोहीम ब्रँडिंग", "प्रिंट ब्रँडिंग साहित्य"] },
+                        { title: "ऑफलाइन ब्रँडिंग आणि साइनेज", desc: "डिजिटल जागेच्या पलीकडे मजबूत उपस्थिती.", details: ["ऑफिस ब्रँडिंग", "स्टोरफ्रंट आणि साइनेज ब्रँडिंग", "वाहन ब्रँडिंग", "इव्हेंट आणि मोहीम ब्रँडिंग", "लार्ज-फॉरमॅट प्रिंटिंग"] },
                         { title: "रिब्रँडिंग आणि ब्रँड रिफ्रेश", desc: "ओळख न गमावता विकसित व्हा.", details: ["ब्रँड ऑडिट्स", "लोगो आणि ओळख रिफ्रेश", "मेसेजिंग रीअलाइनमेंट", "मार्केट रिपोझिशनिंग", "आधुनिक ब्रँड ट्रान्सफॉर्मेशन"] }
                     ]
                 },
@@ -418,61 +365,7 @@ export const translations = {
                         { title: "फोटोग्राफी आणि व्हिज्युअल कंटेंट", desc: "व्यावसायिक प्रतिमा ज्या विश्वासार्हता वाढवतात.", details: ["प्रॉडक्ट आणि ब्रँड फोटोग्राफी", "इव्हेंट आणि मोहीम फोटोग्राफी", "कॉर्पोरेट आणि प्रोफाइल शूट्स", "सोशल मीडिया फोटोशूट्स", "क्रिएटिव्ह आणि लाइफस्टाईल फोटोग्राफी"] }
                     ]
                 },
-                printing: {
-                    id: "printing",
-                    title: "प्रिंटिंग",
-                    desc: "उच्च-गुणवत्तेचे कॉर्पोरेट आणि मोहीम प्रिंटिंग.",
-                    full_title: "प्रिंटिंग जे तुमच्या ब्रँडला मूर्त आणि विश्वासार्ह बनवते.",
-                    full_desc: "डिजिटल जगातही प्रिंटचे महत्त्व कायम आहे. क्रिएटिव्ह मार्क ॲडव्हर्टायझिंगमध्ये, आम्ही उच्च-गुणवत्तेचे प्रिंटिंग सोल्युशन्स देतो.",
-                    sub_services: [
-                        { title: "कमर्शियल प्रिंटिंग", desc: "व्यवसाय वाढीसाठी व्यावसायिक प्रिंट्स.", details: ["बिझनेस कार्ड्स आणि व्हिजिटिंग कार्ड्स", "लेटरहेड्स आणि लिफाफे", "ब्रोशर्स आणि कॅटलॉग", "फ्लायर्स आणि पॅम्प्लेट्स", "कंपनी प्रोफाइल्स"] },
-                        { title: "प्रमोशनल प्रिंटिंग", desc: "मार्केटिंग साहित्य जे लक्ष वेधून घेते.", details: ["पोस्टर्स आणि स्टँडीज", "बॅनर्स आणि फ्लेक्स प्रिंटिंग", "डँग्लर्स आणि टेंट कार्ड्स", "स्टिकर्स आणि लेबल्स", "प्रमोशनल लीफलेट्स"] },
-                        { title: "कॉर्पोरेट आणि ऑफिस प्रिंटिंग", desc: "सर्व ब्रँड साहित्यात सातत्य.", details: ["आयडी कार्ड्स आणि डोरी", "फाइल्स आणि फोल्डर्स", "नोटपॅड्स आणि डायरी", "प्रमाणपत्रे आणि अहवाल", "कस्टमाइज्ड स्टेशनरी"] },
-                        { title: "राजकीय आणि मोहीम प्रिंटिंग", desc: "मास आउटरिचसाठी हाय-इम्पॅक्ट प्रिंटिंग.", details: ["निवडणूक पोस्टर्स आणि बॅनर्स", "पॅम्प्लेट्स आणि जाहीरनामा प्रिंटिंग", "बूथ-स्तरीय साहित्य", "झेंडे, टोप्या आणि मोहीम मर्चंडाईज", "क्षेत्रवार वितरण समर्थन"] },
-                        { title: "क्रिएटिव्ह आणि कस्टम प्रिंटिंग", desc: "तुमच्या ब्रँड ओळखीनुसार तयार केलेले प्रिंट्स.", details: ["कस्टम डिझाइन आणि लेआउट", "स्पेशल फिनिश (लॅमिनेशन, यूव्ही, एम्बॉसिंग)", "लार्ज-फॉरमॅट प्रिंटिंग", "इको-फ्रेंडली प्रिंटिंग पर्याय", "वैयक्तिकृत प्रिंट सोल्युशन्स"] }
-                    ]
-                },
-                designing: {
-                    id: "designing",
-                    title: "डिझाइनिंग",
-                    desc: "सर्व माध्यमांसाठी क्रिएटिव्ह ग्राफिक डिझाइन.",
-                    full_title: "डिझाइन जे तुमच्या आधी बोलते.",
-                    full_desc: "उत्कृष्ट डिझाइन फक्त लूकबद्दल नसते; ते संवादाबद्दल असते. आजच्या व्हिज्युअली-प्रबळ जगात, तुमच्या ब्रँडला व्यावसायिक आणि हाय-इम्पॅक्ट डिझाइन्ससह वेगळे दिसणे आवश्यक आहे.",
-                    sub_services: [
-                        { title: "ग्राफिक डिझाइन", desc: "व्हिज्युअल्स जे प्रेक्षकांना आकर्षित करतात.", details: ["सोशल मीडिया क्रिएटिव्ह", "ॲड बॅनर्स आणि पोस्टर्स", "इन्फोग्राफिक्स", "ई-बुक आणि मॅगझिन डिझाइन", "कस्टम इलस्ट्रेशन"] },
-                        { title: "वेबसाइट UI/UX डिझाइन", desc: "चांगल्या एंगेजमेंटसाठी युजर-केंद्रित इंटरफेस डिझाइन.", details: ["वायरफ्रेमिंग आणि प्रोटोटाइपिंग", "मोबाईल-फ्रेंडली रिस्पॉन्सिव्ह लेआउट", "युजर जर्नी मॅपिंग", "लँडिंग पेजेस", "आधुनिक वेब एस्थेटिक्स"] },
-                        { title: "एडिटोरियल आणि लेआउट डिझाइन", desc: "प्रकाशनांसाठी व्यावसायिक लेआउट.", details: ["मॅगझिन आणि न्यूजलेटर", "वार्षिक अहवाल", "कंपनी प्रोफाइल्स", "कॅटलॉग आणि माहितीपत्रके", "पुस्तकाचे मुखपृष्ठ"] },
-                        { title: "प्रिंटिंग डिझाइन", desc: "भौतिक उत्पादनासाठी ऑप्टिमाइझ केलेले डिझाइन.", details: ["बिझनेस कार्ड्स आणि स्टेशनरी", "ब्रोशर आणि फ्लायर लेआउट", "होर्डिंग डिझाइन्स", "पॅकेजिंग आणि लेबल डिझाइन", "प्रिंट-रेडी फाइल्स"] }
-                    ]
-                }
-            },
-            pricing: {
-                tag: "पारदर्शक गुंतवणूक",
-                title: "वाढीचे पॅकेजेस",
-                desc: "तुमच्या महत्त्वाकांक्षेशी जुळणारा स्तर निवडा. आम्ही प्रत्येक स्तरावर मूल्य देतो.",
-                starter: {
-                    name: "स्टार्टर",
-                    sub: "उदयोन्मुख ब्रँड्ससाठी",
-                    price: "₹५०हजार - ₹१लाख",
-                    btn: "सुरुवात करा",
-                    features: ["सोशल मीडिया मॅनेजमेंट", "बेसिक एसईओ सेटअप", "२ ब्लॉग पोस्ट्स/महिना", "मासिक कामगिरी अहवाल"]
-                },
-                professional: {
-                    name: "प्रोफेशनल",
-                    sub: "आक्रमक वाढीसाठी",
-                    price: "₹१लाख - ₹२लाख",
-                    popular: "लोकप्रिय",
-                    btn: "स्केल वाढवा",
-                    features: ["स्टार्टरमधील सर्वकाही", "पेड जाहिरात व्यवस्थापन", "कंटेंट मार्केटिंग रणनीती", "व्हिडिओ रील्स निर्मिती", "द्वि-साप्ताहिक रणनीती कॉल"]
-                },
-                enterprise: {
-                    name: "एंटरप्राइझ",
-                    sub: "तुमच्या क्षेत्रात वर्चस्व गाजवा",
-                    price: "₹२लाख+",
-                    btn: "सेल्सशी संपर्क साधा",
-                    features: ["पूर्ण-सेवा वॉर रूम", "कस्टम वेब डेव्हलपमेंट", "पीआर आणि मीडिया मॅनेजमेंट", "डेडिकेटेड अकाउंट मॅनेजर", "२४/७ प्राधान्य समर्थन"]
-                },
-                per_month: "/महिना"
+
             },
             cta: {
                 title: "तुम्ही बाजारात वर्चस्व गाजवायला तयार आहात?",
@@ -489,7 +382,7 @@ export const translations = {
         },
         testimonials: {
             tag: "ग्राहकांचे अनुभव",
-            title: "नेत्यांचा विश्वास",
+            title: "आमच्या ग्राहकांचा विश्वास",
             items: [
                 { quote: "क्रिएटिव्ह मार्कने फक्त जाहिराती चालवल्या नाहीत; त्यांनी एक चळवळ उभी केली. आमची मतदान टक्केवारी १५% ने वाढली.", author: "राजेश एस.", role: "आमदार उमेदवार", type: "राजकीय" },
                 { quote: "रिब्रँडिंगने आमची समज बदलली. आम्ही ६ महिन्यांत स्थानिक विक्रेत्याकडून राष्ट्रीय खेळाडू बनलो.", author: "अंजली के.", role: "सीईओ, टेकफ्लो", type: "कॉर्पोरेट" },
@@ -561,7 +454,7 @@ export const translations = {
             title_1: "रणनीती प्रथम.",
             title_2: "सर्जनशीलता",
             title_3: "नेहमी.",
-            desc: "क्रिएटिव्ह मार्क ही एक धोरणात्मक जाहिरात आणि डिजिटल एजन्सी आहे जी स्पष्टतेवर विश्वास ठेवते. आम्ही गोष्टी फक्त चांगल्या बनवत नाही; आम्ही त्या काम करायला लावतो. कॉर्पोरेट बोर्डरूमपासून इलेक्शन वॉर रूमपर्यंत, आम्ही परिणाम देतो.",
+            desc: "क्रिएटिव्ह मार्क ही एक प्रमुख डिजिटल एजन्सी आहे जी धोरणात्मक नवकल्पनाद्वारे ब्रँड्सचे रूपांतर करते. आम्ही जागतिक दर्जाच्या सर्जनशीलतेसह डेटा-आधारित अंतर्दृष्टी एकत्र करतो. स्टार्टअप्सपासून राष्ट्रीय नेत्यांपर्यंत, आम्ही यशाच्या कथा तयार करतो.",
             stats_badges: ["५०+ मोहिमा", "८५% विजय दर", "१०+ वर्षे अनुभव"],
             culture_badge: "एजन्सी संस्कृती",
             timeline: [
@@ -612,7 +505,8 @@ export const translations = {
                     name: "तुमचे नाव",
                     phone: "+९१ - १० अंकी नंबर",
                     email: "tumcha@email.com",
-                    message: "तुमच्या प्रकल्पाच्या गरजा, वेळ आणि बजेट सांगा..."
+                    message: "तुमच्या प्रकल्पाच्या गरजा, वेळ आणि बजेट सांगा...",
+                    service: "तुमची पसंती निवडा"
                 },
                 services_opt: {
                     default: "तुमची पसंती निवडा",

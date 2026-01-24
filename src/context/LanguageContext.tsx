@@ -14,6 +14,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const [language, setLanguage] = useState<Language>("en");
 
+    useEffect(() => {
+        document.documentElement.lang = language;
+    }, [language]);
+
     // Helper function to get nested object values
     // e.g. t('home.hero.title')
     const t = (path: string): any => {

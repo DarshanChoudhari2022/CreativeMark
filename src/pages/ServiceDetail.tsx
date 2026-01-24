@@ -5,9 +5,13 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
 
+import multimediaImg from "@/assets/service-multimedia.png";
+import digitalImg from "@/assets/service-digital.png";
+import brandingImg from "@/assets/service-branding.png";
+
 const ServiceDetail = () => {
     const { id } = useParams();
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     // Map URL IDs to translation keys if they differ
     const idToKeyMap: Record<string, string> = {
@@ -15,21 +19,18 @@ const ServiceDetail = () => {
         "advertising": "advertising",
         "branding": "branding",
         "multimedia": "multimedia",
-        "printing": "printing",
-        "designing": "designing"
+        "printing": "branding", // Redirect printing to branding
     };
 
     const translationKey = id ? idToKeyMap[id] : null;
     const service = translationKey ? t(`services.items.${translationKey}`) : null;
 
-    // Images mapping (since translations don't store image URLs usually, but here we can)
+    // Images mapping
     const images: Record<string, string> = {
-        "digital": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
+        "digital": digitalImg,
         "advertising": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=2000",
-        "branding": "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&q=80&w=2000",
-        "multimedia": "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=2000",
-        "printing": "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=2000",
-        "designing": "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=2000"
+        "branding": brandingImg,
+        "multimedia": multimediaImg,
     };
 
     // Scroll to top on mount
@@ -147,10 +148,12 @@ const ServiceDetail = () => {
 
                     <div className="relative z-10">
                         <h2 className="heading-lg text-white mb-8">
-                            {t('services.cta.title').replace('dominat your market', `dominate with ${service.title}`)}
+                            {language === 'en'
+                                ? `Ready to dominate with ${service.title}?`
+                                : `आपल्या ${service.title} सह वर्चस्व गाजवायला तयार आहात?`}
                         </h2>
                         <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-accent hover:text-white transition-all transform hover:scale-105">
-                            {t('services.pricing.btn')} <ArrowUpRight />
+                            {t('services.cta.btn')} <ArrowUpRight />
                         </Link>
                     </div>
                 </div>

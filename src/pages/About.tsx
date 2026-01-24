@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
+import aboutCulture from "@/assets/about-culture.png";
 
 const About = () => {
   const { t } = useLanguage();
@@ -19,7 +21,7 @@ const About = () => {
             >
               {t('about.tag')}
             </motion.span>
-            <h1 className="text-5xl md:text-8xl font-bold mb-12 tracking-tighter leading-[0.9]">
+            <h1 className="heading-xl mb-12 tracking-tighter">
               {t('about.title_1')}<br />
               <span className="text-accent">{t('about.title_2')}</span> {t('about.title_3')}
             </h1>
@@ -40,9 +42,9 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 mb-40">
             <div className="relative aspect-video lg:aspect-square bg-secondary rounded-3xl overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1522071823991-b1ae5e6a3028?auto=format&fit=crop&q=80&w=1200"
+                src={aboutCulture}
                 alt="Our Team"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-10 left-10 text-white">
@@ -137,6 +139,20 @@ const About = () => {
               ))}
             </div>
           </div>
+          {/* Final CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-40 text-center bg-secondary rounded-3xl py-24 md:py-32 px-8"
+          >
+            <h2 className="heading-lg mb-10 max-w-3xl mx-auto">
+              {t('cta_section.title')}
+            </h2>
+            <Link to="/contact" className="btn-primary px-12 py-5 text-lg">
+              {t('cta_section.btn_primary')}
+            </Link>
+          </motion.div>
         </div>
       </section>
     </Layout>
