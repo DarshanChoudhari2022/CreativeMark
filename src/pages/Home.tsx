@@ -290,17 +290,17 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white group-hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)] transition-shadow duration-700">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-gray-100 bg-white scale-[1.02]">
                 <img
-                  src={garageStandee}
-                  alt="Magic QR Tabletop Standee - Surajit Auto Garage"
-                  className="w-full h-auto transform hover:scale-110 transition-transform duration-1000 ease-out"
+                  src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?auto=format&fit=crop&q=100&w=2500"
+                  alt="Ultra-HD Magic QR Tabletop Stand"
+                  className="w-full h-auto transform hover:scale-105 transition-transform duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 backdrop-blur-md bg-black/40 p-4 rounded-2xl border border-white/20">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_#4ade80]" />
-                  <span className="text-white text-[10px] font-black uppercase tracking-widest leading-none">
-                    Real-World Setup • Counter Standee
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8 flex items-center gap-4 backdrop-blur-xl bg-white/10 p-5 rounded-2xl border border-white/20 shadow-2xl">
+                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse shadow-[0_0_15px_#4ade80]" />
+                  <span className="text-white text-xs font-black uppercase tracking-[0.2em] leading-none">
+                    Ultra-HD Hardware • Premium Standee
                   </span>
                 </div>
               </div>
