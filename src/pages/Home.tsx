@@ -12,6 +12,7 @@ import heroMarathi from "@/assets/hero-marathi.png";
 
 import projectDigital from "@/assets/project-digital.png";
 import projectMultimedia from "@/assets/project-multimedia.png";
+import brandingImg from "@/assets/service-branding.png";
 
 const Home = () => {
   const targetRef = useRef(null);
@@ -250,9 +251,9 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1512428559083-a400a3b8463a?auto=format&fit=crop&q=80&w=1200"
+                  src={brandingImg}
                   alt="Magic QR Code Sample"
                   className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                 />
