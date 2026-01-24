@@ -290,17 +290,17 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-gray-100 bg-white scale-[1.02]">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-white/20 bg-white hover:border-accent/40 transition-all duration-700">
                 <img
-                  src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?auto=format&fit=crop&q=100&w=2500"
-                  alt="Ultra-HD Magic QR Tabletop Stand"
-                  className="w-full h-auto transform hover:scale-105 transition-transform duration-1000 ease-out"
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=100&w=2500"
+                  alt="Ultra-HD Magic QR Hardware Solution"
+                  className="w-full h-auto transform hover:scale-105 transition-transform duration-[2000ms] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8 flex items-center gap-4 backdrop-blur-xl bg-white/10 p-5 rounded-2xl border border-white/20 shadow-2xl">
-                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse shadow-[0_0_15px_#4ade80]" />
+                <div className="absolute bottom-8 left-8 right-8 flex items-center gap-4 backdrop-blur-xl bg-black/40 p-5 rounded-2xl border border-white/20 shadow-2xl">
+                  <div className="w-3 h-3 rounded-full bg-accent animate-pulse shadow-[0_0_15px_#ff0000]" />
                   <span className="text-white text-xs font-black uppercase tracking-[0.2em] leading-none">
-                    Ultra-HD Hardware • Premium Standee
+                    Premium Hardware • Professional Setup
                   </span>
                 </div>
               </div>
@@ -378,7 +378,7 @@ const Home = () => {
             <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 snap-x snap-mandatory scrollbar-hide">
             {t('testimonials.items').map((t: any, i: number) => (
               <motion.div
                 key={i}
@@ -386,19 +386,19 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all"
+                className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all min-w-[85vw] md:min-w-0 snap-center"
               >
-                <div className="text-accent text-6xl font-serif leading-none mb-6 opacity-30">"</div>
-                <p className="text-xl font-medium leading-relaxed mb-8 text-foreground/90">{t.quote}</p>
+                <div className="text-accent text-5xl md:text-6xl font-serif leading-none mb-4 md:mb-6 opacity-30">"</div>
+                <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-foreground/90">{t.quote}</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-foreground">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-foreground text-sm md:text-base">
                     {t.author.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg">{t.author}</h4>
-                    <span className="text-sm text-muted-foreground block">{t.role}</span>
+                    <h4 className="font-bold text-base md:text-lg">{t.author}</h4>
+                    <span className="text-xs md:text-sm text-muted-foreground block">{t.role}</span>
                   </div>
-                  <span className="ml-auto text-xs font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground">{t.type}</span>
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground">{t.type}</span>
                 </div>
               </motion.div>
             ))}
