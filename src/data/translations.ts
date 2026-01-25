@@ -223,10 +223,11 @@ export const translations = {
             stats_badges: ["10+ Campaigns", "85% Win Rate", "10+ Years Exp"],
             culture_badge: "AGENCY CULTURE",
             timeline: [
-                { year: "2015", title: "The Beginning", text: "Founded in Pune with a small team and a big vision to revolutionize political advertising. Revenue: ₹0" },
-                { year: "2018", title: "Expansion Phase", text: "Expanded services to include digital marketing and corporate branding. Crossed ₹50L Turnover." },
-                { year: "2020", title: "Statewide Dominance", text: "Managed campaigns across Maharashtra. Established 85% election win rate. Revenue grew to ₹2Cr." },
-                { year: "2024", title: "National Powerhouse", text: "Evolved into a 360-degree agency serving national brands. Targeting ₹10Cr+ valuation." }
+                { year: "2020", title: "Humble Beginnings", text: "Started small with local banner printing, posters, and short video content." },
+                { year: "2021", title: "Pune Headquarters", text: "Established a dedicated professional office in the heart of Pune to scale operations." },
+                { year: "2022", title: "Political Milestone", text: "Appointed to manage high-stakes creative work for the Party President of MNS Pune." },
+                { year: "2023", title: "Corporate Shift", text: "Diversified expertise into premium corporate advertising and strategic brand building." },
+                { year: "2025", title: "Proven Impact", text: "Successfully managed 10+ Nagarsevak campaigns and served over 80+ businesses nationwide." }
             ],
             values: [
                 { title: "Clarity", desc: "We simplify the complex. Your message should be understood instantly." },
@@ -539,10 +540,11 @@ export const translations = {
             stats_badges: ["१०+ मोहिमा", "८५% विजय दर", "१०+ वर्षे अनुभव"],
             culture_badge: "एजन्सी संस्कृती",
             timeline: [
-                { year: "२०१५", title: "सुरुवात", text: "पुण्यात एका छोट्या टीमसह आणि राजकीय जाहिरातीत क्रांती घडवण्याच्या मोठ्या दृष्टीकोनासह स्थापना. महसूल: ₹०" },
-                { year: "२०१८", title: "विस्तार टप्पा", text: "डिजिटल मार्केटिंग आणि कॉर्पोरेट ब्रँडिंगचा समावेश करण्यासाठी सेवांचा विस्तार. ₹५० लाखांची उलाढाल ओलांडली." },
-                { year: "२०२०", title: "राज्यव्यापी वर्चस्व", text: "महाराष्ट्रभर मोहिमा व्यवस्थापित केल्या. ८५% निवडणूक विजय दर स्थापित केला. महसूल ₹२ कोटींवर गेला." },
-                { year: "२०२४", title: "नॅशनल पॉवरहाऊस", text: "राष्ट्रीय ब्रँड्सना सेवा देणाऱ्या ३६०-डिग्री एजन्सीमध्ये रूपांतरित. ₹१० कोटी+ मूल्यांकनाचे लक्ष्य." }
+                { year: "२०२०", title: "साधी सुरुवात", text: "स्थानिक बॅनर प्रिंटिंग, पोस्टर्स आणि छोट्या व्हिडिओंपासुन कामाला सुरुवात केली." },
+                { year: "२०२१", title: "पुणे कार्यालय", text: "कामाचा विस्तार करण्यासाठी पुण्यात स्वतःचे प्रोफेशनल कार्यालय सुरू केले." },
+                { year: "२०२२", title: "राजकीय भरारी", text: "मनसे पुणे शहराध्यक्ष यांच्या प्रचाराचे आणि सोशल मीडियाचे महत्त्वपूर्ण काम मिळाले." },
+                { year: "२०२३", title: "कॉर्पोरेट विस्तार", text: "कॉर्पोरेट जाहिरात आणि ब्रँडिंग क्षेत्रात पाऊल टाकले." },
+                { year: "२०२५", title: "व्यापक यश", text: "१०+ नगरसेवकांच्या निवडणुकांचे यशस्वी व्यवस्थापन आणि ८०+ पेक्षा जास्त व्यवसायांना सेवा दिली." }
             ],
             values: [
                 { title: "स्पष्टता", desc: "आम्ही गुंतागुंत सोपी करतो. तुमचा संदेश त्वरित समजला पाहिजे." },
