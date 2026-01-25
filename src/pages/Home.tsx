@@ -158,16 +158,7 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-              className="absolute -bottom-24 md:-bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50"
-            >
-              <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-              <div className="w-[1px] h-12 bg-gradient-to-b from-muted-foreground/0 via-muted-foreground/50 to-muted-foreground/0" />
-            </motion.div>
+
 
           </motion.div>
 
