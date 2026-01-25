@@ -131,7 +131,7 @@ const About = () => {
             </div>
 
             {/* Desktop: Grid layout */}
-            <div className="hidden md:grid md:grid-cols-4 gap-8">
+            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
               {t('about.timeline').map((event: any, i: number) => (
                 <motion.div
                   key={i}
