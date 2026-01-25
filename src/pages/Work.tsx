@@ -25,7 +25,7 @@ const Work = () => {
 
   return (
     <Layout>
-      <section className="bg-background min-h-screen pt-40 pb-20">
+      <section className="bg-background min-h-screen pt-28 md:pt-40 pb-20">
         <div className="container-wide">
           <div className="max-w-4xl mb-20">
             <motion.span

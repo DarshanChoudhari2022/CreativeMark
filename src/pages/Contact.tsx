@@ -46,7 +46,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="bg-background min-h-screen pt-24 md:pt-40 pb-12 md:pb-20">
+      <section className="bg-background min-h-screen pt-28 md:pt-40 pb-12 md:pb-20">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
             {/* Info Column */}

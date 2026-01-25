@@ -10,7 +10,7 @@ const Political = () => {
 
   return (
     <Layout>
-      <section className="bg-background min-h-screen pt-40 pb-20">
+      <section className="bg-background min-h-screen pt-28 md:pt-40 pb-20">
         <div className="container-wide">
           {/* Hero Section */}
           <div className="max-w-4xl mb-32">
@@ -45,7 +45,7 @@ const Political = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="aspect-square bg-black rounded-3xl border border-border p-12 relative overflow-hidden group shadow-2xl"
+              className="aspect-square bg-black rounded-3xl border border-border p-6 md:p-12 relative overflow-hidden group shadow-2xl"
             >
               {/* Background 'Real' Image for Political */}
               <div className="absolute inset-0 z-0">

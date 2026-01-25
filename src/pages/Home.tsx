@@ -230,18 +230,18 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Mobile: Horizontal Scroll, Tablet: 2 Columns, Desktop: 4 Columns */}
-          <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide md:hidden">
+          {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
+          <div className="flex flex-col gap-6 md:hidden">
             {[
               { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
               { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
               { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
               { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" }
             ].map((service, i) => (
-              <Link to={`/services/${service.id}`} key={i} className="block min-w-[80vw] sm:min-w-[60vw] snap-center flex-shrink-0">
+              <Link to={`/services/${service.id}`} key={i} className="block w-full">
                 <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="card-minimal group h-full flex flex-col justify-between bg-white p-6 rounded-2xl shadow-lg border border-border/50 relative overflow-hidden"
@@ -268,10 +268,6 @@ const Home = () => {
                 </motion.div>
               </Link>
             ))}
-          </div>
-          {/* Mobile Scroll Indicator */}
-          <div className="md:hidden flex justify-center mt-2">
-            <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
           </div>
 
           {/* Tablet & Desktop: Grid Layout */}
@@ -347,27 +343,24 @@ const Home = () => {
               <div className="mb-8 md:mb-12">
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-4 md:mb-6">{t('products.how_it_works.title')}</h3>
 
-                {/* Mobile: Horizontal Scroll */}
+                {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
                 <div className="lg:hidden">
-                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-3 snap-x snap-mandatory scrollbar-hide">
+                  <div className="flex flex-col gap-4">
                     {[
                       { step: "01", ...t('products.how_it_works.step1') },
                       { step: "02", ...t('products.how_it_works.step2') },
                       { step: "03", ...t('products.how_it_works.step3') }
                     ].map((s, idx) => (
-                      <div key={idx} className="min-w-[70vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-4 rounded-xl border border-border/30">
+                      <div key={idx} className="w-full bg-secondary/50 p-4 rounded-xl border border-border/30">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                             <span className="text-accent font-bold text-xs">{s.step}</span>
                           </div>
                           <h4 className="font-bold text-sm text-foreground">{s.title}</h4>
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed pl-10">{s.desc}</p>
                       </div>
                     ))}
-                  </div>
-                  <div className="flex justify-center mt-2">
-                    <span className="text-[10px] text-muted-foreground font-medium">← Swipe →</span>
                   </div>
                 </div>
 
@@ -436,7 +429,7 @@ const Home = () => {
             <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
-          <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {t('testimonials.items').map((item: any, i: number) => (
               <motion.div
                 key={i}
@@ -444,7 +437,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all min-w-[85vw] md:min-w-0 snap-center"
+                className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all w-full"
               >
                 <div className="text-accent text-5xl md:text-6xl font-serif leading-none mb-4 md:mb-6 opacity-30">"</div>
                 <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-foreground/90">{item.quote}</p>

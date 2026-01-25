@@ -123,17 +123,17 @@ const Services = () => {
                         {section.introTitle}
                       </h3>
 
-                      {/* Mobile: Horizontal Scroll Cards */}
+                      {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
                       <div className="lg:hidden">
-                        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                        <div className="flex flex-col gap-6">
                           {section.items.map((item: any, itemIndex: number) => (
                             <motion.div
                               key={itemIndex}
-                              initial={{ opacity: 0, x: 20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: itemIndex * 0.1 }}
-                              className="min-w-[80vw] sm:min-w-[60vw] snap-center bg-white rounded-2xl p-6 shadow-lg border border-border/50 flex-shrink-0"
+                              className="w-full bg-white rounded-2xl p-6 shadow-lg border border-border/50"
                             >
                               <div className="flex items-center gap-3 mb-4">
                                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
@@ -155,10 +155,6 @@ const Services = () => {
                               </div>
                             </motion.div>
                           ))}
-                        </div>
-                        {/* Scroll Indicator */}
-                        <div className="flex justify-center gap-2 mt-2">
-                          <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
                         </div>
                       </div>
 

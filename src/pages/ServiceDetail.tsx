@@ -52,7 +52,7 @@ const ServiceDetail = () => {
     return (
         <Layout>
             {/* 1. Hero Section */}
-            <section className="bg-background pt-32 pb-20 overflow-hidden">
+            <section className="bg-background pt-28 md:pt-32 pb-20 overflow-hidden">
                 <div className="container-wide">
                     <Link to="/" className="inline-flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-foreground mb-8 transition-colors">
                         <ArrowLeft size={16} /> {t('header.home')}
@@ -107,17 +107,17 @@ const ServiceDetail = () => {
                         </p>
                     </div>
 
-                    {/* Mobile: Horizontal scroll for sub-services */}
+                    {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
                     <div className="md:hidden">
-                        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                        <div className="flex flex-col gap-6">
                             {service.sub_services?.map((sub: any, index: number) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="min-w-[85vw] snap-center bg-white p-6 rounded-xl border border-border shadow-lg flex-shrink-0"
+                                    className="w-full bg-white p-6 rounded-xl border border-border shadow-lg"
                                 >
                                     <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">
                                         {index + 1}
@@ -139,9 +139,6 @@ const ServiceDetail = () => {
                                     </ul>
                                 </motion.div>
                             ))}
-                        </div>
-                        <div className="flex justify-center mt-2">
-                            <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
                         </div>
                     </div>
 
@@ -180,7 +177,7 @@ const ServiceDetail = () => {
 
             {/* 3. CTA */}
             <section className="py-32 bg-background border-t border-border">
-                <div className="container-wide bg-black rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+                <div className="container-wide bg-black rounded-3xl p-8 md:p-20 text-center relative overflow-hidden">
                     {/* Decorative circles */}
                     <div className="absolute top-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
                     <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
