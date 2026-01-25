@@ -12,7 +12,7 @@ import dishaLogo from "@/assets/disha_astrology.png";
 import keyStylishLogo from "@/assets/key_stylish_interiors.png";
 import shwetaLogo from "@/assets/shwetas_nail_art.png";
 import galaxyLogo from "@/assets/galaxy_path_lab.png";
-import metacraftLogo from "@/assets/client_metacraft.jpg";
+import metacraftLogo from "@/assets/client_metacraft_new.png";
 import poonawalaNewLogo from "@/assets/poonawala_travels.png";
 
 const About = () => {
