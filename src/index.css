@@ -166,5 +166,12 @@
 }
 
 .lang-mr body {
-  line-height: 1.5;
+  line-height: 1.7;
+}
+
+.lang-mr p,
+.lang-mr span:not(.text-xs),
+.lang-mr li {
+  font-size: 1.05em;
+  /* Slightly larger for Devanagari legibility */
 }

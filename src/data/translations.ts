@@ -584,7 +584,7 @@ export const translations = {
                 call: "आम्हाला कॉल करा",
                 email: "आम्हाला ईमेल करा",
                 visit: "आम्हाला भेट द्या",
-                address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
+                address: "लॉर्ड्स रेसिडेन्सी, बी-विंग, २ रा मजला, केदारी नगर, वानवडी, संविधान चौकाजवळ, पुणे, महाराष्ट्र ४११०४०",
                 sub_address: "देशभर सेवा देत आहे"
             },
             form: {
@@ -627,7 +627,7 @@ export const translations = {
                 advertising: "इलेक्ट्रॉनिक मीडिया जाहिराती",
                 multimedia: "मल्टीमीडिया सोल्यूशन्स"
             },
-            address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
+            address: "लॉर्ड्स रेसिडेन्सी, बी-विंग, २ रा मजला, केदारी नगर, वानवडी, संविधान चौकाजवळ, पुणे, महाराष्ट्र ४११०४०",
             all_rights: "सर्व हक्क राखीव.",
             privacy: "गोपनीयता धोरण",
             terms: "सेवा अटी"
