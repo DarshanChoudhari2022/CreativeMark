@@ -266,7 +266,7 @@ export const translations = {
                 call: "Call Us",
                 email: "Email Us",
                 visit: "Visit Us",
-                address: "Pune, India",
+                address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
                 sub_address: "Serving clients nationwide"
             },
             form: {
@@ -309,7 +309,7 @@ export const translations = {
                 advertising: "Electronic Media Ads",
                 multimedia: "Multimedia Solutions"
             },
-            address: "Pune & Phaltan, Maharashtra, Serving Clients Nationwide.",
+            address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
             all_rights: "All Rights Reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
@@ -582,7 +582,7 @@ export const translations = {
                 call: "आम्हाला कॉल करा",
                 email: "आम्हाला ईमेल करा",
                 visit: "आम्हाला भेट द्या",
-                address: "पुणे, भारत",
+                address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
                 sub_address: "देशभर सेवा देत आहे"
             },
             form: {
@@ -625,7 +625,7 @@ export const translations = {
                 advertising: "इलेक्ट्रॉनिक मीडिया जाहिराती",
                 multimedia: "मल्टीमीडिया सोल्यूशन्स"
             },
-            address: "पुणे आणि फलटण, महाराष्ट्र, देशभर सेवा देत आहे.",
+            address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
             all_rights: "सर्व हक्क राखीव.",
             privacy: "गोपनीयता धोरण",
             terms: "सेवा अटी"
