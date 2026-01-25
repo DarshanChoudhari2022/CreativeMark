@@ -167,12 +167,11 @@ const About = () => {
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-20 items-center pr-20 bg-white py-8">
                     <img src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={poonawalaLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                     <img src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={domLogo} alt="DOM" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                     <img src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={domLogo} alt="DOM" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                     <img src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                     <img src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                     <img src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
