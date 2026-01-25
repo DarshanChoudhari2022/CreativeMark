@@ -8,6 +8,12 @@ import poonawalaLogo from "@/assets/client_poonawala.png";
 import happinessLogo from "@/assets/client_happiness_forever.jpg";
 import silkRouteLogo from "@/assets/client_silk_route.jpg";
 import domLogo from "@/assets/client_dom.png";
+import dishaLogo from "@/assets/disha_astrology.png";
+import keyStylishLogo from "@/assets/key_stylish_interiors.png";
+import shwetaLogo from "@/assets/shwetas_nail_art.png";
+import galaxyLogo from "@/assets/galaxy_path_lab.png";
+import metacraftLogo from "@/assets/client_metacraft.jpg";
+import poonawalaNewLogo from "@/assets/poonawala_travels.png";
 
 const About = () => {
   const { t } = useLanguage();
@@ -159,12 +165,18 @@ const About = () => {
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {/* Double the logos for seamless loop */}
                 {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-16 items-center pr-16 bg-white py-4">
-                    <img src={modernChineseLogo} alt="Modern Chinese" className="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img src={poonawalaLogo} alt="Poonawala Travels" className="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img src={happinessLogo} alt="Happiness Forever" className="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img src={silkRouteLogo} alt="The Silk Route" className="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img src={domLogo} alt="DOM" className="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                  <div key={setIndex} className="flex gap-20 items-center pr-20 bg-white py-8">
+                    <img src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={poonawalaLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={domLogo} alt="DOM" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                   </div>
                 ))}
               </div>
