@@ -104,17 +104,7 @@ const Services = () => {
                           {section.introText}
                         </p>
 
-                        <div className="hidden lg:block">
-                          <Link
-                            to="/contact"
-                            className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest"
-                          >
-                            <span className="border-b border-black group-hover:border-accent transition-colors pb-1">
-                              {t('cta_section.btn_primary')}
-                            </span>
-                            <ArrowUpRight size={16} className="text-accent transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                          </Link>
-                        </div>
+
                       </div>
                     </div>
 
@@ -229,11 +219,7 @@ const Services = () => {
                         })}
                       </div>
 
-                      <div className="mt-12 lg:hidden">
-                        <Link to="/contact" className="btn-primary w-full justify-center">
-                          {t('cta_section.btn_primary')}
-                        </Link>
-                      </div>
+
                     </div>
 
                   </div>
