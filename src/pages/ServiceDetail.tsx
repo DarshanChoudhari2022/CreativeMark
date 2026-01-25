@@ -8,6 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import multimediaImg from "@/assets/service-multimedia.png";
 import digitalImg from "@/assets/service-digital-new.jpg";
 import brandingImg from "@/assets/service-branding.png";
+import advertisingImg from "@/assets/service-advertising-new.jpg";
 
 const ServiceDetail = () => {
     const { id } = useParams();
@@ -28,7 +29,7 @@ const ServiceDetail = () => {
     // Images mapping
     const images: Record<string, string> = {
         "digital": digitalImg,
-        "advertising": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=2000",
+        "advertising": advertisingImg,
         "branding": brandingImg,
         "multimedia": multimediaImg,
     };

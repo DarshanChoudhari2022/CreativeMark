@@ -7,10 +7,11 @@ import { useLanguage } from "@/context/LanguageContext";
 import multimediaImg from "@/assets/service-multimedia.png";
 import digitalImg from "@/assets/service-digital-new.jpg";
 import brandingImg from "@/assets/service-branding.png";
+import advertisingImg from "@/assets/service-advertising-new.jpg";
 
 const serviceImages: Record<string, string> = {
   digital: digitalImg,
-  advertising: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=1200",
+  advertising: advertisingImg,
   branding: brandingImg,
   multimedia: multimediaImg,
   printing: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200",
