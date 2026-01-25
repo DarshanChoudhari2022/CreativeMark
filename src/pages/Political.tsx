@@ -107,13 +107,13 @@ const Political = () => {
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
-                    <img src={bjpLogo} alt="BJP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={congressLogo} alt="Congress" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={shivSenaBowLogo} alt="Shiv Sena" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={ncpLogo} alt="NCP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={tutariLogo} alt="NCP SP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
-                    <img src={mnsLogo} alt="MNS" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={bjpLogo} alt="BJP" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={congressLogo} alt="Congress" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={shivSenaBowLogo} alt="Shiv Sena" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={ncpLogo} alt="NCP" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={tutariLogo} alt="NCP SP" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={mnsLogo} alt="MNS" className="h-16 w-16 md:h-24 md:w-24 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
                   </div>
                 ))}
               </div>
