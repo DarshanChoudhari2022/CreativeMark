@@ -32,7 +32,7 @@ export const translations = {
         },
         stats: {
             winRatio: "Win Ratio",
-            winRatioSub: "Across 50+ Campaigns",
+            winRatioSub: "Across 10+ Campaigns",
             campaigns: "Campaigns",
             campaignsSub: "Managed Successfully",
             warRoom: "War Room",
@@ -105,7 +105,11 @@ export const translations = {
                         { title: "Reels, Shorts & Social Media Videos", desc: "Content made for scroll-stopping impact.", details: ["Instagram reels & Facebook videos", "YouTube shorts & ads", "Trend-based video creation", "Vertical video optimization", "High-engagement storytelling"] },
                         { title: "Motion Graphics & Animation", desc: "Creative visuals that simplify complex ideas.", details: ["2D & 3D animations", "Explainer videos", "Logo animation & intros", "Infographics & animated ads", "Political & awareness animations"] },
                         { title: "Audio Production", desc: "Sound that strengthens your message.", details: ["Voice-over recording", "Jingles & audio ads", "Podcast production", "Radio commercials", "Background music & sound design"] },
-                        { title: "Photography & Visual Content", desc: "Professional imagery that builds credibility.", details: ["Product & brand photography", "Event & campaign photography", "Corporate & profile shoots", "Social media photoshoots", "Creative & lifestyle photography"] }
+                        { title: "Photography & Visual Content", desc: "Professional imagery that builds credibility.", details: ["Product & brand photography", "Event & campaign photography", "Corporate & profile shoots", "Social media photoshoots", "Creative & lifestyle photography"] },
+                        { title: "Instagram & Facebook Reels", desc: "Trend-driven content tailored for your brand.", details: ["Concept & Scripting", "Professional 4K Shooting", "Dynamic Editing & Transitions", "Trending Audio Selection", "Engagement Strategy"] },
+                        { title: "Product Highlights & Teasers", desc: "Showcase your products in action.", details: ["Cinematic Product Shots", "Feature Highlights", "Unboxing Style Videos", "Launch Teasers", "Call-to-Action Focus"] },
+                        { title: "Corporate & Event Shorts", desc: "Turn company moments into engaging stories.", details: ["Behind-the-Scenes (BTS)", "Event Recaps", "Team Introductions", "Office Culture Reels", "Client Testimonials"] },
+                        { title: "Personal Branding Reels", desc: "Build your personal brand authority.", details: ["Talking Head Videos", "Educational/Tips Reels", "Day in the Life", "Motivation & Storytelling", "Consistency Planning"] }
                     ]
                 },
 
@@ -127,9 +131,11 @@ export const translations = {
             tag: "Client Voices",
             title: "Trusted By Our Customers",
             items: [
-                { quote: "Creative Mark didn't just run ads; they built a movement. Our voter turnout increased by 15%.", author: "Rajesh S.", role: "MLA Candidate", type: "Political" },
-                { quote: "The rebrand transformed our perception. We moved from a local vendor to a national player in 6 months.", author: "Anjali K.", role: "CEO, TechFlow", type: "Corporate" },
-                { quote: "Their digital strategy is surgical. Every rupee spent brought measurable returns. Highly recommended.", author: "Vikram D.", role: "Director, SpiceRoute", type: "Advertising" }
+                { quote: "Creative Mark transformed our digital presence. Patients can now easily find and book appointments. The professional look has significantly built trust in our diagnostic services.", author: "Manager", role: "Galaxy Path Lab", type: "Healthcare" },
+                { quote: "Our interior projects needed a showcase that did justice to our designs. The new branding and portfolio presentation have attracted premium clients we only dreamed of before.", author: "Owner", role: "Key Stylish Interiors", type: "Interior Design" },
+                { quote: "In the travel business, visibility is everything. Their strategic advertising campaigns helped us book more rides and expand our fleet operations efficiently.", author: "Adil Poonawala", role: "Poonawala Travels", type: "Transportation" },
+                { quote: "They captured the elegance of my art perfectly. My nail art studio has seen a 40% increase in bookings since we launched the new social media campaign.", author: "Shweta", role: "Shweta's Nail Art", type: "Beauty" },
+                { quote: "Understanding the sensitive nature of astrology, they created a dignified and trustworthy image for my practice. It has helped me connect with people seeking genuine guidance.", author: "Monali Kapadiya", role: "Disha Astrology", type: "Astrology" }
             ]
         },
         cta_section: {
@@ -174,17 +180,33 @@ export const translations = {
             },
             features: {
                 digital: {
-                    title: "Digital Dominance",
-                    desc: "Targeted social media campaigns that control the narrative."
+                    title: "Social Media & Reels",
+                    desc: "Complete social media account handling and creative reel coverage."
                 },
                 ground: {
-                    title: "Ground Intelligence",
-                    desc: "Surveys and booth-level analytics to identify swing voters."
+                    title: "Ahwal (Work Reports)",
+                    desc: "Designing impactful posters and comprehensive 'Ahwal' booklets of previous work."
                 },
                 brand: {
-                    title: "Brand Building",
-                    desc: "Crafting a leader's image that exudes strength and empathy."
+                    title: "Future Development Plans",
+                    desc: "Strategic future booklets, schemes, and candidate development roadmaps."
                 }
+            },
+            success_story: {
+                tag: "Recent Victories",
+                title: "From Local Bodies to Parliament",
+                desc: "We have successfully managed war rooms for Nagarsevak (Municipal), Amdar (MLA), and Khasdar (MP) elections. Our strategic deployments have consistently delivered victories across Maharashtra.",
+                stat_main: "90%",
+                stat_desc: "Strike Rate",
+                details: [
+                    "Managed campaigns for MP & MLA elections",
+                    "Hyper-local booth management across districts",
+                    "Real-time opposition tracking & counter-strategy"
+                ]
+            },
+            clients: {
+                title: "Parties We Have Worked With",
+                list: ["BJP", "Indian National Congress", "Shiv Sena", "Shiv Sena (UBT)", "NCP", "NCP (SP)", "MNS"]
             },
             cta: {
                 title: "Launch Your War Room",
@@ -198,7 +220,7 @@ export const translations = {
             title_2: "Creativity",
             title_3: "Always.",
             desc: "Creative Mark is a premier digital agency that transforms brands through strategic innovation. We combine data-driven insights with world-class creativity to deliver growth. From startups to national leaders, we engineer success stories.",
-            stats_badges: ["50+ Campaigns", "85% Win Rate", "10+ Years Exp"],
+            stats_badges: ["10+ Campaigns", "85% Win Rate", "10+ Years Exp"],
             culture_badge: "AGENCY CULTURE",
             timeline: [
                 { year: "2015", title: "The Beginning", text: "Founded in Pune with a small team and a big vision to revolutionize political advertising. Revenue: ₹0" },
@@ -223,6 +245,17 @@ export const translations = {
             awards: {
                 title: "Industry Recognition",
                 items: ["Best Political Campaign 2022", "Top Digital Agency Pune", "Excellence in Brandy Identity", "Media Innovation Award"]
+            },
+            clients: {
+                tag: "Trusted Partnerships",
+                title: "Our Valued Customers",
+                list: [
+                    { name: "Galaxy Path Lab", category: "Healthcare" },
+                    { name: "Key Stylish Interiors", category: "Interior Design" },
+                    { name: "Poonawala Travels", category: "Transportation" },
+                    { name: "Shweta's Nail Art", category: "Beauty & Wellness" },
+                    { name: "Disha Astrology", category: "Astrology Services" }
+                ]
             }
         },
         contact: {
@@ -308,14 +341,14 @@ export const translations = {
             est: "स्थापना २०१५",
             agency: "एजन्सी",
             tagline: "VICTORY CREATIVELY MARKED",
-            title1: "तुमची प्रगती",
+            title1: "तुमची  प्रगती",
             title2: "आमची सर्जनशील शक्ती",
             subtitle: "आम्ही रणनीतीवर आधारित मोहिमा तयार करतो ज्या ब्रँड वर्चस्वापासून निवडणुकीतील विजयापर्यंत मोजण्यायोग्य परिणाम देतात.",
             cta_primary: "संपर्क साधा"
         },
         stats: {
-            winRatio: "विजय दर",
-            winRatioSub: "५०+ मोहिमांध्ये",
+            winRatio: "Vijay Dar",
+            winRatioSub: "१०+ मोहिमांध्ये",
             campaigns: "मोहिमा",
             campaignsSub: "यशस्वीरित्या व्यवस्थापित",
             warRoom: "वॉर रूम",
@@ -388,7 +421,11 @@ export const translations = {
                         { title: "रील्स, शॉर्ट्स आणि सोशल मीडिया व्हिडिओ", desc: "स्क्रोल-स्टॉपिंग इम्पॅक्टसाठी बनवलेला कंटेंट.", details: ["इन्स्टाग्राम रील्स आणि फेसबुक व्हिडिओ", "यूट्यूब शॉर्ट्स आणि जाहिराती", "ट्रेंड-आधारित व्हिडिओ निर्मिती", "व्हर्टिकल व्हिडिओ ऑप्टिमायझेशन", "हाय-एंगेजमेंट स्टोरीटेलिंग"] },
                         { title: "मोशन ग्राफिक्स आणि ॲनिमेशन", desc: "क्रिएटिव्ह व्हिज्युअल्स जे कल्पना सोप्या करतात.", details: ["2D आणि 3D ॲनिमेशन", "एक्सप्लेनर व्हिडिओ", "लोगो ॲनिमेशन आणि इंट्रो", "इन्फोग्राफिक्स आणि ॲनिमेटेड जाहिराती", "राजकीय आणि जागरूकता ॲनिमेशन"] },
                         { title: "ऑडिओ प्रॉडक्षन", desc: "आवाज जो तुमचा संदेश मजबूत करतो.", details: ["व्हॉइस-ओव्हर रेकॉर्डिंग", "जिंगल्स आणि ऑडिओ जाहिराती", "पॉडकास्ट निर्मिती", "रेडिओ कमर्शियल", "बॅकग्राउंड म्युझिक आणि साऊंड डिझाइन"] },
-                        { title: "फोटोग्राफी आणि व्हिज्युअल कंटेंट", desc: "व्यावसायिक प्रतिमा ज्या विश्वासार्हता वाढवतात.", details: ["प्रॉडक्ट आणि ब्रँड फोटोग्राफी", "इव्हेंट आणि मोहीम फोटोग्राफी", "कॉर्पोरेट आणि प्रोफाइल शूट्स", "सोशल मीडिया फोटोशूट्स", "क्रिएटिव्ह आणि लाइफस्टाईल फोटोग्राफी"] }
+                        { title: "फोटोग्राफी आणि व्हिज्युअल कंटेंट", desc: "व्यावसायिक प्रतिमा ज्या विश्वासार्हता वाढवतात.", details: ["प्रॉडक्ट आणि ब्रँड फोटोग्राफी", "इव्हेंट आणि मोहीम फोटोग्राफी", "कॉर्पोरेट आणि प्रोफाइल शूट्स", "सोशल मीडिया फोटोशूट्स", "क्रिएटिव्ह आणि लाइफस्टाईल फोटोग्राफी"] },
+                        { title: "इन्स्टाग्राम आणि फेसबुक रील्स", desc: "तुमच्या ब्रँडसाठी ट्रेंड-आधारित कंटेंट.", details: ["संकल्पना आणि स्क्रिप्टिंग", "प्रोफेशनल 4K शूटिंग", "डायनॅमिक एडिटिंग आणि ट्रान्झिशन", "ट्रेंडिंग ऑडिओ निवड", "एंगेजमेंट रणनीती"] },
+                        { title: "प्रॉडक्ट हायलाइट्स आणि टीझर्स", desc: "तुमची उत्पादने कृतीत दर्शवा.", details: ["सिनेमॅटिक प्रॉडक्ट शॉट्स", "वैशिष्ट्ये हायलाइट्स", "अनबॉक्सिंग स्टाईल व्हिडीओ", "लॉन्च टीझर्स", "कॉल-टू-ॲक्शन फोकस"] },
+                        { title: "कॉर्पोरेट आणि इव्हेंट शॉर्ट्स", desc: "कंपनीचे क्षण कथांमध्ये बदला.", details: ["बिहाइंड-द-सीन (BTS)", "इव्हेंट रिकॅप्स", "टीम परिचय", "ऑफिस कल्चर रील्स", "ग्राहक प्रतिक्रिया"] },
+                        { title: "पर्सनल ब्रँडिंग रील्स", desc: "तुमची वैयक्तिक ब्रँड ऑथॉरिटी तयार करा.", details: ["टॉकिंग हेड व्हिडीओ", "शैक्षणिक/टिप्स रील्स", "दैनंदिन जीवन", "प्रेरणा आणि कथा", "सातत्य नियोजन"] }
                     ]
                 },
 
@@ -410,9 +447,11 @@ export const translations = {
             tag: "ग्राहकांचे अनुभव",
             title: "आमच्या ग्राहकांचा विश्वास",
             items: [
-                { quote: "क्रिएटिव्ह मार्कने फक्त जाहिराती चालवल्या नाहीत; त्यांनी एक चळवळ उभी केली. आमची मतदान टक्केवारी १५% ने वाढली.", author: "राजेश एस.", role: "आमदार उमेदवार", type: "राजकीय" },
-                { quote: "रिब्रँडिंगने आमची समज बदलली. आम्ही ६ महिन्यांत स्थानिक विक्रेत्याकडून राष्ट्रीय खेळाडू बनलो.", author: "अंजली के.", role: "सीईओ, टेकफ्लो", type: "कॉर्पोरेट" },
-                { quote: "त्यांची डिजिटल रणनीती अचूक आहे. खर्च केलेल्या प्रत्येक रुपयाने मोजण्यायोग्य परतावा दिला. नक्कीच शिफारस केली जाते.", author: "विक्रम डी.", role: "संचालक, स्पाइस रूट", type: "जाहिरात" }
+                { quote: "क्रिएटिव्ह मार्कने आमची डिजिटल ओळख बदलली. रुग्ण आता सहजपणे अपॉइंटमेंट बुक करू शकतात. प्रोफेशनल लूकमुळे आमच्या डायग्नोस्टिक सेवांवरील विश्वास वाढला आहे.", author: "मॅनेजर", role: "गॅलेक्सी पाथ लॅब", type: "आरोग्यसेवा" },
+                { quote: "आमच्या इंटिरियर प्रोजेक्ट्सना आमच्या डिझाईन्सला न्याय देणाऱ्या शोकेसची गरज होती. नवीन ब्रँडिंग आणि पोर्टफोलिओ सादरीकरणामुळे आम्हाला प्रीमियम क्लायंट्स मिळाले आहेत.", author: "मालक", role: "की स्टायलिश इंटिरियर्स", type: "इंटिरियर डिझाइन" },
+                { quote: "ट्रॅव्हल्स व्यवसायात, व्हिजिबिलिटी सर्वकाही आहे. त्यांच्या धोरणात्मक जाहिरात मोहिमांमुळे आम्हाला अधिक बुकिंग मिळवण्यात आणि आमचा फ्लीट वाढवण्यात मदत झाली.", author: "आदिल पुनावाला", role: "पुनावाला ट्रॅव्हल्स", type: "वाहतूक" },
+                { quote: "त्यांनी माझ्या कलेचा अभिजातपणा उत्तम प्रकारे टिपला. नवीन सोशल मीडिया मोहीम सुरू केल्यापासून माझ्या नेल आर्ट स्टुडिओच्या बुकिंगमध्ये ४०% वाढ झाली आहे.", author: "श्वेता", role: "श्वेता नेल आर्ट", type: "सौंदर्य" },
+                { quote: "ज्योतिषशास्त्राचे संवेदनशील स्वरूप समजून घेऊन, त्यांनी माझ्या प्रॅक्टिससाठी एक प्रतिष्ठित आणि विश्वासार्ह प्रतिमा तयार केली. यामुळे मला गरजू लोकांशी जोडले जाण्यास मदत झाली.", author: "मोनाली कपाडिया", role: "दिशा ॲस्ट्रोलॉजी", type: "ज्योतिष" }
             ]
         },
         cta_section: {
@@ -457,17 +496,33 @@ export const translations = {
             },
             features: {
                 digital: {
-                    title: "डिजिटल वर्चस्व",
-                    desc: "लक्ष्यित सोशल मीडिया मोहिमा ज्या कथानकावर नियंत्रण ठेवतात."
+                    title: "सोशल मीडिया आणि रील",
+                    desc: "संपूर्ण सोशल मीडिया खाते हाताळणी आणि प्रभावी रील कव्हरेज."
                 },
                 ground: {
-                    title: "ग्राउंड इंटेलिजन्स",
-                    desc: "स्विंग व्होटर्स ओळखण्यासाठी सर्वेक्षण आणि बूथ-स्तरीय विश्लेषण."
+                    title: "अहवाल आणि पोस्टर्स",
+                    desc: "मागील कामांचे पोस्टर्स आणि सर्वसमावेशक 'अहवाल' पुस्तिकेचे डिझाइन."
                 },
                 brand: {
-                    title: "ब्रँड बिल्डिंग",
-                    desc: "नेत्याची प्रतिमा तयार करणे जी सामर्थ्य आणि सहानुभूती दर्शवते."
+                    title: "भावी विकास आराखडा",
+                    desc: "भावी विकासाची पुस्तिका (Future Booklet) आणि विविध योजनांचा आराखडा."
                 }
+            },
+            success_story: {
+                tag: "अलीकडील विजय",
+                title: "स्थानिक स्वराज्य संस्था ते संसद",
+                desc: "आम्ही नगरसेवक, आमदार आणि खासदार निवडणुकीसाठी वॉर रूम्स यशस्वीरित्या व्यवस्थापित केल्या आहेत. आमच्या धोरणात्मक नियोजनाने महाराष्ट्रभर सातत्याने विजय मिळवून दिला आहे.",
+                stat_main: "९०%",
+                stat_desc: "स्ट्राईक रेट",
+                details: [
+                    "खासदार आणि आमदार निवडणुकीसाठी मोहिमा",
+                    "जिल्ह्यांमध्ये हायपर-लोकल बूथ व्यवस्थापन",
+                    "विरोधकांचे रिअल-टाइम ट्रॅकिंग आणि रणनीती"
+                ]
+            },
+            clients: {
+                title: "आम्ही ज्या पक्षांसोबत काम केले आहे",
+                list: ["भाजप", "भारतीय राष्ट्रीय काँग्रेस", "शिवसेना", "शिवसेना (उबाठा)", "राष्ट्रवादी", "राष्ट्रवादी (शरद पवार गट)", "मनसे"]
             },
             cta: {
                 title: "तुमची वॉर रूम लाँच करा",
@@ -481,7 +536,7 @@ export const translations = {
             title_2: "सर्जनशीलता",
             title_3: "नेहमी.",
             desc: "क्रिएटिव्ह मार्क ही एक प्रमुख डिजिटल एजन्सी आहे जी धोरणात्मक नवकल्पनाद्वारे ब्रँड्सचे रूपांतर करते. आम्ही जागतिक दर्जाच्या सर्जनशीलतेसह डेटा-आधारित अंतर्दृष्टी एकत्र करतो. स्टार्टअप्सपासून राष्ट्रीय नेत्यांपर्यंत, आम्ही यशाच्या कथा तयार करतो.",
-            stats_badges: ["५०+ मोहिमा", "८५% विजय दर", "१०+ वर्षे अनुभव"],
+            stats_badges: ["१०+ मोहिमा", "८५% विजय दर", "१०+ वर्षे अनुभव"],
             culture_badge: "एजन्सी संस्कृती",
             timeline: [
                 { year: "२०१५", title: "सुरुवात", text: "पुण्यात एका छोट्या टीमसह आणि राजकीय जाहिरातीत क्रांती घडवण्याच्या मोठ्या दृष्टीकोनासह स्थापना. महसूल: ₹०" },
@@ -506,6 +561,17 @@ export const translations = {
             awards: {
                 title: "उद्योग मान्यता",
                 items: ["सर्वोत्कृष्ट राजकीय मोहीम २०२२", "टॉप डिजिटल एजन्सी पुणे", "ब्रँड ओळखीत उत्कृष्टता", "मीडिया इनोव्हेशन अवॉर्ड"]
+            },
+            clients: {
+                tag: "विश्वासार्ह भागीदारी",
+                title: "आमचे मौल्यवान ग्राहक",
+                list: [
+                    { name: "गॅलेक्सी पाथ लॅब", category: "आरोग्यसेवा" },
+                    { name: "की स्टायलिश इंटिरियर्स", category: "इंटिरियर डिझाइन" },
+                    { name: "पुनावाला ट्रॅव्हल्स", category: "वाहतूक" },
+                    { name: "श्वेता नेल आर्ट", category: "सौंदर्य" },
+                    { name: "दिशा ॲस्ट्रोलॉजी", category: "ज्योतिष सेवा" }
+                ]
             }
         },
         contact: {

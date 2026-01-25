@@ -107,17 +107,17 @@ const ServiceDetail = () => {
                         </p>
                     </div>
 
-                    {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
+                    {/* Mobile: Horizontal scroll for sub-services */}
                     <div className="md:hidden">
-                        <div className="flex flex-col gap-6">
+                        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
                             {service.sub_services?.map((sub: any, index: number) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="w-full bg-white p-6 rounded-xl border border-border shadow-lg"
+                                    className="min-w-[85vw] snap-center bg-white p-6 rounded-xl border border-border shadow-lg flex-shrink-0"
                                 >
                                     <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">
                                         {index + 1}
@@ -139,6 +139,9 @@ const ServiceDetail = () => {
                                     </ul>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="flex justify-center mt-2">
+                            <span className="text-xs text-muted-foreground font-medium">← Swipe to explore →</span>
                         </div>
                     </div>
 

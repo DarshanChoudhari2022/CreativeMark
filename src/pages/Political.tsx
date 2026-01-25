@@ -1,9 +1,16 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Shield, Target, Users, Zap, CheckCircle2 } from "lucide-react";
+import { Shield, Target, Users, Zap, CheckCircle2, Video, FileText, LayoutDashboard } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import bjpLogo from "@/assets/real_bjp.jpg";
+import congressLogo from "@/assets/real_congress.jpg";
+import shivSenaLogo from "@/assets/real_shivsena.jpg";
+import shivSenaBowLogo from "@/assets/real_shivsena_bow.jpg";
+import ncpLogo from "@/assets/real_ncp.jpg";
+import tutariLogo from "@/assets/real_tutari.jpg";
+import mnsLogo from "@/assets/real_mns.jpg";
 
 const Political = () => {
   const { t } = useLanguage();
@@ -37,6 +44,80 @@ const Political = () => {
             >
               {t('political_page.desc')}
             </motion.p>
+          </div>
+
+          {/* Success Story Section (New) */}
+          <div className="mb-40 grid lg:grid-cols-2 gap-16 items-center bg-secondary/30 p-8 md:p-16 rounded-3xl border border-border">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">
+                {t('political_page.success_story.tag')}
+              </span>
+              <h2 className="heading-lg mb-6">
+                {t('political_page.success_story.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                {t('political_page.success_story.desc')}
+              </p>
+              <ul className="space-y-4 mb-8">
+                {t('political_page.success_story.details').map((item: string, i: number) => (
+                  <li key={i} className="flex items-center gap-3 font-medium">
+                    <CheckCircle2 size={20} className="text-accent flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-accent text-white p-12 rounded-3xl text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+              <div className="relative z-10">
+                <span className="block text-8xl font-black mb-2 tracking-tighter">
+                  {t('political_page.success_story.stat_main')}
+                </span>
+                <span className="text-xl font-bold uppercase tracking-widest opacity-90 block">
+                  {t('political_page.success_story.stat_desc')}
+                </span>
+                <div className="mt-8 pt-8 border-t border-white/20">
+                  <p className="text-sm font-medium opacity-80">
+                    Creative Mark War Room Effect
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Political Clients Marquee (New) */}
+          <div className="mb-40 overflow-hidden">
+            <div className="text-center mb-12">
+              <span className="text-accent font-bold tracking-widest uppercase text-sm block">
+                {t('political_page.clients.title')}
+              </span>
+            </div>
+
+            <div className="relative w-full mask-gradient-x bg-white py-4">
+              <div className="flex items-center animate-scroll whitespace-nowrap w-max">
+                {[...Array(2)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
+                    <img src={bjpLogo} alt="BJP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={congressLogo} alt="Congress" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={shivSenaBowLogo} alt="Shiv Sena" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={ncpLogo} alt="NCP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={tutariLogo} alt="NCP SP" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                    <img src={mnsLogo} alt="MNS" className="h-16 md:h-24 w-auto object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.05]" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* War Room Section */}
@@ -81,10 +162,8 @@ const Political = () => {
 
             <div className="grid grid-cols-2 gap-8">
               {[
-                { val: "50+", lab: t('political_page.stats.campaigns') },
-                { val: "85%", lab: t('political_page.stats.victory') },
-                { val: "10+", lab: t('political_page.stats.states') },
-                { val: "1M+", lab: t('political_page.stats.support') }
+                { val: "10+", lab: t('political_page.stats.campaigns') },
+                { val: "85%", lab: t('political_page.stats.victory') }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
@@ -101,12 +180,17 @@ const Political = () => {
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-12 mb-40">
+          {/* Offerings Section */}
+          <div className="mb-12">
+            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('political_page.tag')}</span>
+            <h2 className="heading-lg">End-to-End Campaign Offerings</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-40">
             {[
-              { icon: Zap, title: t('political_page.features.digital.title'), desc: t('political_page.features.digital.desc') },
-              { icon: Target, title: t('political_page.features.ground.title'), desc: t('political_page.features.ground.desc') },
-              { icon: Shield, title: t('political_page.features.brand.title'), desc: t('political_page.features.brand.desc') }
+              { icon: Video, title: t('political_page.features.digital.title'), desc: t('political_page.features.digital.desc') },
+              { icon: FileText, title: t('political_page.features.ground.title'), desc: t('political_page.features.ground.desc') },
+              { icon: LayoutDashboard, title: t('political_page.features.brand.title'), desc: t('political_page.features.brand.desc') }
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -114,10 +198,10 @@ const Political = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group"
+                className="group p-8 rounded-3xl bg-white border border-border shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                  <feature.icon size={32} />
+                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <feature.icon size={28} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
@@ -145,5 +229,7 @@ const Political = () => {
     </Layout>
   );
 };
+
+
 
 export default Political;

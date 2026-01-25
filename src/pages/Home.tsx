@@ -78,18 +78,7 @@ const Home = () => {
       {/* 2. HERO SECTION */}
       <section ref={targetRef} className="relative min-h-screen flex flex-col bg-background pt-36 md:pt-44 lg:pt-48 pb-12 overflow-hidden">
 
-        {/* Background 'Real' Image Overlay with Parallax */}
-        <motion.div
-          style={{ y: yHero }}
-          className="absolute inset-x-0 top-0 h-[100%] w-full pointer-events-none opacity-[0.07] z-0"
-        >
-          <img
-            src={language === 'en' ? heroEnglish : heroMarathi}
-            className="w-full h-full object-cover grayscale brightness-50"
-            alt="Agency Background"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background" />
-        </motion.div>
+
 
         <div className="container-wide relative z-10">
           <motion.div
@@ -119,13 +108,13 @@ const Home = () => {
             <div className="mb-8 md:mb-12 w-full relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[150%] bg-gradient-to-r from-accent/5 via-transparent to-accent/5 blur-3xl rounded-full -z-10" />
 
-              <h1 className="heading-xl flex flex-col items-center w-full uppercase tracking-tighter mix-blend-multiply dark:mix-blend-normal">
+              <h1 className={`heading-xl flex flex-col items-center w-full mix-blend-multiply dark:mix-blend-normal ${language === 'en' ? 'uppercase tracking-tighter' : ''}`}>
                 <div className="overflow-hidden">
                   <motion.span
                     initial={{ y: "110%", rotate: 2 }}
                     animate={{ y: "0%", rotate: 0 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-                    className="block origin-bottom-left py-1"
+                    className={`block origin-bottom-left ${language === 'mr' ? 'py-1 leading-tight' : 'py-1'}`}
                   >
                     {t('hero.title1')}
                   </motion.span>
@@ -135,7 +124,7 @@ const Home = () => {
                     initial={{ y: "110%", rotate: -2 }}
                     animate={{ y: "0%", rotate: 0 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-                    className="block origin-bottom-right drop-shadow-xl py-1"
+                    className={`block origin-bottom-right drop-shadow-xl ${language === 'mr' ? 'py-1 leading-tight' : 'py-1'}`}
                   >
                     {t('hero.title2')}
                   </motion.span>
@@ -187,17 +176,16 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-8 md:mt-12 pt-8 border-t border-border/60 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center max-w-5xl mx-auto px-4"
+            className="mt-8 md:mt-12 pt-8 border-t border-border/60 grid grid-cols-3 gap-4 md:gap-8 text-center max-w-5xl mx-auto px-2 md:px-4"
           >
             {[
               { val: "85%", lab: t('stats.winRatio'), sub: t('stats.winRatioSub') },
-              { val: "50+", lab: t('stats.campaigns'), sub: t('stats.campaignsSub') },
-              { val: "24/7", lab: t('stats.warRoom'), sub: t('stats.warRoomSub') },
-              { val: "10+", lab: t('stats.states'), sub: t('stats.statesSub') }
+              { val: "10+", lab: t('stats.campaigns'), sub: t('stats.campaignsSub') },
+              { val: "24/7", lab: t('stats.warRoom'), sub: t('stats.warRoomSub') }
             ].map((stat, i) => (
               <div key={i} className="group cursor-default py-4">
                 <span className="block text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-3 tracking-tight group-hover:scale-110 transition-transform duration-300 ease-out">{stat.val}</span>
-                <span className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest block mb-1">{stat.lab}</span>
+                <span className={`text-xs md:text-sm font-bold text-muted-foreground block mb-1 ${language === 'en' ? 'uppercase tracking-widest' : ''}`}>{stat.lab}</span>
                 <span className="text-[10px] md:text-xs text-muted-foreground/60 block">{stat.sub}</span>
               </div>
             ))}
@@ -230,8 +218,8 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
-          <div className="flex flex-col gap-6 md:hidden">
+          {/* Mobile: Vertical Stack, Tablet: 2 Columns, Desktop: 4 Columns */}
+          <div className="md:hidden flex flex-col gap-6">
             {[
               { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
               { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
@@ -244,20 +232,20 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="card-minimal group h-full flex flex-col justify-between bg-white p-6 rounded-2xl shadow-lg border border-border/50 relative overflow-hidden"
+                  className="card-minimal group flex flex-col justify-between bg-white p-6 rounded-2xl shadow-lg border border-border/50 relative overflow-hidden"
                 >
-                  <span className="absolute -top-4 -right-2 text-7xl font-black text-black/[0.03] pointer-events-none">
+                  <span className="absolute -top-4 -right-2 text-6xl font-black text-black/[0.03] pointer-events-none">
                     0{i + 1}
                   </span>
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-500">
                       <service.icon size={24} strokeWidth={1.5} />
                     </div>
                     <span className="inline-block px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-bold uppercase tracking-widest rounded-full mb-3">
                       {service.tag}
                     </span>
                     <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm font-medium line-clamp-3">{service.desc}</p>
+                    <p className="text-muted-foreground leading-relaxed text-sm font-medium">{service.desc}</p>
                   </div>
                   <div className="mt-5 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-4">
                     <span className="text-foreground/70 uppercase tracking-widest text-[10px]">{t('services.explore')}</span>
@@ -317,7 +305,7 @@ const Home = () => {
 
       {/* 4. PRODUCTS SECTION - "MAGIC QR" */}
       <section id="products" className="py-16 md:py-24 lg:py-40 bg-white overflow-hidden">
-        <div className="container-wide">
+        <div className="container-wide px-4 md:px-12">
           {/* Mobile: Stack vertically, show image first */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
 
@@ -327,7 +315,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="order-2 lg:order-2"
+              className="order-2 lg:order-2 w-full"
             >
               <span className="text-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block">
                 {t('products.tag')}
@@ -343,24 +331,27 @@ const Home = () => {
               <div className="mb-8 md:mb-12">
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-4 md:mb-6">{t('products.how_it_works.title')}</h3>
 
-                {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
+                {/* Mobile: Horizontal Scroll */}
                 <div className="lg:hidden">
-                  <div className="flex flex-col gap-4">
+                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-3 snap-x snap-mandatory scrollbar-hide">
                     {[
                       { step: "01", ...t('products.how_it_works.step1') },
                       { step: "02", ...t('products.how_it_works.step2') },
                       { step: "03", ...t('products.how_it_works.step3') }
                     ].map((s, idx) => (
-                      <div key={idx} className="w-full bg-secondary/50 p-4 rounded-xl border border-border/30">
+                      <div key={idx} className="min-w-[70vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-4 rounded-xl border border-border/30">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
                             <span className="text-accent font-bold text-xs">{s.step}</span>
                           </div>
                           <h4 className="font-bold text-sm text-foreground">{s.title}</h4>
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed pl-10">{s.desc}</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
                       </div>
                     ))}
+                  </div>
+                  <div className="flex justify-center mt-2">
+                    <span className="text-[10px] text-muted-foreground font-medium">← Swipe →</span>
                   </div>
                 </div>
 
@@ -402,13 +393,13 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative order-1 lg:order-1 w-full"
+              className="relative order-1 lg:order-1 w-full max-w-sm lg:max-w-none mx-auto"
             >
-              <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6 max-w-md mx-auto lg:max-w-none">
+              <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6">
                 <img
                   src={magicQrProduct}
                   alt="Magic QR Standee for Google Reviews"
-                  className="w-full h-auto rounded-xl object-cover"
+                  className="w-full h-auto rounded-xl object-contain"
                 />
               </div>
 
@@ -423,36 +414,41 @@ const Home = () => {
 
 
       {/* NEW TESTIMONIALS SECTION */}
-      <section className="py-32 bg-secondary border-t border-border">
+      <section className="py-24 bg-secondary border-t border-border overflow-hidden">
         <div className="container-wide">
-          <div className="mb-16 max-w-2xl">
-            <span className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>
+          <div className="text-center mb-16">
+            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
-          <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
-            {t('testimonials.items').map((item: any, i: number) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:shadow-xl transition-all w-full"
-              >
-                <div className="text-accent text-5xl md:text-6xl font-serif leading-none mb-4 md:mb-6 opacity-30">"</div>
-                <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-foreground/90">{item.quote}</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-foreground text-sm md:text-base">
-                    {item.author.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-base md:text-lg">{item.author}</h4>
-                    <span className="text-xs md:text-sm text-muted-foreground block">{item.role}</span>
-                  </div>
-                  <span className="ml-auto text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground">{item.type}</span>
+
+          <div className="relative w-full mask-gradient-x">
+            <div className="flex gap-6 items-center animate-scroll-reverse whitespace-normal w-max">
+              {[...Array(2)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-6">
+                  {t('testimonials.items').map((item: any, i: number) => (
+                    <div
+                      key={i}
+                      className="bg-white p-6 rounded-2xl relative w-[300px] md:w-[350px] flex-shrink-0 border border-gray-100 shadow-sm"
+                    >
+                      <div className="text-3xl text-accent mb-4">"</div>
+                      <p className="text-sm text-foreground/80 mb-6 italic leading-relaxed line-clamp-4">
+                        {item.quote}
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-sm">
+                          {item.author.charAt(0)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-bold text-sm leading-tight truncate">{item.author}</h4>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                        </div>
+                        <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground whitespace-nowrap">{item.type}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

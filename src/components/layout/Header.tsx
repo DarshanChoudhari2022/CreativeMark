@@ -164,15 +164,14 @@ const Header = () => {
                       <a
                         href={link.href}
                         onClick={(e) => handleExternalRedirect(e, link.href)}
-                        className="block text-4xl font-black tracking-tighter text-black"
+                        className={`block text-2xl md:text-3xl font-bold text-black ${language === 'en' ? 'tracking-[0.2em] uppercase' : ''}`}
                       >
                         {t(`header.${link.key}`)}
                       </a>
                     ) : (
                       <Link
                         to={link.href}
-                        className={`block text-4xl font-black tracking-tighter ${location.pathname === link.href ? "text-accent" : "text-black"
-                          }`}
+                        className={`block text-2xl md:text-3xl font-bold ${location.pathname === link.href ? "text-accent" : "text-black"} ${language === 'en' ? 'tracking-[0.2em] uppercase' : ''}`}
                       >
                         {t(`header.${link.key}`)}
                       </Link>
@@ -185,7 +184,7 @@ const Header = () => {
                   transition={{ delay: navLinks.length * 0.08 }}
                   className="w-full max-w-xs mt-12"
                 >
-                  <Link to="/contact" className="btn-primary w-full py-5 text-xl">
+                  <Link to="/contact" className="btn-primary w-full py-4 text-sm font-bold tracking-widest uppercase">
                     {t('header.contact')}
                   </Link>
                 </motion.div>

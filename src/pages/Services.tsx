@@ -123,39 +123,59 @@ const Services = () => {
                         {section.introTitle}
                       </h3>
 
-                      {/* Mobile: Vertical Stack (Modified from Horizontal Scroll) */}
-                      <div className="lg:hidden">
-                        <div className="flex flex-col gap-6">
-                          {section.items.map((item: any, itemIndex: number) => (
+                      {/* Mobile: Expandable Vertical Stack */}
+                      <div className="lg:hidden flex flex-col gap-4">
+                        {section.items.map((item: any, itemIndex: number) => {
+                          const id = `${section.id}-${itemIndex}`;
+                          const isOpen = activeAccordion === id;
+
+                          return (
                             <motion.div
                               key={itemIndex}
                               initial={{ opacity: 0, y: 20 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: itemIndex * 0.1 }}
-                              className="w-full bg-white rounded-2xl p-6 shadow-lg border border-border/50"
+                              className={`bg-white rounded-2xl transition-all duration-300 border ${isOpen ? 'border-accent shadow-lg' : 'border-border/50 shadow-sm'}`}
                             >
-                              <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                                  <span className="text-accent font-bold text-sm">0{itemIndex + 1}</span>
-                                </div>
-                                <h4 className="text-lg font-bold text-foreground">{item.title}</h4>
-                              </div>
-                              <p className="text-muted-foreground mb-5 text-sm leading-relaxed">{item.desc}</p>
-                              <div className="space-y-2">
-                                {item.details.slice(0, 4).map((detail: string, dIndex: number) => (
-                                  <div key={dIndex} className="flex items-center gap-2 text-xs font-medium text-foreground/70">
-                                    <Disc size={8} className="text-accent flex-shrink-0" />
-                                    <span className="truncate">{detail}</span>
+                              <button
+                                onClick={() => toggleAccordion(id)}
+                                className="w-full text-left p-5 flex justify-between items-center"
+                              >
+                                <div className="flex items-center gap-3">
+                                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${isOpen ? 'bg-accent text-white' : 'bg-secondary text-accent'}`}>
+                                    <span className="font-bold text-xs">0{itemIndex + 1}</span>
                                   </div>
-                                ))}
-                                {item.details.length > 4 && (
-                                  <span className="text-xs text-accent font-medium">+{item.details.length - 4} more</span>
+                                  <h4 className={`font-bold transition-colors ${isOpen ? 'text-accent' : 'text-foreground'}`}>{item.title}</h4>
+                                </div>
+                                <ArrowDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-accent' : 'text-muted-foreground'}`} />
+                              </button>
+
+                              <AnimatePresence>
+                                {isOpen && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="overflow-hidden"
+                                  >
+                                    <div className="px-5 pb-6">
+                                      <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{item.desc}</p>
+                                      <div className="grid grid-cols-1 gap-3 pt-2">
+                                        {item.details.map((detail: string, dIndex: number) => (
+                                          <div key={dIndex} className="flex items-start gap-3 text-xs font-medium text-foreground/80">
+                                            <Disc size={12} className="text-accent mt-0.5 flex-shrink-0" />
+                                            <span>{detail}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  </motion.div>
                                 )}
-                              </div>
+                              </AnimatePresence>
                             </motion.div>
-                          ))}
-                        </div>
+                          );
+                        })}
                       </div>
 
                       {/* Desktop: Accordion Style */}

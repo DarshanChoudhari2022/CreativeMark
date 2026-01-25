@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 import FloatingLanguageToggle from "../ui/FloatingLanguageToggle";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ const pageVariants = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const { language } = useLanguage();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -24,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className={`flex flex-col min-h-screen lang-${language}`}>
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-[100]"
         style={{ scaleX }}
