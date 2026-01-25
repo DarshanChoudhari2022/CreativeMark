@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import bjpLogo from "@/assets/real_bjp.jpg";
-import congressLogo from "@/assets/real_congress_new.png";
+import congressLogo from "@/assets/real_congress_final.png";
 import shivSenaLogo from "@/assets/real_shivsena.jpg";
 import shivSenaBowLogo from "@/assets/real_shivsena_bow.jpg";
 import ncpLogo from "@/assets/real_ncp.jpg";
@@ -108,7 +108,7 @@ const Political = () => {
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
                     <img src={bjpLogo} alt="BJP" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img src={congressLogo} alt="Congress" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1] scale-[1.8]" />
+                    <img src={congressLogo} alt="Congress" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
                     <img src={shivSenaBowLogo} alt="Shiv Sena" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
                     <img src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
                     <img src={ncpLogo} alt="NCP" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
