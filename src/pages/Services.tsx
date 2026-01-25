@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUpRight, Check, Disc, Circle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
 import multimediaImg from "@/assets/service-multimedia.png";
-import digitalImg from "@/assets/service-digital.png";
+import digitalImg from "@/assets/service-digital-new.jpg";
 import brandingImg from "@/assets/service-branding.png";
 
 const serviceImages: Record<string, string> = {
