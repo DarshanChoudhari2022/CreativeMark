@@ -166,16 +166,16 @@ const About = () => {
                 {/* Double the logos for seamless loop */}
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-12 md:gap-20 items-center pr-12 md:pr-20 bg-white py-8">
-                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={domLogo} alt="DOM Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={domLogo} alt="DOM Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                   </div>
                 ))}
               </div>

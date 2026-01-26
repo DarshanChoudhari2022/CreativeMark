@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Shield, Target, Users, Zap, CheckCircle2, Video, FileText, LayoutDashboard } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
@@ -107,13 +107,13 @@ const Political = () => {
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
-                    <img loading="lazy" src={bjpLogo} alt="BJP" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={congressLogo} alt="Congress" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={shivSenaBowLogo} alt="Shiv Sena" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={ncpLogo} alt="NCP" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={tutariLogo} alt="NCP SP" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={mnsLogo} alt="MNS" className="h-24 w-24 md:h-40 md:w-40 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={bjpLogo} alt="BJP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={congressLogo} alt="Congress" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={shivSenaBowLogo} alt="Shiv Sena" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={ncpLogo} alt="NCP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={tutariLogo} alt="NCP SP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={mnsLogo} alt="MNS" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
                   </div>
                 ))}
               </div>
@@ -178,35 +178,6 @@ const Political = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-
-          {/* Offerings Section */}
-          <div className="mb-12">
-            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('political_page.tag')}</span>
-            <h2 className="heading-lg">End-to-End Campaign Offerings</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-40">
-            {[
-              { icon: Video, title: t('political_page.features.digital.title'), desc: t('political_page.features.digital.desc') },
-              { icon: FileText, title: t('political_page.features.ground.title'), desc: t('political_page.features.ground.desc') },
-              { icon: LayoutDashboard, title: t('political_page.features.brand.title'), desc: t('political_page.features.brand.desc') }
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group p-8 rounded-3xl bg-white border border-border shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                  <feature.icon size={28} />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
           </div>
 
           {/* Final CTA */}
