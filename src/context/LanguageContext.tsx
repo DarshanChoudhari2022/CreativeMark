@@ -12,10 +12,20 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const [language, setLanguage] = useState<Language>("en");
+    const [language, setLanguageState] = useState<Language>(() => {
+        const saved = localStorage.getItem("preferredLanguage");
+        return (saved === "en" || saved === "mr") ? saved : "en";
+    });
+
+    const setLanguage = (lang: Language) => {
+        setLanguageState(lang);
+        localStorage.setItem("preferredLanguage", lang);
+    };
 
     useEffect(() => {
         document.documentElement.lang = language;
+        // Apply a class to body for global CSS targeting
+        document.body.className = `lang-${language}`;
     }, [language]);
 
     // Helper function to get nested object values

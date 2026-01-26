@@ -165,17 +165,17 @@ const About = () => {
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {/* Double the logos for seamless loop */}
                 {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-20 items-center pr-20 bg-white py-8">
-                    <img src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={domLogo} alt="DOM" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                    <img src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                  <div key={setIndex} className="flex gap-12 md:gap-20 items-center pr-12 md:pr-20 bg-white py-8">
+                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={domLogo} alt="DOM Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises Logo - Creative Mark Client" className="h-20 md:h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                   </div>
                 ))}
               </div>
@@ -191,31 +191,88 @@ const About = () => {
 
             {/* Reverse Scroll for visual variety */}
             <div className="relative w-full mask-gradient-x">
-              <div className="flex gap-6 items-center animate-scroll-reverse whitespace-normal w-max">
-                {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-6">
+              {/* Mobile Testimonials Carousel */}
+              <div className="md:hidden">
+                <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+                  {t('testimonials.items').map((item: any, i: number) => (
+                    <div
+                      key={i}
+                      className="bg-white p-6 rounded-2xl relative w-[85vw] snap-center flex-shrink-0 border border-gray-100 shadow-lg"
+                    >
+                      <div className="text-3xl text-accent mb-4">"</div>
+                      <p className="text-sm text-foreground/80 mb-6 italic leading-relaxed">
+                        {item.quote}
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-sm">
+                          {item.author.charAt(0)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-bold text-sm leading-tight truncate">{item.author}</h4>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col items-center gap-2 mt-4">
+                  <div className="flex gap-1.5">
+                    {t('testimonials.items').map((_: any, i: number) => (
+                      <div key={i} className="w-1.5 h-1.5 rounded-full bg-accent/20" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/60">← Swipe to explore →</span>
+                </div>
+              </div>
+
+              {/* Desktop Testimonials Marquee - No set repeat to avoid "3x same" perception */}
+              <div className="hidden md:block relative w-full mask-gradient-x">
+                <div className="flex gap-6 items-center animate-scroll-reverse whitespace-normal w-max py-4">
+                  <div className="flex gap-6">
                     {t('testimonials.items').map((item: any, i: number) => (
                       <div
                         key={i}
-                        className="bg-secondary p-6 rounded-2xl relative w-[350px] flex-shrink-0 border border-border/50"
+                        className="bg-white p-8 rounded-3xl relative w-[400px] flex-shrink-0 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
                       >
-                        <div className="text-3xl text-accent mb-4">"</div>
-                        <p className="text-sm text-muted-foreground mb-6 italic leading-relaxed line-clamp-4">
+                        <div className="text-4xl text-accent mb-6">"</div>
+                        <p className="text-base text-foreground/80 mb-8 italic leading-relaxed">
                           {item.quote}
                         </p>
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center font-bold text-accent shadow-sm border border-border">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-lg">
                             {item.author.charAt(0)}
                           </div>
-                          <div>
-                            <h4 className="font-bold text-sm leading-tight">{item.author}</h4>
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">{item.role}</span>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-bold text-base leading-tight truncate">{item.author}</h4>
+                            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    {/* Minimum one repeat for seamless transition but don't double loop in JS array set */}
+                    {t('testimonials.items').map((item: any, i: number) => (
+                      <div
+                        key={`repeat-${i}`}
+                        className="bg-white p-8 rounded-3xl relative w-[400px] flex-shrink-0 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
+                      >
+                        {/* ... same content ... */}
+                        <div className="text-4xl text-accent mb-6">"</div>
+                        <p className="text-base text-foreground/80 mb-8 italic leading-relaxed">
+                          {item.quote}
+                        </p>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-lg">
+                            {item.author.charAt(0)}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-bold text-base leading-tight truncate">{item.author}</h4>
+                            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>

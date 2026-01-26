@@ -340,14 +340,14 @@ const Home = () => {
                       { step: "02", ...t('products.how_it_works.step2') },
                       { step: "03", ...t('products.how_it_works.step3') }
                     ].map((s, idx) => (
-                      <div key={idx} className="min-w-[70vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-4 rounded-xl border border-border/30">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                            <span className="text-accent font-bold text-xs">{s.step}</span>
+                      <div key={idx} className="min-w-[75vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-6 rounded-2xl border border-border/30">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                            <span className="text-accent font-bold text-sm">{s.step}</span>
                           </div>
-                          <h4 className="font-bold text-sm text-foreground">{s.title}</h4>
+                          <h4 className="font-bold text-base text-foreground">{s.title}</h4>
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                        <p className="text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -383,8 +383,8 @@ const Home = () => {
 
               <div className="flex">
                 <a
-                  href="https://creative-mark-magic-qrcode.vercel.app/"
-                  onClick={(e) => handleExternalRedirect(e, "https://creative-mark-magic-qrcode.vercel.app/")}
+                  href={`https://creative-mark-magic-qrcode.vercel.app/${language === 'mr' ? '?lang=mr' : ''}`}
+                  onClick={(e) => handleExternalRedirect(e, `https://creative-mark-magic-qrcode.vercel.app/${language === 'mr' ? '?lang=mr' : ''}`)}
                   className="btn-primary inline-flex items-center justify-center gap-2 px-6 md:px-10 py-4 md:py-5 text-base md:text-lg group w-full sm:w-auto"
                 >
                   {t('products.btn')}
@@ -421,7 +421,7 @@ const Home = () => {
 
 
       {/* NEW TESTIMONIALS SECTION */}
-      <section className="py-24 bg-secondary border-t border-border overflow-hidden">
+      <section className="py-20 md:py-32 lg:py-40 bg-secondary border-t border-border overflow-hidden">
         <div className="container-wide">
           <div className="text-center mb-16">
             <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('testimonials.tag')}</span>

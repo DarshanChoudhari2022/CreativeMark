@@ -82,7 +82,7 @@ const Contact = () => {
                 {t('contact.desc')}
               </p>
 
-              <div className="space-y-8 md:space-y-10">
+              <div className="grid grid-cols-1 gap-4 md:gap-6">
                 {contactInfo.map((item, i) => (
                   <motion.a
                     key={i}
@@ -90,14 +90,14 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4 md:gap-6 group min-h-[48px]"
+                    className="flex flex-col md:flex-row items-start md:items-center gap-4 p-6 rounded-2xl bg-secondary hover:bg-white hover:shadow-xl hover:border-accent/20 border border-transparent transition-all duration-300 group"
                   >
-                    <div className="w-14 h-14 md:w-14 md:h-14 rounded-2xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm">
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-1">{item.label}</span>
-                      <span className="text-lg md:text-xl font-bold group-hover:text-accent transition-colors break-all">{item.value}</span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/60 block mb-1">{item.label}</span>
+                      <span className="text-base md:text-xl font-bold text-foreground break-all">{item.value}</span>
                     </div>
                   </motion.a>
                 ))}
@@ -116,7 +116,7 @@ const Contact = () => {
                 {/* Mobile: Single Column, Desktop: 2 Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.name')}</label>
+                    <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.name')} <span className="text-accent">*</span></label>
                     <input
                       type="text"
                       id="name"
@@ -128,7 +128,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.email')}</label>
+                    <label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.email')} <span className="text-accent">*</span></label>
                     <input
                       type="email"
                       id="email"
@@ -143,7 +143,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.phone')}</label>
+                    <label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.phone')} <span className="text-accent">*</span></label>
                     <input
                       type="tel"
                       id="phone"
@@ -155,7 +155,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="service" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.service')}</label>
+                    <label htmlFor="service" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.service')} <span className="text-accent">*</span></label>
                     <select
                       id="service"
                       required
@@ -174,7 +174,9 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.message')}</label>
+                  <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                    {t('contact.form.message')} <span className="text-accent">*</span>
+                  </label>
                   <textarea
                     id="message"
                     rows={4}

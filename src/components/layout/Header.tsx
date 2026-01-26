@@ -103,12 +103,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
-            {navLinks.map((link) => (
-              link.isExternal ? (
+            {navLinks.map((link) => {
+              const actualHref = link.isExternal && link.key === 'products'
+                ? `${link.href}${language === 'mr' ? '?lang=mr' : ''}`
+                : link.href;
+
+              return link.isExternal ? (
                 <a
                   key={link.key}
-                  href={link.href}
-                  onClick={(e) => handleExternalRedirect(e, link.href)}
+                  href={actualHref}
+                  onClick={(e) => handleExternalRedirect(e, actualHref)}
                   className="text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase text-gray-500 hover:text-black"
                 >
                   {t(`header.${link.key}`)}
@@ -122,8 +126,8 @@ const Header = () => {
                 >
                   {t(`header.${link.key}`)}
                 </Link>
-              )
-            ))}
+              );
+            })}
 
             <Link to="/contact" className="ml-2 xl:ml-4 btn-primary px-4 xl:px-6 py-2 xl:py-2.5 text-[10px] xl:text-xs uppercase tracking-widest whitespace-nowrap">
               {t('header.contact')}
@@ -161,38 +165,64 @@ const Header = () => {
               </button>
 
               <nav className="flex flex-col gap-6 items-center text-center">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.key}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.08 }}
-                  >
-                    {link.isExternal ? (
-                      <a
-                        href={link.href}
-                        onClick={(e) => handleExternalRedirect(e, link.href)}
-                        className={`block text-2xl md:text-3xl font-bold text-black ${language === 'en' ? 'tracking-[0.2em] uppercase' : ''}`}
-                      >
-                        {t(`header.${link.key}`)}
-                      </a>
-                    ) : (
-                      <Link
-                        to={link.href}
-                        className={`block text-2xl md:text-3xl font-bold ${location.pathname === link.href ? "text-accent" : "text-black"} ${language === 'en' ? 'tracking-[0.2em] uppercase' : ''}`}
-                      >
-                        {t(`header.${link.key}`)}
-                      </Link>
-                    )}
-                  </motion.div>
-                ))}
+                {/* Mobile Language Toggle */}
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  onClick={toggleLanguage}
+                  className="mb-8 flex items-center gap-2 px-6 py-2 rounded-full border border-gray-100 bg-secondary/50 text-sm font-bold uppercase tracking-widest"
+                >
+                  <Globe size={16} className="text-accent" />
+                  {language === 'en' ? 'मराठी / Marathi' : 'English / इंग्रजी'}
+                </motion.button>
+
+                {navLinks.map((link, index) => {
+                  const actualHref = link.isExternal && link.key === 'products'
+                    ? `${link.href}${language === 'mr' ? '?lang=mr' : ''}`
+                    : link.href;
+
+                  return (
+                    <motion.div
+                      key={link.key}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.08 }}
+                      className="w-full"
+                    >
+                      {link.isExternal ? (
+                        <a
+                          href={actualHref}
+                          onClick={(e) => {
+                            setIsMobileMenuOpen(false);
+                            handleExternalRedirect(e, actualHref);
+                          }}
+                          className={`block py-2 text-2xl md:text-3xl font-black text-black ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
+                        >
+                          {t(`header.${link.key}`)}
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`block py-2 text-2xl md:text-3xl font-black ${location.pathname === link.href ? "text-accent" : "text-black"} ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
+                        >
+                          {t(`header.${link.key}`)}
+                        </Link>
+                      )}
+                    </motion.div>
+                  );
+                })}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navLinks.length * 0.08 }}
                   className="w-full max-w-xs mt-12"
                 >
-                  <Link to="/contact" className="btn-primary w-full py-4 text-sm font-bold tracking-widest uppercase">
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="btn-primary w-full py-5 text-sm font-black tracking-widest uppercase"
+                  >
                     {t('header.contact')}
                   </Link>
                 </motion.div>
