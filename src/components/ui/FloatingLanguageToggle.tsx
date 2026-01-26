@@ -20,7 +20,7 @@ const FloatingLanguageToggle = () => {
         >
             <Globe size={20} className="text-primary mb-1 group-hover:rotate-12 transition-transform" />
             <span className="text-[10px] font-bold text-primary uppercase tracking-wide">
-                {language === 'en' ? 'मराठी' : 'English'}
+                {language === 'en' ? 'मराठी' : 'EN'}
             </span>
         </motion.button>
     );

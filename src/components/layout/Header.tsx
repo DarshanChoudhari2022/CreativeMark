@@ -146,7 +146,7 @@ const Header = () => {
               aria-label={language === 'en' ? 'Switch to Marathi' : 'Switch to English'}
             >
               <Globe size={14} className="text-accent" />
-              {language === 'en' ? 'मरा' : 'EN'}
+              {language === 'en' ? 'मराठी' : 'EN'}
             </button>
 
             <Link to="/contact" className="ml-2 xl:ml-4 btn-primary px-4 xl:px-6 py-2 xl:py-2.5 text-[10px] xl:text-xs uppercase tracking-widest whitespace-nowrap">
@@ -193,7 +193,7 @@ const Header = () => {
                   className="mb-8 flex items-center gap-2 px-6 py-2 rounded-full border border-gray-100 bg-secondary/50 text-sm font-bold uppercase tracking-widest"
                 >
                   <Globe size={16} className="text-accent" />
-                  {language === 'en' ? 'मराठी / Marathi' : 'English / इंग्रजी'}
+                  {language === 'en' ? 'मराठी' : 'English'}
                 </motion.button>
 
                 {navLinks.map((link, index) => {
