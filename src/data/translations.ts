@@ -342,7 +342,7 @@ export const translations = {
             work: "कार्य",
             political: "राजकीय मोहिमा",
             about: "आमच्याबद्दल",
-            products: "Products",
+            products: "प्रोडक्ट्स",
             contact: "संपर्क साधा"
         },
         products: {
