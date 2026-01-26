@@ -11,9 +11,9 @@ export const translations = {
         },
         products: {
             tag: "Next-Gen Tools",
-            title: "Magic QR Code",
-            desc: "Transform your brand with artistic, AI-generated QR codes that blend seamlessly with your design while maintaining perfect scannability.",
-            btn: "Try Magic QR",
+            title: "Improve Google Reviews with Magic QR",
+            desc: "Get 5-star Google Reviews instantly. Our artistic QR stands make it incredibly simple for customers to scan, copy a pre-written review, and post it to your profile in seconds.",
+            btn: "Get More Reviews",
             how_it_works: {
                 title: "How it Works",
                 step1: { title: "Scan & Discover", desc: "User scans the artistic Magic QR standee placed at your location." },
@@ -110,6 +110,19 @@ export const translations = {
                         { title: "Product Highlights & Teasers", desc: "Showcase your products in action.", details: ["Cinematic Product Shots", "Feature Highlights", "Unboxing Style Videos", "Launch Teasers", "Call-to-Action Focus"] },
                         { title: "Corporate & Event Shorts", desc: "Turn company moments into engaging stories.", details: ["Behind-the-Scenes (BTS)", "Event Recaps", "Team Introductions", "Office Culture Reels", "Client Testimonials"] },
                         { title: "Personal Branding Reels", desc: "Build your personal brand authority.", details: ["Talking Head Videos", "Educational/Tips Reels", "Day in the Life", "Motivation & Storytelling", "Consistency Planning"] }
+                    ]
+                },
+                technology: {
+                    id: "technology",
+                    title: "Technology Solutions",
+                    desc: "Custom software, high-performance websites, and smart kiosk systems.",
+                    full_title: "Automate and Scale Your Business with Custom Tech.",
+                    full_desc: "We build modern digital tools that help businesses automate tasks, reach more customers, and operate efficiently. From high-speed websites to specialized kiosk systems, we provide technology that works for you.",
+                    sub_services: [
+                        { title: "Website Development", desc: "", details: ["Corporate & Business Websites", "E-commerce Platforms & Online Stores", "Portfolio & Personal Branding Sites", "Landing Pages & Campaign Microsites", "Responsive & Mobile-First Design", "SEO-Optimized Architecture", "Fast Loading & Security First"] },
+                        { title: "Custom ERP Development", desc: "", details: ["Inventory & Stock Management", "Order & Sales Tracking", "HR & Finance Modules"] },
+                        { title: "NGO Donation Platform", desc: "", details: ["Online Donation Collection", "Donor Database & CRM"] },
+                        { title: "Kiosk Systems", desc: "", details: ["Worshiping Place Kiosk (Donation & Booking)", "Hotel & Restaurant Ordering Kiosk", "Institutional Kiosk (Schools & Hospitals)", "Interactive & Game-Based Kiosk"] }
                     ]
                 },
 
@@ -328,9 +341,9 @@ export const translations = {
         },
         products: {
             tag: "नेक्स्ट-जेन साधने",
-            title: "मॅजिक क्यूआर कोड",
-            desc: "कलात्मक, एआय-व्युत्पन्न क्यूआर कोडसह तुमचा ब्रँड बदला जो तुमच्या डिझाइनमध्ये अखंडपणे मिसळतो आणि उत्तम स्कॅनेबिलिटी राखतो.",
-            btn: "मॅजिक क्यूआर वापरून पहा",
+            title: "मॅजिक क्यूआरसह गुगल रिव्ह्यू वाढवा",
+            desc: "त्वरीत ५-स्टार गुगल रिव्ह्यू मिळवा. आमचे कलात्मक क्यूआर स्टँड्स ग्राहकांसाठी स्कॅन करणे, पूर्व-लिखित रिव्ह्यू कॉपी करणे आणि आपल्या प्रोफाइलवर पोस्ट करणे सोपे करतात.",
+            btn: "अधिक रिव्ह्यू मिळवा",
             how_it_works: {
                 title: "हे कसे कार्य करते",
                 step1: { title: "स्कॅन आणि शोध", desc: "वापरकर्ता तुमच्या ठिकाणी ठेवलेला कलात्मक मॅजिक क्यूआर स्टँडी स्कॅन करतो." },
@@ -427,6 +440,19 @@ export const translations = {
                         { title: "प्रॉडक्ट हायलाइट्स आणि टीझर्स", desc: "तुमची उत्पादने कृतीत दर्शवा.", details: ["सिनेमॅटिक प्रॉडक्ट शॉट्स", "वैशिष्ट्ये हायलाइट्स", "अनबॉक्सिंग स्टाईल व्हिडीओ", "लॉन्च टीझर्स", "कॉल-टू-ॲक्शन फोकस"] },
                         { title: "कॉर्पोरेट आणि इव्हेंट शॉर्ट्स", desc: "कंपनीचे क्षण कथांमध्ये बदला.", details: ["बिहाइंड-द-सीन (BTS)", "इव्हेंट रिकॅप्स", "टीम परिचय", "ऑफिस कल्चर रील्स", "ग्राहक प्रतिक्रिया"] },
                         { title: "पर्सनल ब्रँडिंग रील्स", desc: "तुमची वैयक्तिक ब्रँड ऑथॉरिटी तयार करा.", details: ["टॉकिंग हेड व्हिडीओ", "शैक्षणिक/टिप्स रील्स", "दैनंदिन जीवन", "प्रेरणा आणि कथा", "सातत्य नियोजन"] }
+                    ]
+                },
+                technology: {
+                    id: "technology",
+                    title: "तंत्रज्ञान उपाय",
+                    desc: "कस्टम सॉफ्टवेअर, उच्च-क्षमतेच्या वेबसाइट्स आणि स्मार्ट कियोस्क सिस्टम.",
+                    full_title: "कस्टम तंत्रज्ञानासह आपल्या व्यवसायाचे ऑटोमेशन आणि विस्तार करा.",
+                    full_desc: "आम्ही आधुनिक डिजिटल साधने तयार करतो जी व्यवसायांना कार्ये स्वयंचलित करण्यात, अधिक ग्राहकांपर्यंत पोहोचण्यात आणि कार्यक्षमतेने कार्य करण्यास मदत करतात.",
+                    sub_services: [
+                        { title: "वेबसाइट डेव्हलपमेंट", desc: "", details: ["कॉर्पोरेट आणि बिझनेस वेबसाइट्स", "ई-कॉमर्स प्लॅटफॉर्म आणि ऑनलाइन स्टोअर्स", "पोर्टफोलिओ आणि पर्सनल ब्रँडिंग साइट्स", "लँडिंग पेजेस आणि कॅम्पेन मायक्रोसाइट्स", "रिस्पॉन्सिव्ह आणि मोबाइल-फर्स्ट डिझाइन", "SEO-ऑप्टिमाइज्ड आराखडा", "फास्ट लोडिंग आणि सुरक्षा"] },
+                        { title: "कस्टम ERP डेव्हलपमेंट", desc: "", details: ["इन्व्हेंटरी आणि स्टॉक मॅनेजमेंट", "ऑर्डर आणि सेल्स ट्रॅकिंग", "HR आणि फायनान्स मॉड्यूल्स"] },
+                        { title: "NGO डोनेशन प्लॅटफॉर्म", desc: "", details: ["ऑनलाइन देणगी संकलन", "डोनर डेटाबेस आणि CRM"] },
+                        { title: "कियोस्क सिस्टम", desc: "", details: ["धार्मिक स्थळ कियोस्क (देणगी आणि बुकिंग)", "हॉटेल आणि रेस्टॉरंट ऑर्डरिंग कियोस्क", "संस्थात्मक कियोस्क (शाळा आणि हॉस्पिटल्स)", "परस्परसंवादी आणि गेम-आधारित कियोस्क"] }
                     ]
                 },
 

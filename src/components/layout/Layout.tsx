@@ -33,6 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
       />
       <Header />
       <motion.main
+        id="main-content"
         className="flex-1"
         initial="initial"
         animate="enter"

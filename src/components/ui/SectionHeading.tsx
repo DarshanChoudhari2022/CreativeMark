@@ -23,13 +23,13 @@ const SectionHeading = ({
       className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}
     >
       {eyebrow && (
-        <span className="inline-block text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
+        <span className="inline-block text-xs font-black text-foreground/40 uppercase tracking-[0.3em] mb-3">
           {eyebrow}
         </span>
       )}
-      <h2 className="heading-lg mb-4">{title}</h2>
+      <h2 className="heading-lg mb-6">{title}</h2>
       {description && (
-        <p className="text-body max-w-2xl mx-auto">{description}</p>
+        <p className="text-foreground/70 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">{description}</p>
       )}
     </motion.div>
   );

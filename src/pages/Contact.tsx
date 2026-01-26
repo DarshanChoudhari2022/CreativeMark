@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
+import { toast } from "sonner";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -21,6 +22,17 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Basic Validation
+    if (!/^\d{10}$/.test(formData.phone.replace(/[^0-9]/g, ""))) {
+      toast.error("Please enter a valid 10-digit phone number");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
     // Format message for WhatsApp
     const whatsappMessage = `*New Inquiry from Creative Mark Website*%0A%0A` +
       `*Name:* ${formData.name}%0A` +
@@ -31,7 +43,12 @@ const Contact = () => {
 
     // Replace with your actual WhatsApp Number
     const whatsappNumber = "917447332829";
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+
+    toast.success("Redirecting to WhatsApp...");
+
+    setTimeout(() => {
+      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+    }, 1000);
   };
 
   const contactInfo = [

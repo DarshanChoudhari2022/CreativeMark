@@ -15,6 +15,7 @@ const serviceImages: Record<string, string> = {
   branding: brandingImg,
   multimedia: multimediaImg,
   printing: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200",
+  technology: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
 };
 
 const Services = () => {
@@ -25,7 +26,7 @@ const Services = () => {
     setActiveAccordion(activeAccordion === id ? null : id);
   };
 
-  const serviceKeys = ['digital', 'advertising', 'branding', 'multimedia'];
+  const serviceKeys = ['digital', 'advertising', 'branding', 'multimedia', 'technology'];
   const servicesData = serviceKeys.map(key => {
     const data = t(`services.items.${key}`);
     return {
@@ -151,7 +152,7 @@ const Services = () => {
                                     className="overflow-hidden"
                                   >
                                     <div className="px-5 pb-6">
-                                      <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{item.desc}</p>
+                                      {item.desc && <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{item.desc}</p>}
                                       <div className="grid grid-cols-1 gap-3 pt-2">
                                         {item.details.map((detail: string, dIndex: number) => (
                                           <div key={dIndex} className="flex items-start gap-3 text-xs font-medium text-foreground/80">
@@ -201,7 +202,7 @@ const Services = () => {
                                     className="overflow-hidden"
                                   >
                                     <div className="px-6 pb-8 pt-2">
-                                      <p className="text-muted-foreground mb-6 text-lg">{item.desc}</p>
+                                      {item.desc && <p className="text-muted-foreground mb-6 text-lg">{item.desc}</p>}
                                       <ul className="grid sm:grid-cols-2 gap-3">
                                         {item.details.map((detail: string, dIndex: number) => (
                                           <li key={dIndex} className="flex items-center gap-3 text-sm font-medium text-foreground/80">

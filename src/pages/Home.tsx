@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode, Loader2 } from "lucide-react";
+import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode, Loader2, Code2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
 import { useLanguage } from "@/context/LanguageContext";
+import { Helmet } from 'react-helmet-async';
 
 import projectBranding from "@/assets/project-branding.png";
 import heroEnglish from "@/assets/hero-english.png";
@@ -32,7 +33,8 @@ const Home = () => {
     advertising: "https://images.unsplash.com/photo-1555392336-fb8c3ba8163e?auto=format&fit=crop&q=80&w=800",
     digital: projectDigital,
     branding: projectBranding,
-    multimedia: projectMultimedia
+    multimedia: projectMultimedia,
+    technology: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
   };
 
   const handleExternalRedirect = (e: React.MouseEvent, href: string) => {
@@ -48,6 +50,12 @@ const Home = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{language === 'en' ? 'Creative Mark | Advertising & Political Campaign Agency Pune' : 'क्रिएटिव्ह मार्क | जाहिरात आणि राजकीय मोहीम एजन्सी पुणे'}</title>
+        <meta name="description" content={language === 'en' ? 'Creative Mark is a premier advertising agency in Pune specializing in branding, digital marketing, and end-to-end political campaign management.' : 'क्रिएटिव्ह मार्क ही पुण्यातील एक अग्रगण्य जाहिरात संस्था आहे जी ब्रँडिंग, डिजिटल मार्केटिंग आणि राजकीय मोहीम व्यवस्थापनात तज्ञ आहे.'} />
+        <meta property="og:title" content="Creative Mark - Your Growth, Our Creative Power" />
+        <meta property="og:description" content="Strategic advertising and political campaign management that delivers measurable results." />
+      </Helmet>
       <AnimatePresence>
         {isRedirecting && (
           <motion.div
@@ -167,7 +175,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-8 md:mt-12 pt-8 border-t border-border/60 grid grid-cols-3 gap-4 md:gap-8 text-center max-w-5xl mx-auto px-2 md:px-4"
+            className="mt-12 md:mt-20 pt-8 border-t border-border/60 grid grid-cols-3 gap-2 md:gap-8 text-center max-w-5xl mx-auto px-2"
           >
             {[
               { val: "85%", lab: t('stats.winRatio'), sub: t('stats.winRatioSub') },
@@ -175,9 +183,9 @@ const Home = () => {
               { val: "24/7", lab: t('stats.warRoom'), sub: t('stats.warRoomSub') }
             ].map((stat, i) => (
               <div key={i} className="group cursor-default py-4">
-                <span className="block text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-3 tracking-tight group-hover:scale-110 transition-transform duration-300 ease-out">{stat.val}</span>
-                <span className={`text-xs md:text-sm font-bold text-muted-foreground block mb-1 ${language === 'en' ? 'uppercase tracking-widest' : ''}`}>{stat.lab}</span>
-                <span className="text-[10px] md:text-xs text-muted-foreground/60 block">{stat.sub}</span>
+                <span className="block text-3xl sm:text-5xl md:text-6xl font-bold text-foreground mb-2 md:mb-3 tracking-tight group-hover:scale-110 transition-transform duration-300 ease-out">{stat.val}</span>
+                <span className={`text-[10px] md:text-sm font-bold text-muted-foreground block mb-1 ${language === 'en' ? 'uppercase tracking-widest' : ''}`}>{stat.lab}</span>
+                <span className="text-[9px] md:text-xs text-muted-foreground/60 block">{stat.sub}</span>
               </div>
             ))}
           </motion.div>
@@ -215,7 +223,8 @@ const Home = () => {
               { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
               { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
               { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
-              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" }
+              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" },
+              { id: "technology", icon: Code2, title: t('services.items.technology.title'), desc: t('services.items.technology.desc'), tag: "Tech" }
             ].map((service, i) => (
               <Link to={`/services/${service.id}`} key={i} className="block w-full">
                 <motion.div
@@ -240,7 +249,7 @@ const Home = () => {
                   </div>
                   <div className="mt-5 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-4">
                     <span className="text-foreground/70 uppercase tracking-widest text-[10px]">{t('services.explore')}</span>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-secondary">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-secondary transition-colors group-hover:bg-accent group-hover:text-white">
                       <ArrowUpRight size={14} />
                     </div>
                   </div>
@@ -250,12 +259,13 @@ const Home = () => {
           </div>
 
           {/* Tablet & Desktop: Grid Layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-stretch">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 justify-items-stretch">
             {[
               { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
               { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
               { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
-              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" }
+              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" },
+              { id: "technology", icon: Code2, title: t('services.items.technology.title'), desc: t('services.items.technology.desc'), tag: "Tech" }
             ].map((service, i) => (
               <Link to={`/services/${service.id}`} key={i} className="block h-full perspective-1000">
                 <motion.div
@@ -341,8 +351,13 @@ const Home = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="flex justify-center mt-2">
-                    <span className="text-[10px] text-muted-foreground font-medium">← Swipe →</span>
+                  <div className="flex flex-col items-center gap-2 mt-4">
+                    <div className="flex gap-1">
+                      {[1, 2, 3].map((_, i) => (
+                        <div key={i} className="w-1 h-1 rounded-full bg-accent/30" />
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">← Swipe to explore →</span>
                   </div>
                 </div>
 
@@ -388,8 +403,9 @@ const Home = () => {
             >
               <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6">
                 <img
+                  loading="lazy"
                   src={magicQrProduct}
-                  alt="Magic QR Standee for Google Reviews"
+                  alt="Creative Mark Magic QR Standee - Improve Google Reviews"
                   className="w-full h-auto rounded-xl object-contain"
                 />
               </div>
@@ -412,28 +428,60 @@ const Home = () => {
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
 
-          <div className="relative w-full mask-gradient-x">
+          {/* Mobile Testimonials Carousel */}
+          <div className="md:hidden">
+            <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
+              {t('testimonials.items').map((item: any, i: number) => (
+                <div
+                  key={i}
+                  className="bg-white p-6 rounded-2xl relative w-[85vw] snap-center flex-shrink-0 border border-gray-100 shadow-lg"
+                >
+                  <div className="text-3xl text-accent mb-4">"</div>
+                  <p className="text-sm text-foreground/80 mb-6 italic leading-relaxed">
+                    {item.quote}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-sm">
+                      {item.author.charAt(0)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-sm leading-tight truncate">{item.author}</h4>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center gap-1.5 mt-2">
+              {t('testimonials.items').map((_: any, i: number) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-accent/20" />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Testimonials Marquee */}
+          <div className="hidden md:block relative w-full mask-gradient-x">
             <div className="flex gap-6 items-center animate-scroll-reverse whitespace-normal w-max">
               {[...Array(2)].map((_, setIndex) => (
                 <div key={setIndex} className="flex gap-6">
                   {t('testimonials.items').map((item: any, i: number) => (
                     <div
                       key={i}
-                      className="bg-white p-6 rounded-2xl relative w-[300px] md:w-[350px] flex-shrink-0 border border-gray-100 shadow-sm"
+                      className="bg-white p-8 rounded-3xl relative w-[400px] flex-shrink-0 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300"
                     >
-                      <div className="text-3xl text-accent mb-4">"</div>
-                      <p className="text-sm text-foreground/80 mb-6 italic leading-relaxed line-clamp-4">
+                      <div className="text-4xl text-accent mb-6">"</div>
+                      <p className="text-base text-foreground/80 mb-8 italic leading-relaxed">
                         {item.quote}
                       </p>
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-sm">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-lg">
                           {item.author.charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-sm leading-tight truncate">{item.author}</h4>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                          <h4 className="font-bold text-base leading-tight truncate">{item.author}</h4>
+                          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
                         </div>
-                        <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary rounded text-muted-foreground whitespace-nowrap">{item.type}</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 bg-secondary rounded-full text-muted-foreground/60 whitespace-nowrap">{item.type}</span>
                       </div>
                     </div>
                   ))}
