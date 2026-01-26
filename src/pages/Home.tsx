@@ -247,9 +247,7 @@ const Home = () => {
                   }}
                   className="card-minimal group h-full flex flex-col justify-between bg-white p-6 md:p-8 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
                 >
-                  <span className="absolute -top-4 -right-2 text-6xl md:text-8xl font-black text-black/[0.03] group-hover:text-accent/[0.05] transition-colors pointer-events-none">
-                    0{i + 1}
-                  </span>
+
                   <div>
                     <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 md:mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
                       <service.icon size={28} strokeWidth={1.5} className="md:w-8 md:h-8" />

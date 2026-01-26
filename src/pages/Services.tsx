@@ -80,9 +80,7 @@ const Services = () => {
               >
                 <div className="container-wide">
                   {/* Huge Background Number */}
-                  <span className="absolute top-10 left-4 text-[12rem] md:text-[20rem] font-bold text-foreground/[0.03] pointer-events-none select-none leading-none -z-10">
-                    0{index + 1}
-                  </span>
+
 
                   <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
 
@@ -136,7 +134,6 @@ const Services = () => {
                               >
                                 <div className="flex items-center gap-3">
                                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${isOpen ? 'bg-accent text-white' : 'bg-secondary text-accent'}`}>
-                                    <span className="font-bold text-xs">0{itemIndex + 1}</span>
                                   </div>
                                   <h4 className={`font-bold transition-colors ${isOpen ? 'text-accent' : 'text-foreground'}`}>{item.title}</h4>
                                 </div>
