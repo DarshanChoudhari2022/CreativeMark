@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, QrCode, Loader2, Code2 } from "lucide-react";
+import { Check, Megaphone, Globe, Palette, PenTool, Video, Printer, ArrowUpRight, Code2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { useLanguage } from "@/context/LanguageContext";
 import { Helmet } from 'react-helmet-async';
 
@@ -19,7 +20,6 @@ import magicQrProduct from "@/assets/magic-qr-product.png";
 
 const Home = () => {
   const targetRef = useRef(null);
-  const [isRedirecting, setIsRedirecting] = useState(false);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end start"],
@@ -29,6 +29,24 @@ const Home = () => {
   const yText = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const yHero = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
+  // Carousel State
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   const serviceImages: Record<string, string> = {
     advertising: "https://images.unsplash.com/photo-1555392336-fb8c3ba8163e?auto=format&fit=crop&q=80&w=800",
     digital: projectDigital,
@@ -37,16 +55,13 @@ const Home = () => {
     technology: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
   };
 
-  const handleExternalRedirect = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
-    setIsRedirecting(true);
-
-    // Smooth buffer before opening in new tab
-    setTimeout(() => {
-      window.open(href, '_blank', 'noopener,noreferrer');
-      setIsRedirecting(false);
-    }, 1200);
-  };
+  const servicesList = [
+    { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: t('services.items.advertising.tag') },
+    { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: t('services.items.digital.tag') },
+    { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: t('services.items.branding.tag') },
+    { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: t('services.items.multimedia.tag') },
+    { id: "technology", icon: Code2, title: t('services.items.technology.title'), desc: t('services.items.technology.desc'), tag: t('services.items.technology.tag') }
+  ];
 
   return (
     <Layout>
@@ -55,33 +70,29 @@ const Home = () => {
         <meta name="description" content={language === 'en' ? 'Creative Mark is a premier advertising agency in Pune specializing in branding, digital marketing, and end-to-end political campaign management.' : 'क्रिएटिव्ह मार्क ही पुण्यातील एक अग्रगण्य जाहिरात संस्था आहे जी ब्रँडिंग, डिजिटल मार्केटिंग आणि राजकीय मोहीम व्यवस्थापनात तज्ञ आहे.'} />
         <meta property="og:title" content="Creative Mark - Your Growth, Our Creative Power" />
         <meta property="og:description" content="Strategic advertising and political campaign management that delivers measurable results." />
+        {/* Schema Markup for Local Business */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Creative Mark Advertising", // Using English/Brand name or localized if suitable
+            "alternateName": "क्रिएटिव्ह मार्क जाहिरात",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Lord's Residency, B-Wing, 2nd Floor, Kedari Nagar, Wanowrie",
+              "addressLocality": "Pune",
+              "postalCode": "411040",
+              "addressRegion": "Maharashtra",
+              "addressCountry": "IN"
+            },
+            "telephone": "+91-7447332829",
+            "url": `https://creative-mark.vercel.app/?lang=${language}`,
+            "inLanguage": language,
+            "areaServed": ["IN", "Pune", "Maharashtra"]
+          })}
+        </script>
       </Helmet>
-      <AnimatePresence>
-        {isRedirecting && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center text-white"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center gap-8"
-            >
-              <div className="relative">
-                <Loader2 className="w-20 h-20 text-accent animate-spin" strokeWidth={1} />
-                <div className="absolute inset-0 bg-accent/30 blur-3xl rounded-full" />
-              </div>
-              <div className="text-center">
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-accent mb-3">Initializing Experience</p>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Magic QR Code</h2>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* 2. HERO SECTION */}
       <section ref={targetRef} className="relative min-h-screen flex flex-col bg-background pt-36 md:pt-44 lg:pt-48 pb-12 overflow-hidden">
@@ -159,9 +170,13 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
               >
-                <Link to="/contact" className="btn-primary px-10 py-5 text-base md:text-lg">
+                <Link to="/contact" className="btn-primary px-10 py-5 text-base md:text-lg w-full sm:w-auto text-center">
                   {t('hero.cta_primary')}
+                </Link>
+                <Link to="/services" className="btn-secondary px-10 py-5 text-base md:text-lg w-full sm:w-auto text-center">
+                  {t('hero.cta_secondary')}
                 </Link>
               </motion.div>
             </div>
@@ -217,83 +232,37 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Mobile: Vertical Stack, Tablet: 2 Columns, Desktop: 4 Columns */}
-          <div className="md:hidden flex flex-col gap-6">
-            {[
-              { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
-              { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
-              { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
-              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" },
-              { id: "technology", icon: Code2, title: t('services.items.technology.title'), desc: t('services.items.technology.desc'), tag: "Tech" }
-            ].map((service, i) => (
-              <Link to={`/services/${service.id}`} key={i} className="block w-full">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="card-minimal group flex flex-col justify-between bg-white p-6 rounded-2xl shadow-lg border border-border/50 relative overflow-hidden"
-                >
-                  <span className="absolute -top-4 -right-2 text-6xl font-black text-black/[0.03] pointer-events-none">
-                    0{i + 1}
-                  </span>
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                      <service.icon size={24} strokeWidth={1.5} />
-                    </div>
-                    <span className="inline-block px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-bold uppercase tracking-widest rounded-full mb-3">
-                      {service.tag}
-                    </span>
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm font-medium">{service.desc}</p>
-                  </div>
-                  <div className="mt-5 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-4">
-                    <span className="text-foreground/70 uppercase tracking-widest text-[10px]">{t('services.explore')}</span>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-secondary transition-colors group-hover:bg-accent group-hover:text-white">
-                      <ArrowUpRight size={14} />
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Tablet & Desktop: Grid Layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 justify-items-stretch">
-            {[
-              { id: "advertising", icon: Megaphone, title: t('services.items.advertising.title'), desc: t('services.items.advertising.desc'), tag: "Impact" },
-              { id: "digital-marketing", icon: Globe, title: t('services.items.digital.title'), desc: t('services.items.digital.desc'), tag: "Growth" },
-              { id: "branding", icon: Palette, title: t('services.items.branding.title'), desc: t('services.items.branding.desc'), tag: "Identity" },
-              { id: "multimedia", icon: Video, title: t('services.items.multimedia.title'), desc: t('services.items.multimedia.desc'), tag: "Visuals" },
-              { id: "technology", icon: Code2, title: t('services.items.technology.title'), desc: t('services.items.technology.desc'), tag: "Tech" }
-            ].map((service, i) => (
-              <Link to={`/services/${service.id}`} key={i} className="block h-full perspective-1000">
+          {/* Unified Responsive Grid for Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 justify-items-stretch">
+            {servicesList.map((service, i) => (
+              <Link to={`/services/${service.id}`} key={i} className="block w-full h-full perspective-1000">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.8,
+                    delay: i * 0.1,
                     ease: [0.16, 1, 0.3, 1]
                   }}
-                  className="card-minimal group h-full flex flex-col justify-between bg-white p-7 md:p-9 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
+                  className="card-minimal group h-full flex flex-col justify-between bg-white p-6 md:p-8 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
                 >
-                  <span className="absolute -top-4 -right-2 text-8xl font-black text-black/[0.03] group-hover:text-accent/[0.05] transition-colors pointer-events-none">
+                  <span className="absolute -top-4 -right-2 text-6xl md:text-8xl font-black text-black/[0.03] group-hover:text-accent/[0.05] transition-colors pointer-events-none">
                     0{i + 1}
                   </span>
                   <div>
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 md:mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
+                    <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 md:mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
                       <service.icon size={28} strokeWidth={1.5} className="md:w-8 md:h-8" />
                     </div>
                     <span className="inline-block px-3 py-1 bg-accent/5 text-accent text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
                       {service.tag}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
                     <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-medium">{service.desc}</p>
                   </div>
                   <div className="mt-8 md:mt-10 flex justify-between items-center text-sm font-bold border-t border-gray-50 pt-6">
                     <span className="text-foreground/70 group-hover:text-accent transition-colors uppercase tracking-widest text-[11px]">{t('services.explore')}</span>
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-secondary group-hover:bg-accent group-hover:text-white transition-all duration-300 transform group-hover:translate-x-1">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center bg-secondary group-hover:bg-accent group-hover:text-white transition-all duration-300 transform group-hover:translate-x-1">
                       <ArrowUpRight size={18} />
                     </div>
                   </div>
@@ -328,67 +297,56 @@ const Home = () => {
                 {t('products.desc')}
               </p>
 
-              {/* How It Works - Mobile: Horizontal Scroll, Desktop: Vertical */}
+              {/* How It Works - Unified Responsive Component */}
               <div className="mb-8 md:mb-12">
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-accent/60 mb-4 md:mb-6">{t('products.how_it_works.title')}</h3>
 
-                {/* Mobile: Horizontal Scroll */}
-                <div className="lg:hidden">
-                  <div className="flex overflow-x-auto pb-4 -mx-4 px-4 gap-3 snap-x snap-mandatory scrollbar-hide">
+                <div className="relative">
+                  {/* Desktop Connecting Line */}
+                  <div className="hidden lg:block absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
+
+                  <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 gap-3 lg:gap-8 -mx-4 px-4 lg:mx-0 lg:px-0 lg:pl-8 scrollbar-hide snap-x snap-mandatory">
                     {[
                       { step: "01", ...t('products.how_it_works.step1') },
                       { step: "02", ...t('products.how_it_works.step2') },
                       { step: "03", ...t('products.how_it_works.step3') }
                     ].map((s, idx) => (
-                      <div key={idx} className="min-w-[75vw] sm:min-w-[45vw] snap-center flex-shrink-0 bg-secondary/50 p-6 rounded-2xl border border-border/30">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                            <span className="text-accent font-bold text-sm">{s.step}</span>
+                      <div key={idx} className="relative group min-w-[75vw] sm:min-w-[45vw] lg:min-w-0 snap-center flex-shrink-0">
+                        {/* Desktop Dot */}
+                        <div className="hidden lg:block absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-white border-2 border-accent shadow-sm group-hover:scale-125 transition-transform" />
+
+                        <div className="bg-secondary/50 p-6 lg:p-5 rounded-2xl lg:rounded-xl border border-border/30 lg:border-transparent lg:group-hover:border-accent/20 lg:group-hover:bg-white lg:group-hover:shadow-lg transition-all duration-300 h-full">
+                          <div className="flex items-center gap-3 lg:gap-0 lg:block mb-3 lg:mb-1">
+                            <div className="lg:hidden w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center mb-0">
+                              <span className="text-accent font-bold text-xs">{s.step}</span>
+                            </div>
+                            <span className="hidden lg:block text-[10px] font-black text-accent uppercase tracking-widest mb-1">{s.step}</span>
+                            <h4 className="font-bold text-base text-foreground">{s.title}</h4>
                           </div>
-                          <h4 className="font-bold text-base text-foreground">{s.title}</h4>
+                          <p className="text-sm text-foreground/70 lg:text-muted-foreground leading-relaxed">{s.desc}</p>
                         </div>
-                        <p className="text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col items-center gap-2 mt-4">
-                    <div className="flex gap-1">
-                      {[1, 2, 3].map((_, i) => (
-                        <div key={i} className="w-1 h-1 rounded-full bg-accent/30" />
-                      ))}
-                    </div>
-                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">← Swipe to explore →</span>
-                  </div>
-                </div>
 
-                {/* Desktop: Vertical Steps */}
-                <div className="hidden lg:block relative pl-8 space-y-8">
-                  <div className="absolute left-3 top-3 bottom-8 w-[2px] bg-gradient-to-b from-accent/20 via-accent/10 to-transparent" />
-                  {[
-                    { step: "01", ...t('products.how_it_works.step1') },
-                    { step: "02", ...t('products.how_it_works.step2') },
-                    { step: "03", ...t('products.how_it_works.step3') }
-                  ].map((s, idx) => (
-                    <div key={idx} className="relative group">
-                      <div className="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-white border-2 border-accent shadow-sm group-hover:scale-125 transition-transform" />
-                      <div className="bg-secondary/30 p-5 rounded-xl border border-transparent group-hover:border-accent/20 group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
-                        <span className="text-[10px] font-black text-accent uppercase tracking-widest mb-1 block">{s.step}</span>
-                        <h4 className="font-bold text-base text-foreground mb-1">{s.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                  {/* Mobile Swipe Text */}
+                  <div className="flex lg:hidden flex-col items-center gap-2 mt-2">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">
+                      {language === 'en' ? '← Swipe to explore →' : '← स्वाइप करून अन्वेषण करा →'}
+                    </span>
+                  </div>
                 </div>
               </div>
 
               <div className="flex">
                 <a
                   href={`https://creative-mark-magic-qrcode.vercel.app/${language === 'mr' ? '?lang=mr' : ''}`}
-                  onClick={(e) => handleExternalRedirect(e, `https://creative-mark-magic-qrcode.vercel.app/${language === 'mr' ? '?lang=mr' : ''}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 px-6 md:px-10 py-4 md:py-5 text-base md:text-lg group w-full sm:w-auto"
                 >
                   {t('products.btn')}
-                  <QrCode size={20} className="group-hover:rotate-12 transition-transform" />
+                  <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </a>
               </div>
             </motion.div>
@@ -428,65 +386,75 @@ const Home = () => {
             <h2 className="heading-lg">{t('testimonials.title')}</h2>
           </div>
 
-          {/* Mobile Testimonials Carousel */}
-          <div className="md:hidden">
-            <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-4 snap-x snap-mandatory scrollbar-hide">
-              {t('testimonials.items').map((item: any, i: number) => (
-                <div
-                  key={i}
-                  className="bg-white p-6 rounded-2xl relative w-[85vw] snap-center flex-shrink-0 border border-gray-100 shadow-lg"
-                >
-                  <div className="text-3xl text-accent mb-4">"</div>
-                  <p className="text-sm text-foreground/80 mb-6 italic leading-relaxed">
-                    {item.quote}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-sm">
-                      {item.author.charAt(0)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-sm leading-tight truncate">{item.author}</h4>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center gap-1.5 mt-2">
-              {t('testimonials.items').map((_: any, i: number) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-accent/20" />
-              ))}
-            </div>
-          </div>
+          {/* Unified Testimonials Carousel */}
+          <div className="w-full px-4 md:px-0">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 md:-ml-6 py-4">
+                {t('testimonials.items').map((item: any, i: number) => (
+                  <CarouselItem key={i} className="pl-4 md:pl-6 basis-[85%] md:basis-1/2 lg:basis-1/3">
+                    <div className="bg-white p-6 md:p-8 rounded-3xl relative h-full flex flex-col border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                      {/* Star Rating */}
+                      <div className="flex gap-0.5 mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <svg key={star} className="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
 
-          {/* Desktop Testimonials Marquee */}
-          <div className="hidden md:block relative w-full mask-gradient-x">
-            <div className="flex gap-6 items-center animate-scroll-reverse whitespace-normal w-max">
-              {[...Array(2)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-6">
-                  {t('testimonials.items').map((item: any, i: number) => (
-                    <div
-                      key={i}
-                      className="bg-white p-8 rounded-3xl relative w-[400px] flex-shrink-0 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300"
-                    >
-                      <div className="text-4xl text-accent mb-6">"</div>
-                      <p className="text-base text-foreground/80 mb-8 italic leading-relaxed">
+                      <div className="text-4xl text-accent/20 mb-4 font-serif leading-none">"</div>
+
+                      <p className="text-base text-foreground/80 mb-8 italic leading-relaxed flex-grow">
                         {item.quote}
                       </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-bold text-accent text-lg">
-                          {item.author.charAt(0)}
+
+                      <div className="flex items-center gap-4 pt-4 border-t border-gray-50 mt-auto">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-gray-100 flex items-center justify-center font-bold text-accent text-lg shadow-inner ring-2 ring-white">
+                          {item.initials || item.author.charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-base leading-tight truncate">{item.author}</h4>
-                          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block truncate">{item.role}</span>
+                          <h4 className="font-bold text-base leading-tight truncate text-foreground">{item.author}</h4>
+                          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block truncate mt-1">{item.role}</span>
                         </div>
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 bg-secondary rounded-full text-muted-foreground/60 whitespace-nowrap">{item.type}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {language === 'en' ? 'Customer since 2023' : 'ग्राहक २०२३ पासून'}
+                        </span>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="hidden md:block">
+                <CarouselPrevious className="-left-4 lg:-left-12 h-12 w-12 border-2 border-border/50 hover:bg-accent hover:text-white hover:border-accent transition-all" />
+                <CarouselNext className="-right-4 lg:-right-12 h-12 w-12 border-2 border-border/50 hover:bg-accent hover:text-white hover:border-accent transition-all" />
+              </div>
+
+            </Carousel>
+
+            {/* Carousel Dots */}
+            <div className="py-2 text-center text-sm text-muted-foreground flex justify-center gap-2 mt-8">
+              {Array.from({ length: count }).map((_, i) => (
+                <button
+                  key={i}
+                  className={`rounded-full transition-all duration-300 ${i === current - 1 ? "bg-accent w-6 h-2" : "bg-accent/20 w-2 h-2 hover:bg-accent/40"}`}
+                  onClick={() => api?.scrollTo(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
               ))}
+            </div>
+
+            {/* Mobile Swipe Hint */}
+            <div className="flex md:hidden justify-center items-center gap-2 mt-4 opacity-60">
+              <span className="text-[10px] font-black uppercase tracking-widest animate-pulse">
+                {language === 'en' ? 'Swipe to explore →' : 'स्वाइप करून अन्वेषण करा →'}
+              </span>
             </div>
           </div>
         </div>

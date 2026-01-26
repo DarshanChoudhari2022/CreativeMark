@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -131,6 +131,15 @@
   }
 }
 
+/* External Link Indicator */
+a[href*="creative-mark-magic-qrcode"]::after {
+  content: " ↗";
+  display: inline-block;
+  font-family: sans-serif;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
 /* Language Specific Refinements */
 .lang-mr {
   /* Reset tracking as Devanagari characters should stay connected */
@@ -150,25 +159,38 @@
 }
 
 /* Professional Marathi Typography */
+.lang-mr body,
+.lang-mr p,
+.lang-mr span,
+.lang-mr div,
+.lang-mr a,
+.lang-mr li {
+  font-family: 'Noto Sans Devanagari', sans-serif !important;
+  line-height: 1.6;
+}
+
 .lang-mr h1,
 .lang-mr h2,
 .lang-mr h3,
+.lang-mr h4,
+.lang-mr h5,
+.lang-mr h6,
 .lang-mr .heading-xl,
 .lang-mr .heading-lg {
-  font-family: 'Khand', sans-serif !important;
-  line-height: 1.2 !important;
-  font-weight: 600 !important;
+  font-family: 'Noto Sans Devanagari', sans-serif !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
 }
 
 /* Fix Hero Spacing specifically for Marathi titles */
 .lang-mr .heading-xl span {
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
-  line-height: 1.1 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  line-height: 1.2 !important;
 }
 
 .lang-mr body {
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .lang-mr p,

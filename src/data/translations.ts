@@ -12,8 +12,8 @@ export const translations = {
         products: {
             tag: "Next-Gen Tools",
             title: "Improve Google Reviews with Magic QR",
-            desc: "Get 5-star Google Reviews instantly. Our artistic QR stands make it incredibly simple for customers to scan, copy a pre-written review, and post it to your profile in seconds.",
-            btn: "Get More Reviews",
+            desc: "Make it easy for happy customers to share authentic feedback. Our artistic QR stands simplify the review process—customers scan, select, and share their experience to your Google profile in seconds.",
+            btn: "Learn About Magic QR",
             how_it_works: {
                 title: "How it Works",
                 step1: { title: "Scan & Discover", desc: "User scans the artistic Magic QR standee placed at your location." },
@@ -25,10 +25,11 @@ export const translations = {
             est: "Est. 2015",
             agency: "AGENCY",
             tagline: "VICTORY CREATIVELY MARKED",
-            title1: "YOUR GROWTH",
+            title1: "YOUR GROWTH,",
             title2: "OUR CREATIVE POWER",
             subtitle: "We create strategy-driven campaigns that deliver measurable results—from brand dominance to election victories.",
-            cta_primary: "Get in Touch"
+            cta_primary: "Get in Touch",
+            cta_secondary: "View Services"
         },
         stats: {
             winRatio: "Win Ratio",
@@ -50,8 +51,9 @@ export const translations = {
             items: {
                 digital: {
                     id: "digital-marketing",
+                    tag: "Growth",
                     title: "Digital Marketing",
-                    desc: "SEO, Social Media, and Performance Marketing.",
+                    desc: "SEO, Social, Performance Marketing for lead growth.",
                     full_title: "We Don’t Just Market Brands — We Build Digital Success Stories.",
                     full_desc: "We transform online visibility into measurable growth through data-driven campaigns that attract, engage, and convert your ideal audience. At Creative Mark Advertising, we help businesses grow online with data-driven digital marketing solutions.",
                     sub_services: [
@@ -65,8 +67,9 @@ export const translations = {
                 },
                 advertising: {
                     id: "advertising",
+                    tag: "Impact",
                     title: "Advertising",
-                    desc: "Print, outdoor, and data-driven ad campaigns.",
+                    desc: "Print & outdoor campaigns driving local visibility.",
                     full_title: "We Create Ads That Don’t Just Appear — They Perform.",
                     full_desc: "In a competitive market, visibility alone is not enough. Your brand needs strategic advertising that reaches the right audience, at the right time, with the right message. At Creative Mark Advertising, we deliver impact-driven advertising solutions that increase brand recall, generate leads, and boost sales.",
                     sub_services: [
@@ -80,8 +83,9 @@ export const translations = {
                 },
                 branding: {
                     id: "branding",
+                    tag: "Identity",
                     title: "Branding",
-                    desc: "Identity, strategy, and high-quality brand collateral.",
+                    desc: "Logo, visual identity, messaging for brand recall.",
                     full_title: "We Don’t Just Create Brands — We Create Powerful Impressions.",
                     full_desc: "Your brand is more than a logo. It’s how people recognize you, trust you, and remember you. At Creative Mark, we craft strong, consistent, and meaningful brand identities that connect emotionally with your audience and stand out in crowded markets.",
                     sub_services: [
@@ -95,8 +99,9 @@ export const translations = {
                 },
                 multimedia: {
                     id: "multimedia",
+                    tag: "Visuals",
                     title: "Multimedia",
-                    desc: "Video production, reels, and motion graphics.",
+                    desc: "Videos, Reels, Motion Graphics for Instagram & YouTube.",
                     full_title: "We Turn Ideas Into Powerful Visual Experiences.",
                     full_desc: "In today’s digital world, visual content speaks louder than words. At Creative Mark, we create high-impact multimedia solutions that engage audiences, strengthen branding, and deliver your message with clarity and emotion.",
                     sub_services: [
@@ -114,8 +119,9 @@ export const translations = {
                 },
                 technology: {
                     id: "technology",
+                    tag: "Tech",
                     title: "Technology Solutions",
-                    desc: "Custom software, high-performance websites, and smart kiosk systems.",
+                    desc: "Custom software, fast websites, smart kiosk systems.",
                     full_title: "Automate and Scale Your Business with Custom Tech.",
                     full_desc: "We build modern digital tools that help businesses automate tasks, reach more customers, and operate efficiently. From high-speed websites to specialized kiosk systems, we provide technology that works for you.",
                     sub_services: [
@@ -144,11 +150,11 @@ export const translations = {
             tag: "Client Voices",
             title: "Trusted By Our Customers",
             items: [
-                { quote: "Creative Mark transformed our digital presence. Patients can now easily find and book appointments. The professional look has significantly built trust in our diagnostic services.", author: "Manager", role: "Galaxy Path Lab", type: "Healthcare" },
-                { quote: "Our interior projects needed a showcase that did justice to our designs. The new branding and portfolio presentation have attracted premium clients we only dreamed of before.", author: "Owner", role: "Key Stylish Interiors", type: "Interior Design" },
-                { quote: "In the travel business, visibility is everything. Their strategic advertising campaigns helped us book more rides and expand our fleet operations efficiently.", author: "Adil Poonawala", role: "Poonawala Travels", type: "Transportation" },
-                { quote: "They captured the elegance of my art perfectly. My nail art studio has seen a 40% increase in bookings since we launched the new social media campaign.", author: "Shweta", role: "Shweta's Nail Art", type: "Beauty" },
-                { quote: "Understanding the sensitive nature of astrology, they created a dignified and trustworthy image for my practice. It has helped me connect with people seeking genuine guidance.", author: "Monali Kapadiya", role: "Disha Astrology", type: "Astrology" }
+                { quote: "Creative Mark transformed our digital presence. Patients can now easily find and book appointments. The professional look has significantly built trust in our diagnostic services.", author: "Galaxy Path Lab", role: "Healthcare Partner", type: "Healthcare", initials: "G" },
+                { quote: "Our interior projects needed a showcase that did justice to our designs. The new branding and portfolio presentation have attracted premium clients we only dreamed of before.", author: "Key Stylish Interiors", role: "Interior Design Partner", type: "Interior Design", initials: "K" },
+                { quote: "In the travel business, visibility is everything. Their strategic advertising campaigns helped us book more rides and expand our fleet operations efficiently.", author: "Poonawala Travels", role: "Transportation Partner", type: "Transportation", initials: "P" },
+                { quote: "They captured the elegance of my art perfectly. My nail art studio has seen a 40% increase in bookings since we launched the new social media campaign.", author: "Shweta's Nail Art", role: "Beauty & Wellness Partner", type: "Beauty", initials: "S" },
+                { quote: "Understanding the sensitive nature of astrology, they created a dignified and trustworthy image for my practice. It has helped me connect with people seeking genuine guidance.", author: "Disha Astrology", role: "Astrology Services Partner", type: "Astrology", initials: "D" }
             ]
         },
         cta_section: {
@@ -280,7 +286,7 @@ export const translations = {
                 call: "Call Us",
                 email: "Email Us",
                 visit: "Visit Us",
-                address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
+                address: "LORD'S RESIDENCY, B-WING 2ND FLOOR\nKEDARI NAGAR, WANOWRIE\nNEAR SAVIDHAN CHOWK\nPUNE 411040, MAHARASHTRA, INDIA",
                 sub_address: "Serving clients nationwide"
             },
             form: {
@@ -323,7 +329,7 @@ export const translations = {
                 advertising: "Electronic Media Ads",
                 multimedia: "Multimedia Solutions"
             },
-            address: "Lord's Residency B-wing 2nd floor kedari Nagar Wanowrie Near Savidhan Chowk Pune Maharashtra 411040, Pune, Maharashtra",
+            address: "LORD'S RESIDENCY, B-WING 2ND FLOOR\nKEDARI NAGAR, WANOWRIE\nNEAR SAVIDHAN CHOWK\nPUNE 411040, MAHARASHTRA, INDIA",
             all_rights: "All Rights Reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
@@ -342,8 +348,8 @@ export const translations = {
         products: {
             tag: "नेक्स्ट-जेन साधने",
             title: "मॅजिक क्यूआरसह गुगल रिव्ह्यू वाढवा",
-            desc: "त्वरीत ५-स्टार गुगल रिव्ह्यू मिळवा. आमचे कलात्मक क्यूआर स्टँड्स ग्राहकांसाठी स्कॅन करणे, पूर्व-लिखित रिव्ह्यू कॉपी करणे आणि आपल्या प्रोफाइलवर पोस्ट करणे सोपे करतात.",
-            btn: "अधिक रिव्ह्यू मिळवा",
+            desc: "खुश ग्राहकांना गुगल रिव्ह्यू दिणे सोपे करा. आमचे कलात्मक क्यूआर स्टँड्स रिव्ह्यू प्रक्रिया सोपी करतात—ग्राहक स्कॅन करतात, निवडतात आणि गुगल प्रोफाइलवर त्यांचा अनुभव शेअर करतात.",
+            btn: "मॅजिक क्यूआर बद्दल जाणून घ्या",
             how_it_works: {
                 title: "हे कसे कार्य करते",
                 step1: { title: "स्कॅन आणि शोध", desc: "वापरकर्ता तुमच्या ठिकाणी ठेवलेला कलात्मक मॅजिक क्यूआर स्टँडी स्कॅन करतो." },
@@ -358,14 +364,15 @@ export const translations = {
             title1: "विजयाच्या रणांगणात,",
             title2: "आमचा क्रिएटिव्ह ठसा.!",
             subtitle: "आम्ही रणनीतीवर आधारित मोहिमा तयार करतो ज्या ब्रँड वर्चस्वापासून निवडणुकीतील विजयापर्यंत मोजण्यायोग्य परिणाम देतात.",
-            cta_primary: "संपर्क साधा"
+            cta_primary: "संपर्क साधा",
+            cta_secondary: "सेवा पहा"
         },
         stats: {
-            winRatio: "Vijay Dar",
+            winRatio: "विजय दर",
             winRatioSub: "१०+ मोहिमांध्ये",
             campaigns: "मोहिमा",
             campaignsSub: "यशस्वीरित्या व्यवस्थापित",
-            warRoom: "वॉर रूम",
+            warRoom: "रणनीती केंद्र",
             warRoomSub: "रिअल-टाइम देखरेख",
             states: "राज्ये",
             statesSub: "अखिल भारतीय उपस्थिती"
@@ -374,12 +381,13 @@ export const translations = {
             intro_tag: "आमची शस्त्रे",
             intro_title: "सर्वसमावेशक क्षमता",
             intro_desc: "तुमचा ब्रँड उंचावण्यासाठी आणि विजय निश्चित करण्यासाठी डिझाइन केलेले तज्ञ उपाय.",
-            explore: "एक्सप्लोर करा",
+            explore: "पाहा",
             page_title: "सर्वसमावेशक क्षमता",
             page_subtitle: "आमची तज्ञता",
             items: {
                 digital: {
                     id: "digital-marketing",
+                    tag: "विकास",
                     title: "डिजिटल मार्केटिंग",
                     desc: "एसईओ, सोशल मीडिया आणि परफॉर्मन्स मार्केटिंग.",
                     full_title: "आम्ही फक्त ब्रँड्सचे मार्केटिंग करत नाही — आम्ही डिजिटल यशाच्या कथा तयार करतो.",
@@ -395,6 +403,7 @@ export const translations = {
                 },
                 advertising: {
                     id: "advertising",
+                    tag: "प्रभाव",
                     title: "जाहिरात",
                     desc: "प्रिंट, आउटडोअर आणि डेटा-आधारित जाहिरात मोहिमा.",
                     full_title: "आम्ही अशा जाहिराती बनवतो ज्या फक्त दिसत नाहीत — त्या परफॉर्म करतात.",
@@ -410,6 +419,7 @@ export const translations = {
                 },
                 branding: {
                     id: "branding",
+                    tag: "ओळख",
                     title: "ब्रँडिंग",
                     desc: "ओळख, रणनीती आणि उच्च-गुणवत्तेचे ब्रँड कोलेटरल.",
                     full_title: "आम्ही फक्त ब्रँड तयार करत नाही — आम्ही शक्तिशाली छाप निर्माण करतो.",
@@ -425,6 +435,7 @@ export const translations = {
                 },
                 multimedia: {
                     id: "multimedia",
+                    tag: "दृश्ये",
                     title: "मल्टीमीडिया",
                     desc: "व्हिडिओ निर्मिती, रील्स आणि मोशन ग्राफिक्स.",
                     full_title: "आम्ही कल्पनांना शक्तिशाली व्हिज्युअल अनुभवांमध्ये बदलतो.",
@@ -444,6 +455,7 @@ export const translations = {
                 },
                 technology: {
                     id: "technology",
+                    tag: "तंत्रज्ञान",
                     title: "तंत्रज्ञान उपाय",
                     desc: "कस्टम सॉफ्टवेअर, उच्च-क्षमतेच्या वेबसाइट्स आणि स्मार्ट कियोस्क सिस्टम.",
                     full_title: "कस्टम तंत्रज्ञानासह आपल्या व्यवसायाचे ऑटोमेशन आणि विस्तार करा.",
@@ -474,11 +486,11 @@ export const translations = {
             tag: "ग्राहकांचे अनुभव",
             title: "आमच्या ग्राहकांचा विश्वास",
             items: [
-                { quote: "क्रिएटिव्ह मार्कने आमची डिजिटल ओळख बदलली. रुग्ण आता सहजपणे अपॉइंटमेंट बुक करू शकतात. प्रोफेशनल लूकमुळे आमच्या डायग्नोस्टिक सेवांवरील विश्वास वाढला आहे.", author: "मॅनेजर", role: "गॅलेक्सी पाथ लॅब", type: "आरोग्यसेवा" },
-                { quote: "आमच्या इंटिरियर प्रोजेक्ट्सना आमच्या डिझाईन्सला न्याय देणाऱ्या शोकेसची गरज होती. नवीन ब्रँडिंग आणि पोर्टफोलिओ सादरीकरणामुळे आम्हाला प्रीमियम क्लायंट्स मिळाले आहेत.", author: "मालक", role: "की स्टायलिश इंटिरियर्स", type: "इंटिरियर डिझाइन" },
-                { quote: "ट्रॅव्हल्स व्यवसायात, व्हिजिबिलिटी सर्वकाही आहे. त्यांच्या धोरणात्मक जाहिरात मोहिमांमुळे आम्हाला अधिक बुकिंग मिळवण्यात आणि आमचा फ्लीट वाढवण्यात मदत झाली.", author: "आदिल पुनावाला", role: "पुनावाला ट्रॅव्हल्स", type: "वाहतूक" },
-                { quote: "त्यांनी माझ्या कलेचा अभिजातपणा उत्तम प्रकारे टिपला. नवीन सोशल मीडिया मोहीम सुरू केल्यापासून माझ्या नेल आर्ट स्टुडिओच्या बुकिंगमध्ये ४०% वाढ झाली आहे.", author: "श्वेता", role: "श्वेता नेल आर्ट", type: "सौंदर्य" },
-                { quote: "ज्योतिषशास्त्राचे संवेदनशील स्वरूप समजून घेऊन, त्यांनी माझ्या प्रॅक्टिससाठी एक प्रतिष्ठित आणि विश्वासार्ह प्रतिमा तयार केली. यामुळे मला गरजू लोकांशी जोडले जाण्यास मदत झाली.", author: "मोनाली कपाडिया", role: "दिशा ॲस्ट्रोलॉजी", type: "ज्योतिष" }
+                { quote: "क्रिएटिव्ह मार्कने आमची डिजिटल ओळख बदलली. रुग्ण आता सहजपणे अपॉइंटमेंट बुक करू शकतात. प्रोफेशनल लूकमुळे आमच्या डायग्नोस्टिक सेवांवरील विश्वास वाढला आहे.", author: "गॅलेक्सी पाथ लॅब", role: "आरोग्यसेवा भागीदार", type: "आरोग्यसेवा", initials: "G" },
+                { quote: "आमच्या इंटिरियर प्रोजेक्ट्सना आमच्या डिझाईन्सला न्याय देणाऱ्या शोकेसची गरज होती. नवीन ब्रँडिंग आणि पोर्टफोलिओ सादरीकरणामुळे आम्हाला प्रीमियम क्लायंट्स मिळाले आहेत.", author: "की स्टायलिश इंटिरियर्स", role: "इंटिरियर डिझाइन भागीदार", type: "इंटिरियर डिझाइन", initials: "K" },
+                { quote: "ट्रॅव्हल्स व्यवसायात, व्हिजिबिलिटी सर्वकाही आहे. त्यांच्या धोरणात्मक जाहिरात मोहिमांमुळे आम्हाला अधिक बुकिंग मिळवण्यात आणि आमचा फ्लीट वाढवण्यात मदत झाली.", author: "पुनावाला ट्रॅव्हल्स", role: "वाहतूक भागीदार", type: "वाहतूक", initials: "P" },
+                { quote: "त्यांनी माझ्या कलेचा अभिजातपणा उत्तम प्रकारे टिपला. नवीन सोशल मीडिया मोहीम सुरू केल्यापासून माझ्या नेल आर्ट स्टुडिओच्या बुकिंगमध्ये ४०% वाढ झाली आहे.", author: "श्वेता नेल आर्ट", role: "सौंदर्य भागीदार", type: "सौंदर्य", initials: "S" },
+                { quote: "ज्योतिषशास्त्राचे संवेदनशील स्वरूप समजून घेऊन, त्यांनी माझ्या प्रॅक्टिससाठी एक प्रतिष्ठित आणि विश्वासार्ह प्रतिमा तयार केली. यामुळे मला गरजू लोकांशी जोडले जाण्यास मदत झाली.", author: "दिशा ॲस्ट्रोलॉजी", role: "ज्योतिष सेवा भागीदार", type: "ज्योतिष", initials: "D" }
             ]
         },
         cta_section: {
@@ -642,7 +654,7 @@ export const translations = {
             }
         },
         footer: {
-            desc: "ब्रँड आणि राजकीय नेत्यांसाठी रणनीती, डिझाइन आणि डिजिटल वर्चश्वाद्वारे गती निर्माण करणारी पूर्ण-सेवा एजन्सी.",
+            desc: "ब्रँड आणि राजकीय नेत्यांसाठी रणनीती, डिझाइन आणि डिजिटल वर्चस्वाद्वारे गती निर्माण करणारी पूर्ण-सेवा एजन्सी.",
             chat: "व्हॉट्सॲपवर चॅट करा",
             links_title: "एजन्सी",
             expertise: {
@@ -653,7 +665,7 @@ export const translations = {
                 advertising: "इलेक्ट्रॉनिक मीडिया जाहिराती",
                 multimedia: "मल्टीमीडिया सोल्यूशन्स"
             },
-            address: "लॉर्ड्स रेसिडेन्सी, बी-विंग, २ रा मजला, केदारी नगर, वानवडी, संविधान चौकाजवळ, पुणे, महाराष्ट्र ४११०४०",
+            address: "लॉर्ड्स रेसिडेन्सी, बी-विंग, २ रा मजला\nकेदारी नगर, वानवडी\nसंविधान चौकाजवळ\nपुणे ४११०४०, महाराष्ट्र, भारत",
             all_rights: "सर्व हक्क राखीव.",
             privacy: "गोपनीयता धोरण",
             terms: "सेवा अटी"

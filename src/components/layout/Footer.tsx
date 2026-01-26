@@ -122,9 +122,12 @@ const Footer = () => {
                         <a
                           href={actualPath}
                           onClick={(e) => handleExternalRedirect(e, actualPath)}
-                          className="text-gray-300 hover:text-white transition-colors cursor-pointer font-bold text-sm uppercase tracking-wide"
+                          className="text-gray-300 hover:text-white transition-colors cursor-pointer font-bold text-sm uppercase tracking-wide inline-flex items-center gap-1"
                         >
                           {link.name}
+                          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                          </svg>
                         </a>
                       ) : (
                         <Link to={link.path} className="text-gray-300 hover:text-white transition-colors font-bold text-sm uppercase tracking-wide">
@@ -168,8 +171,7 @@ const Footer = () => {
                     <MapPin size={18} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">{t('contact.info.visit')}</span>
-                    <span className="text-gray-300 font-black text-[10px] sm:text-xs leading-relaxed uppercase tracking-tight">
+                    <span className="text-gray-300 font-black text-[10px] sm:text-xs leading-relaxed uppercase tracking-tight whitespace-pre-line">
                       {t('footer.address')}
                     </span>
                   </div>
@@ -186,7 +188,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
             <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest">
-              &copy; {new Date().getFullYear()} CREATIVE MARK ADVERTISING. {t('footer.all_rights')}
+              &copy; 2020-{new Date().getFullYear()} CREATIVE MARK ADVERTISING. {t('footer.all_rights')}
             </p>
             <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
               <Link to="/privacy" className="hover:text-accent transition-colors">{t('footer.privacy')}</Link>

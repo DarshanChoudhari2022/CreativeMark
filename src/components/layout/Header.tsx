@@ -107,27 +107,47 @@ const Header = () => {
               const actualHref = link.isExternal && link.key === 'products'
                 ? `${link.href}${language === 'mr' ? '?lang=mr' : ''}`
                 : link.href;
+              const isActive = !link.isExternal && (
+                link.href === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(link.href)
+              );
 
               return link.isExternal ? (
                 <a
                   key={link.key}
                   href={actualHref}
                   onClick={(e) => handleExternalRedirect(e, actualHref)}
-                  className="text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase text-gray-500 hover:text-black"
+                  className="text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase text-gray-500 hover:text-black inline-flex items-center gap-1"
                 >
                   {t(`header.${link.key}`)}
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
                 </a>
               ) : (
                 <Link
                   key={link.key}
                   to={link.href}
-                  className={`text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase ${location.pathname === link.href ? "text-black" : "text-gray-500 hover:text-black"
+                  className={`text-[11px] xl:text-sm font-bold tracking-widest transition-colors duration-200 uppercase relative pb-1 ${isActive
+                    ? "text-accent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent"
+                    : "text-gray-500 hover:text-black"
                     }`}
                 >
                   {t(`header.${link.key}`)}
                 </Link>
               );
             })}
+
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 bg-secondary/50 text-[10px] xl:text-xs font-bold uppercase tracking-wider hover:border-accent hover:bg-accent/5 transition-all"
+              aria-label={language === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+            >
+              <Globe size={14} className="text-accent" />
+              {language === 'en' ? 'मरा' : 'EN'}
+            </button>
 
             <Link to="/contact" className="ml-2 xl:ml-4 btn-primary px-4 xl:px-6 py-2 xl:py-2.5 text-[10px] xl:text-xs uppercase tracking-widest whitespace-nowrap">
               {t('header.contact')}
@@ -196,15 +216,20 @@ const Header = () => {
                             setIsMobileMenuOpen(false);
                             handleExternalRedirect(e, actualHref);
                           }}
-                          className={`block py-2 text-2xl md:text-3xl font-black text-black ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
+                          className={`inline-flex items-center justify-center gap-2 py-2 text-2xl md:text-3xl font-black text-black ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
                         >
                           {t(`header.${link.key}`)}
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                          </svg>
                         </a>
                       ) : (
                         <Link
                           to={link.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block py-2 text-2xl md:text-3xl font-black ${location.pathname === link.href ? "text-accent" : "text-black"} ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
+                          className={`relative inline-block py-2 text-2xl md:text-3xl font-black ${location.pathname === link.href
+                            ? "text-accent after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-8 after:h-0.5 after:bg-accent"
+                            : "text-black"} ${language === 'en' ? 'tracking-[0.1em] uppercase' : ''}`}
                         >
                           {t(`header.${link.key}`)}
                         </Link>
