@@ -107,13 +107,13 @@ const Political = () => {
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
-                    <img loading="lazy" src={bjpLogo} alt="BJP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={congressLogo} alt="Congress" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={shivSenaBowLogo} alt="Shiv Sena" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={ncpLogo} alt="NCP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={tutariLogo} alt="NCP SP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={mnsLogo} alt="MNS" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform mix-blend-multiply rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={bjpLogo} alt="BJP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={congressLogo} alt="Congress" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={shivSenaLogo} alt="Shiv Sena (UBT)" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={shivSenaBowLogo} alt="Shiv Sena" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={ncpLogo} alt="NCP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={tutariLogo} alt="NCP SP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={mnsLogo} alt="MNS" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full contrast-[1.1] brightness-[1.1]" />
                   </div>
                 ))}
               </div>
@@ -180,7 +180,7 @@ const Political = () => {
             </div>
           </div>
 
-          {/* Final CTA */}
+          {/*   Final CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

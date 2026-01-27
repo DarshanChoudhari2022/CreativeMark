@@ -101,33 +101,42 @@
 @layer utilities {
   .animate-scroll {
     animation: scroll 30s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 
 @keyframes scroll-reverse {
   from {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 
   to {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @layer utilities {
   .animate-scroll-reverse {
     animation: scroll-reverse 50s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .mask-gradient-x {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 }
 
