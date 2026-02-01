@@ -49,7 +49,7 @@ const About = () => {
           </div>
 
           {/* Image / Culture Section */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-20 md:mb-40">
+          <div className="grid md:grid-cols-2 gap-12 mb-20 md:mb-40">
             <div className="relative aspect-video lg:aspect-square bg-secondary rounded-3xl overflow-hidden group">
               <img
                 src={aboutCulture}
@@ -64,7 +64,7 @@ const About = () => {
             </div>
 
             {/* Mobile: Vertical list */}
-            <div className="lg:hidden flex flex-col gap-6">
+            <div className="md:hidden flex flex-col gap-6">
               {t('about.values').map((value: any, i: number) => (
                 <motion.div
                   key={i}
@@ -83,7 +83,7 @@ const About = () => {
             </div>
 
             {/* Desktop: Original vertical layout */}
-            <div className="hidden lg:flex flex-col justify-center gap-12">
+            <div className="hidden md:flex flex-col justify-center gap-12">
               {t('about.values').map((value: any, i: number) => (
                 <motion.div
                   key={i}
@@ -160,22 +160,22 @@ const About = () => {
               <h2 className="heading-lg">{t('about.clients.title')}</h2>
             </div>
 
-            <div className="relative w-full mask-gradient-x">
+            <div className="relative w-full mask-gradient-x bg-white py-4">
               {/* Marquee Container */}
               <div className="flex items-center animate-scroll whitespace-nowrap w-max">
                 {/* Double the logos for seamless loop */}
                 {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-12 md:gap-20 items-center pr-12 md:pr-20 bg-white py-8">
-                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={domLogo} alt="DOM Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises Logo - Creative Mark Client" className="h-28 md:h-40 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                  <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
+                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={domLogo} alt="DOM Logo" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
                   </div>
                 ))}
               </div>

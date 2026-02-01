@@ -274,16 +274,16 @@ const Home = () => {
       {/* 4. PRODUCTS SECTION - "MAGIC QR" */}
       <section id="products" className="py-16 md:py-24 lg:py-40 bg-white overflow-hidden">
         <div className="container-wide px-4 md:px-12">
-          {/* Mobile: Stack vertically, show image first */}
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+          {/* Mobile: Stack vertically, Tablet+: 2 columns */}
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-10 lg:gap-24 items-center">
 
-            {/* Content - Shows first on mobile */}
+            {/* Content */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="order-2 lg:order-2 w-full"
+              className="order-2 md:order-2 w-full"
             >
               <span className="text-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block">
                 {t('products.tag')}
@@ -327,7 +327,7 @@ const Home = () => {
                     ))}
                   </div>
 
-                  {/* Mobile Swipe Text */}
+                  {/* Tablet/Mobile Swipe Text */}
                   <div className="flex lg:hidden flex-col items-center gap-2 mt-2">
                     <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">
                       {language === 'en' ? '← Swipe to explore →' : '← स्वाइप करून अन्वेषण करा →'}
@@ -349,13 +349,13 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Image - Shows second on mobile, first on desktop */}
+            {/* Image - Shows second on mobile/tablet, first on desktop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative order-1 lg:order-1 w-full max-w-sm lg:max-w-none mx-auto"
+              className="relative order-1 md:order-1 w-full max-w-sm lg:max-w-none mx-auto"
             >
               <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6">
                 <img

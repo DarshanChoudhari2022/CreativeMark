@@ -82,11 +82,11 @@ const Services = () => {
                   {/* Huge Background Number */}
 
 
-                  <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
+                  <div className="grid md:grid-cols-12 gap-12 md:gap-16 lg:gap-24">
 
                     {/* Left Column: Title & Essence */}
-                    <div className="lg:col-span-5 relative">
-                      <div className="lg:sticky lg:top-32">
+                    <div className="md:col-span-5 relative">
+                      <div className="md:sticky md:top-32">
                         <div className="mb-8 overflow-hidden rounded-2xl aspect-[4/3] shadow-2xl">
                           <img
                             src={section.image}
@@ -95,11 +95,11 @@ const Services = () => {
                           />
                         </div>
 
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
                           {section.category}
                         </h2>
 
-                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light mb-8">
+                        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed font-light mb-8">
                           {section.introText}
                         </p>
 
@@ -108,13 +108,13 @@ const Services = () => {
                     </div>
 
                     {/* Right Column: Detailed Capabilities */}
-                    <div className="lg:col-span-7 pt-8 lg:pt-32">
+                    <div className="md:col-span-7 pt-2 md:pt-12 lg:pt-32">
                       <h3 className="text-2xl font-bold mb-8 lg:mb-12 border-b border-border pb-6">
                         {section.introTitle}
                       </h3>
 
                       {/* Mobile: Expandable Vertical Stack */}
-                      <div className="lg:hidden flex flex-col gap-4">
+                      <div className="md:hidden flex flex-col gap-4">
                         {section.items.map((item: any, itemIndex: number) => {
                           const id = `${section.id}-${itemIndex}`;
                           const isOpen = activeAccordion === id;
@@ -168,7 +168,7 @@ const Services = () => {
                       </div>
 
                       {/* Desktop: Accordion Style */}
-                      <div className="hidden lg:block space-y-4">
+                      <div className="hidden md:block space-y-4">
                         {section.items.map((item: any, itemIndex: number) => {
                           const id = `${section.id}-${itemIndex}`;
                           const isOpen = activeAccordion === id;

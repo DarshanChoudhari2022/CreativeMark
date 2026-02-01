@@ -47,7 +47,7 @@ const Political = () => {
           </div>
 
           {/* Success Story Section (New) */}
-          <div className="mb-40 grid lg:grid-cols-2 gap-16 items-center bg-secondary/30 p-8 md:p-16 rounded-3xl border border-border">
+          <div className="mb-40 grid md:grid-cols-2 gap-16 items-center bg-secondary/30 p-8 md:p-16 rounded-3xl border border-border">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -121,12 +121,12 @@ const Political = () => {
           </div>
 
           {/* War Room Section */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-40 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 mb-40 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="aspect-auto lg:aspect-square bg-black rounded-3xl border border-border p-8 md:p-12 relative overflow-hidden group shadow-2xl"
+              className="aspect-auto md:aspect-square bg-black rounded-3xl border border-border p-8 md:p-12 relative overflow-hidden group shadow-2xl"
             >
               {/* Background 'Real' Image for Political */}
               <div className="absolute inset-0 z-0">

@@ -166,16 +166,21 @@ const Footer = () => {
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02]">
-                  <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 shadow-sm">
+                <a
+                  href="https://maps.app.goo.gl/9dR5SXowxgqk6GvC6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 shadow-sm group-hover:bg-accent group-hover:text-white transition-all">
                     <MapPin size={18} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-300 font-black text-[10px] sm:text-xs leading-relaxed uppercase tracking-tight whitespace-pre-line">
+                    <span className="text-gray-300 font-black text-[10px] sm:text-xs leading-relaxed uppercase tracking-tight whitespace-pre-line group-hover:text-white transition-colors">
                       {t('footer.address')}
                     </span>
                   </div>
-                </div>
+                </a>
 
                 <a href="mailto:creativemarkadvertising@gmail.com" className="flex items-center gap-4 group px-4 py-2 opacity-60 hover:opacity-100 transition-opacity">
                   <Mail size={14} className="text-accent" />
