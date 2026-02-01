@@ -160,22 +160,21 @@ const About = () => {
               <h2 className="heading-lg">{t('about.clients.title')}</h2>
             </div>
 
-            <div className="relative w-full mask-gradient-x bg-white py-4">
-              {/* Marquee Container */}
-              <div className="flex items-center animate-scroll whitespace-nowrap w-max">
-                {/* Double the logos for seamless loop */}
-                {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-10 md:gap-20 items-center px-4">
-                    <img loading="lazy" src={modernChineseLogo} alt="Modern Chinese Logo" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={happinessLogo} alt="Happiness Forever" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={dishaLogo} alt="Disha Astrology" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={silkRouteLogo} alt="The Silk Route" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={domLogo} alt="DOM Logo" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={shwetaLogo} alt="Shweta's Nail Art" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={galaxyLogo} alt="Galaxy Path Lab" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
-                    <img loading="lazy" src={metacraftLogo} alt="Metacraft Enterprises" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform contrast-[1.1] brightness-[1.1]" />
+            <div className="relative w-full mask-gradient-x bg-white py-12 md:py-20 lg:py-24">
+              {/* Marquee Container - Slower Speed & Triple Duplication for gapless loop */}
+              <div className="flex items-center animate-scroll-slow whitespace-nowrap w-max gap-12 md:gap-20 lg:gap-32">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-12 md:gap-20 lg:gap-32 items-center">
+                    <img loading="eager" src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={domLogo} alt="DOM Logo" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
                   </div>
                 ))}
               </div>
