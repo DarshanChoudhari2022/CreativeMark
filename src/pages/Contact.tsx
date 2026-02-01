@@ -54,11 +54,9 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: t('contact.info.call') || "Phone", value: "+91 74473 32829", href: "tel:+917447332829" },
     { icon: Mail, label: t('contact.info.email') || "Email", value: "creativemarkadvertising@gmail.com", href: "mailto:creativemarkadvertising@gmail.com" },
-    { icon: MapPin, label: t('contact.info.visit') || "Address", value: t('footer.address'), href: "#" }
+    { icon: MapPin, label: t('contact.info.visit') || "Address", value: t('footer.address'), href: "https://maps.app.goo.gl/9dR5SXowxgqk6GvC6" }
   ];
 
-  // Robust way to get options: hardcode keys or try to extract from valid object
-  // Since we know the keys in translation, let's use them directly to avoid map errors on objects
   const serviceKeys = ['digital', 'advertising', 'political', 'branding', 'multimedia', 'website', 'other'];
 
   return (
@@ -87,6 +85,8 @@ const Contact = () => {
                   <motion.a
                     key={i}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
