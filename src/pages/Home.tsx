@@ -232,10 +232,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Unified Responsive Grid for Services */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 justify-items-stretch">
+          {/* Unified Responsive Flex-Grid for Services */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {servicesList.map((service, i) => (
-              <Link to={`/services/${service.id}`} key={i} className="block w-full h-full perspective-1000">
+              <Link
+                to={`/services/${service.id}`}
+                key={i}
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(20%-1.6rem)] perspective-1000 group"
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -245,7 +249,7 @@ const Home = () => {
                     delay: i * 0.1,
                     ease: [0.16, 1, 0.3, 1]
                   }}
-                  className="card-minimal group h-full flex flex-col justify-between bg-white p-6 md:p-8 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
+                  className="card-minimal h-full flex flex-col justify-between bg-white p-6 md:p-8 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
                 >
 
                   <div>
