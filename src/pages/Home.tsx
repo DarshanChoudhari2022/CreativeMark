@@ -240,15 +240,7 @@ const Home = () => {
                 key={i}
                 className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(20%-1.6rem)] perspective-1000 group"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    delay: i * 0.1,
-                    ease: [0.16, 1, 0.3, 1]
-                  }}
+                <div
                   className="card-minimal h-full flex flex-col justify-between bg-white p-6 md:p-8 rounded-3xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 border border-border/50 hover:border-accent/30 relative overflow-hidden"
                 >
 
@@ -268,7 +260,7 @@ const Home = () => {
                       <ArrowUpRight size={18} />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </Link>
             ))}
           </div>

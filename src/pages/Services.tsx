@@ -71,11 +71,8 @@ const Services = () => {
             const isLast = index === servicesData.length - 1;
 
             return (
-              <motion.section
+              <section
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-10%" }}
                 className={`py-32 relative ${index % 2 === 0 ? 'bg-secondary/30' : 'bg-background'} border-t border-border`}
               >
                 <div className="container-wide">
@@ -120,12 +117,8 @@ const Services = () => {
                           const isOpen = activeAccordion === id;
 
                           return (
-                            <motion.div
+                            <div
                               key={itemIndex}
-                              initial={{ opacity: 0, y: 20 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: itemIndex * 0.1 }}
                               className={`bg-white rounded-2xl transition-all duration-300 border ${isOpen ? 'border-accent shadow-lg' : 'border-border/50 shadow-sm'}`}
                             >
                               <button
@@ -162,7 +155,7 @@ const Services = () => {
                                   </motion.div>
                                 )}
                               </AnimatePresence>
-                            </motion.div>
+                            </div>
                           );
                         })}
                       </div>
@@ -222,7 +215,7 @@ const Services = () => {
 
                   </div>
                 </div>
-              </motion.section>
+              </section>
             );
           })}
         </div>

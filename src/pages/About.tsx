@@ -165,16 +165,16 @@ const About = () => {
               <div className="flex items-center animate-scroll-slow whitespace-nowrap w-max gap-12 md:gap-20 lg:gap-32">
                 {[...Array(3)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-12 md:gap-20 lg:gap-32 items-center">
-                    <img loading="eager" src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={domLogo} alt="DOM Logo" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
-                    <img loading="eager" src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform contrast-[1.1]" />
+                    <img loading="eager" src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={domLogo} alt="DOM Logo" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
                   </div>
                 ))}
               </div>
