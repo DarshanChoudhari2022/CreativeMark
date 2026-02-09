@@ -12,6 +12,7 @@ import ncpLogo from "@/assets/real_ncp.jpg";
 import tutariLogo from "@/assets/real_tutari.jpg";
 import mnsLogo from "@/assets/real_mns.jpg";
 
+
 const Political = () => {
   const { t } = useLanguage();
 
@@ -114,6 +115,7 @@ const Political = () => {
                     <img loading="lazy" src={ncpLogo} alt="NCP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full" />
                     <img loading="lazy" src={tutariLogo} alt="NCP SP" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full" />
                     <img loading="lazy" src={mnsLogo} alt="MNS" className="h-32 w-32 md:h-48 md:w-48 object-contain hover:scale-110 transition-transform rounded-full" />
+
                   </div>
                 ))}
               </div>

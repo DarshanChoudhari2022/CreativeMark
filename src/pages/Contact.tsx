@@ -53,6 +53,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Phone, label: t('contact.info.call') || "Phone", value: "+91 74473 32829", href: "tel:+917447332829" },
+    { icon: Phone, label: t('contact.info.call') || "Phone", value: "+91 98909 76952", href: "tel:+919890976952" },
     { icon: Mail, label: t('contact.info.email') || "Email", value: "creativemarkadvertising@gmail.com", href: "mailto:creativemarkadvertising@gmail.com" },
     { icon: MapPin, label: t('contact.info.visit') || "Address", value: t('footer.address'), href: "https://maps.app.goo.gl/9dR5SXowxgqk6GvC6" }
   ];

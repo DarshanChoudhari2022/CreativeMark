@@ -14,6 +14,10 @@ import shwetaLogo from "@/assets/shwetas_nail_art.png";
 import galaxyLogo from "@/assets/galaxy_path_lab.png";
 import metacraftLogo from "@/assets/client_metacraft_new.png";
 import poonawalaNewLogo from "@/assets/poonawala_travels.png";
+import mikesPlaceLogo from "@/assets/client_mikes_place.jpg";
+import pgMomoWalaLogo from "@/assets/client_pg_momo_wala.png";
+import rangeeloRajasthanLogo from "@/assets/client_rangeelo_rajasthan.jpg";
+import tspLogo from "@/assets/client_tsp.jpg";
 
 const About = () => {
   const { t } = useLanguage();
@@ -175,6 +179,10 @@ const About = () => {
                     <img loading="eager" src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
                     <img loading="eager" src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
                     <img loading="eager" src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={mikesPlaceLogo} alt="Mike's Place" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={pgMomoWalaLogo} alt="PG Momo Wala" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={rangeeloRajasthanLogo} alt="Rangeelo Rajasthan" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img loading="eager" src={tspLogo} alt="TSP" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
                   </div>
                 ))}
               </div>
