@@ -274,9 +274,16 @@ export const translations = {
                     { name: "Key Stylish Interiors", category: "Interior Design" },
                     { name: "Poonawala Travels", category: "Transportation" },
                     { name: "Shweta's Nail Art", category: "Beauty & Wellness" },
-                    { name: "Disha Astrology", category: "Astrology Services" }
+                    { name: "Disha Astrology", category: "Astrology Services" },
+
+                    // ⭐ NEW CLIENTS ADDED
+                    { name: "Mike's Place", category: "Restaurant" },
+                    { name: "PG Momos Wala", category: "Food Brand" },
+                    { name: "Rangoli Rajasthan", category: "Restaurant" },
+                    { name: "TSP", category: "Brand" }
                 ]
             }
+
         },
         contact: {
             tag: "Get In Touch",
@@ -610,9 +617,16 @@ export const translations = {
                     { name: "की स्टायलिश इंटिरियर्स", category: "इंटिरियर डिझाइन" },
                     { name: "पुनावाला ट्रॅव्हल्स", category: "वाहतूक" },
                     { name: "श्वेता नेल आर्ट", category: "सौंदर्य" },
-                    { name: "दिशा ॲस्ट्रोलॉजी", category: "ज्योतिष सेवा" }
+                    { name: "दिशा ॲस्ट्रोलॉजी", category: "ज्योतिष सेवा" },
+
+                    // ⭐ NEW CLIENTS ADDED
+                    { name: "माईक्स प्लेस", category: "रेस्टॉरंट" },
+                    { name: "पीजी मोमो वाला", category: "फूड ब्रँड" },
+                    { name: "रंगोली राजस्थान", category: "रेस्टॉरंट" },
+                    { name: "टीएसपी", category: "ब्रँड" }
                 ]
             }
+
         },
         contact: {
             tag: "संपर्क करा",

@@ -14,10 +14,10 @@ import shwetaLogo from "@/assets/shwetas_nail_art.png";
 import galaxyLogo from "@/assets/galaxy_path_lab.png";
 import metacraftLogo from "@/assets/client_metacraft_new.png";
 import poonawalaNewLogo from "@/assets/poonawala_travels.png";
-import mikesPlaceLogo from "@/assets/client_mikes_place.jpg";
-import pgMomoWalaLogo from "@/assets/client_pg_momo_wala.png";
-import rangeeloRajasthanLogo from "@/assets/client_rangeelo_rajasthan.jpg";
-import tspLogo from "@/assets/client_tsp.jpg";
+import mikesPlaceLogo from "@/assets/mikesplace.png";
+import pgMomoWalaLogo from "@/assets/pgmoma.png";
+import rangeeloRajasthanLogo from "@/assets/rangoli-rajasthan.png";
+import tspLogo from "@/assets/tsp.png";
 
 const About = () => {
   const { t } = useLanguage();
@@ -156,38 +156,42 @@ const About = () => {
           </div>
 
 
-
           {/* Clients Ribbon Section */}
           <div className="mb-32 overflow-hidden">
             <div className="mb-12 text-center">
-              <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">{t('about.clients.tag')}</span>
+              <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">
+                {t('about.clients.tag')}
+              </span>
               <h2 className="heading-lg">{t('about.clients.title')}</h2>
             </div>
 
             <div className="relative w-full mask-gradient-x bg-white py-12 md:py-20 lg:py-24">
-              {/* Marquee Container - Slower Speed & Triple Duplication for gapless loop */}
+              {/* ✅ ONLY 2 sets for smooth infinite loop */}
               <div className="flex items-center animate-scroll-slow whitespace-nowrap w-max gap-12 md:gap-20 lg:gap-32">
-                {[...Array(3)].map((_, setIndex) => (
+                {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-12 md:gap-20 lg:gap-32 items-center">
-                    <img loading="eager" src={modernChineseLogo} alt="Modern Chinese" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={happinessLogo} alt="Happiness Forever" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={dishaLogo} alt="Disha Astrology" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={silkRouteLogo} alt="The Silk Route" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={poonawalaNewLogo} alt="Poonawala Travels" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={domLogo} alt="DOM Logo" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={keyStylishLogo} alt="Key Stylish Interiors" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={shwetaLogo} alt="Shweta's Nail Art" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={galaxyLogo} alt="Galaxy Path Lab" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={metacraftLogo} alt="Metacraft Enterprises" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={mikesPlaceLogo} alt="Mike's Place" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={pgMomoWalaLogo} alt="PG Momo Wala" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={rangeeloRajasthanLogo} alt="Rangeelo Rajasthan" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
-                    <img loading="eager" src={tspLogo} alt="TSP" className="h-28 md:h-40 lg:h-52 w-auto object-contain transition-transform" />
+                    <img src={mikesPlaceLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={pgMomoWalaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={rangeeloRajasthanLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={tspLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+
+                    <img src={modernChineseLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={happinessLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={dishaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={silkRouteLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={poonawalaNewLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={domLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={keyStylishLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={shwetaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={galaxyLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={metacraftLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+
                   </div>
                 ))}
               </div>
             </div>
           </div>
+
 
           {/* Testimonials Section - Marquee Style */}
           <div className="mb-40 overflow-hidden">

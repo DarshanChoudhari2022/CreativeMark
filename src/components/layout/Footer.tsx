@@ -166,6 +166,16 @@ const Footer = () => {
                   </div>
                 </a>
 
+                <a href="tel:+919890976952" className="flex items-center gap-4 group bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition-all border border-transparent hover:border-white/10">
+                  <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
+                    <Phone size={18} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">{t('contact.info.call')}</span>
+                    <span className="text-gray-300 font-bold text-sm">+91 98909 76952</span>
+                  </div>
+                </a>
+
                 <a
                   href="https://maps.app.goo.gl/9dR5SXowxgqk6GvC6"
                   target="_blank"

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -106,7 +106,7 @@
   }
 
   .animate-scroll-slow {
-    animation: scroll 60s linear infinite;
+    animation: scroll 55s linear infinite;
     will-change: transform;
     backface-visibility: hidden;
   }
@@ -166,6 +166,11 @@ a[href*="creative-mark-magic-qrcode"]::after {
 .lang-mr {
   /* Reset tracking as Devanagari characters should stay connected */
   --tracking-reset: normal !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.lang-mr * {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .lang-mr .tracking-widest,
@@ -186,36 +191,33 @@ a[href*="creative-mark-magic-qrcode"]::after {
 .lang-mr h3,
 .lang-mr .heading-xl,
 .lang-mr .heading-lg {
-  font-family: 'Khand', sans-serif !important;
-  line-height: 1.2 !important;
-  font-weight: 600 !important;
-}
-
-/* Fix Hero Spacing specifically for Marathi titles */
-.lang-mr .heading-xl span {
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
-  line-height: 1.1 !important;
-}
-
-.lang-mr body {
-  line-height: 1.7;
+  font-family: 'Poppins', sans-serif !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
 }
 
 .lang-mr p,
 .lang-mr span:not(.text-xs),
 .lang-mr li {
-  font-size: 1.05em;
-  /* Slightly larger for Devanagari legibility */
+  font-size: 1.0em;
 }
 
 @media (max-width: 768px) {
 
+  .lang-mr .heading-xl {
+    font-size: 2.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .lang-mr .heading-lg {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+
   .lang-mr p,
   .lang-mr span:not(.text-xs),
   .lang-mr li {
-    font-size: 1.15em;
-    /* Extra boost for mobile screens */
+    font-size: 1.0em;
     line-height: 1.6;
   }
 }
