@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
+import EvolutionTimeline from "@/components/ui/EvolutionTimeline";
 import aboutCulture from "@/assets/about-culture.png";
 import modernChineseLogo from "@/assets/client_modern_chinese.png";
 import poonawalaLogo from "@/assets/client_poonawala.png";
@@ -108,51 +109,38 @@ const About = () => {
 
           {/* Timeline Section */}
           <div className="mb-20 md:mb-40">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-4">
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Our Evolution</h2>
-              <div className="hidden md:block w-1/3 h-[1px] bg-border mb-4" />
-            </div>
-
-            {/* Mobile: Vertical layout */}
-            <div className="md:hidden flex flex-col gap-8 ml-4 border-l-2 border-accent/20 pl-8 relative">
-              {t('about.timeline').map((event: any, i: number) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative"
-                >
-                  <div className="absolute -left-[41px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm" />
-                  <span className="text-sm font-bold text-accent mb-1 block">{event.year}</span>
-                  <h4 className="text-lg font-bold mb-2">{event.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {event.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Desktop: Grid layout */}
-            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
-              {t('about.timeline').map((event: any, i: number) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
+            {/* Section header */}
+            <div className="mb-14 md:mb-20">
+              <motion.span
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="text-accent font-black tracking-widest uppercase text-xs mb-4 block"
+              >
+                Our Story
+              </motion.span>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <motion.h2
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative"
+                  className="text-4xl md:text-6xl font-bold tracking-tighter"
                 >
-                  <span className="text-6xl font-black text-secondary block mb-6">{event.year}</span>
-                  <h4 className="text-xl font-bold mb-4">{event.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {event.text}
-                  </p>
-                </motion.div>
-              ))}
+                  Our Evolution
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="hidden md:block text-muted-foreground text-base max-w-xs text-right leading-relaxed"
+                >
+                  From political graphics to a full-stack digital powerhouse&nbsp;— 8 years of relentless building.
+                </motion.p>
+              </div>
             </div>
+
+            <EvolutionTimeline milestones={t('about.timeline')} />
           </div>
 
 

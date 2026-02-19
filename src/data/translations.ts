@@ -242,11 +242,13 @@ export const translations = {
             stats_badges: ["10+ Campaigns", "85% Win Rate", "10+ Years Exp"],
             culture_badge: "AGENCY CULTURE",
             timeline: [
-                { year: "2020", title: "Humble Beginnings", text: "Started small with local banner printing, posters, and short video content." },
-                { year: "2021", title: "Pune Headquarters", text: "Established a dedicated professional office in the heart of Pune to scale operations." },
-                { year: "2022", title: "Political Milestone", text: "Appointed to manage high-stakes creative work for the Party President of MNS Pune." },
-                { year: "2023", title: "Corporate Shift", text: "Diversified expertise into premium corporate advertising and strategic brand building." },
-                { year: "2025", title: "Proven Impact", text: "Successfully managed 10+ Nagarsevak campaigns and served over 80+ businesses nationwide." }
+                { year: "2017", title: "The Creative Spark", subtitle: "The Design Pioneers", text: "We entered the arena during the high-stakes 2017 elections as a specialized graphic design team. Our mission was simple: transform political visions into powerful visual narratives that resonate with the people." },
+                { year: "2020", title: "The Foundation", subtitle: "Building the Physical Presence", text: "From a team to a firm. We established our full-scale creative studio, bridging the gap between digital design and high-end printing technology. We became a one-stop shop for advertising that you could both see online and touch in the real world." },
+                { year: "2021", title: "The Social Shift", subtitle: "Mastering the Feed", text: "As the world shifted, So did We. We launched our dedicated Social Media Management wing, helping brands and figures navigate the complex digital landscape and build authentic communities across platforms." },
+                { year: "2022", title: "The Digital Leap", subtitle: "Becoming Full-Service", text: "Recognizing the power of data, we transformed into a complete Digital Marketing Agency. We stopped just making things look good and started making them perform—integrating strategy with creativity." },
+                { year: "2023", title: "The Talent Surge", subtitle: "Growing the Mindshare", text: "Great work requires a great team. We expanded our workforce, bringing in specialized experts in tech, copy, and strategy to handle the growing complexity of our expanding client portfolio." },
+                { year: "2024", title: "The Battle Tested", subtitle: "Elections & Beyond", text: "A milestone year. We successfully managed massive Lok Sabha and Vidhan Sabha election campaigns while simultaneously scaling our corporate client base. We proved we could handle the intensity of politics and the precision of corporate brands." },
+                { year: "2025", title: "The Integrated Powerhouse", subtitle: "Vast. Versatile. Visionary.", text: "Today, we provide the ultimate end-to-end digital ecosystem. From high-level corporate branding and political strategy to SEO-driven lead generation, we don't just market your brand—we grow your empire." }
             ],
             values: [
                 { title: "Clarity", desc: "We simplify the complex. Your message should be understood instantly." },
@@ -585,11 +587,13 @@ export const translations = {
             stats_badges: ["१०+ मोहिमा", "८५% विजय दर", "१०+ वर्षे अनुभव"],
             culture_badge: "एजन्सी संस्कृती",
             timeline: [
-                { year: "२०२०", title: "साधी सुरुवात", text: "स्थानिक बॅनर प्रिंटिंग, पोस्टर्स आणि छोट्या व्हिडिओंपासुन कामाला सुरुवात केली." },
-                { year: "२०२१", title: "पुणे कार्यालय", text: "कामाचा विस्तार करण्यासाठी पुण्यात स्वतःचे प्रोफेशनल कार्यालय सुरू केले." },
-                { year: "२०२२", title: "राजकीय भरारी", text: "मनसे पुणे शहराध्यक्ष यांच्या प्रचाराचे आणि सोशल मीडियाचे महत्त्वपूर्ण काम मिळाले." },
-                { year: "२०२३", title: "कॉर्पोरेट विस्तार", text: "कॉर्पोरेट जाहिरात आणि ब्रँडिंग क्षेत्रात पाऊल टाकले." },
-                { year: "२०२५", title: "व्यापक यश", text: "१०+ नगरसेवकांच्या निवडणुकांचे यशस्वी व्यवस्थापन आणि ८०+ पेक्षा जास्त व्यवसायांना सेवा दिली." }
+                { year: "२०१७", title: "सर्जनशील ठिणगी", subtitle: "डिझाइन पायोनियर्स", text: "२०१७ च्या महत्त्वपूर्ण निवडणुकांमध्ये आम्ही विशेष ग्राफिक डिझाइन टीम म्हणून ताकद दाखवली. आमचे ध्येय होते: राजकीय दृष्टी शक्तिशाली व्हिज्युअल कथांमध्ये बदलणे." },
+                { year: "२०२०", title: "पाया", subtitle: "भौतिक उपस्थिती निर्माण", text: "टीमपासून एजन्सीपर्यंत. आम्ही डिजिटल डिझाइन आणि उच्च-गुणवत्तेच्या प्रिंटिंग तंत्रज्ञानामधील दुवा जोडत पूर्ण-स्तरीय क्रिएटिव्ह स्टुडिओ स्थापन केले." },
+                { year: "२०२१", title: "सोशल मीडिया क्रांती", subtitle: "फीड मास्टरी", text: "जग बदलले, आम्हीही बदललो. आम्ही समर्पित सोशल मीडिया व्यवस्थापन विभाग सुरू केला आणि ब्रँड्सना डिजिटल जगात मार्गदर्शन केले." },
+                { year: "२०२२", title: "डिजिटल झेप", subtitle: "पूर्ण सेवा बनणे", text: "डेटाची शक्ती ओळखून, आम्ही संपूर्ण डिजिटल मार्केटिंग एजन्सीमध्ये रूपांतरित झालो. केवळ चांगले दिसण्यापलीकडे, आम्ही परफॉर्मन्सवर लक्ष केंद्रित केले." },
+                { year: "२०२३", title: "प्रतिभा वृद्धी", subtitle: "विशेषज्ञता वाढ", text: "महान काम महान टीम मागते. आम्ही तंत्रज्ञान, कॉपीरायटिंग आणि रणनीतीमध्ये विशेषज्ञ आणले आणि आमची टीम वाढवली." },
+                { year: "२०२४", title: "कसोटीवर उतरलेलो", subtitle: "निवडणुका व त्यापलीकडे", text: "एक महत्त्वाचे वर्ष. लोकसभा आणि विधानसभा निवडणूक मोहिमा यशस्वीरित्या सांभाळत, आम्ही कॉर्पोरेट क्लायंट बेसही वाढवला." },
+                { year: "२०२५", title: "समन्वित पावरहाऊस", subtitle: "विशाल. बहुमुखी. दूरदर्शी.", text: "आज, आम्ही संपूर्ण डिजिटल इकोसिस्टम प्रदान करतो. कॉर्पोरेट ब्रँडिंगपासून राजकीय रणनीतीपर्यंत, आम्ही केवळ तुमचे ब्रँड मार्केट करत नाही—आम्ही तुमचे साम्राज्य वाढवतो." }
             ],
             values: [
                 { title: "स्पष्टता", desc: "आम्ही गुंतागुंत सोपी करतो. तुमचा संदेश त्वरित समजला पाहिजे." },
