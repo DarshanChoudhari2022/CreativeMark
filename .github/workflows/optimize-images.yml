@@ -12,12 +12,16 @@ on:
 jobs:
   optimize:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,6 +54,8 @@ jobs:
           git add src/assets/*.webp
           git commit -m "optimize: convert images to WebP format with 87% size reduction"
           git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Create Pull Request
         if: steps.check_changes.outputs.has_changes == 'true'
