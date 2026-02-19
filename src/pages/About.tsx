@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
+import SEO from "@/components/layout/SEO";
 import EvolutionTimeline from "@/components/ui/EvolutionTimeline";
 import aboutCulture from "@/assets/about-culture.png";
 import modernChineseLogo from "@/assets/client_modern_chinese.png";
@@ -21,10 +22,14 @@ import rangeeloRajasthanLogo from "@/assets/rangoli-rajasthan.png";
 import tspLogo from "@/assets/tsp.png";
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <Layout>
+      <SEO
+        title={language === 'en' ? 'About Us' : 'आमच्याबद्दल'}
+        description={language === 'en' ? 'Learn about Creative Mark - a dedicated advertising and political campaign agency founded in Pune.' : 'क्रिएटिव्ह मार्कबद्दल जाणून घ्या - पुण्यात स्थापन झालेली जाहिरात आणि राजकीय मोहीम एजन्सी.'}
+      />
       <section className="bg-background min-h-screen pt-28 md:pt-40 pb-20">
         <div className="container-wide">
           {/* Header Section */}
@@ -58,7 +63,9 @@ const About = () => {
             <div className="relative aspect-video lg:aspect-square bg-secondary rounded-3xl overflow-hidden group">
               <img
                 src={aboutCulture}
-                alt="Our Team"
+                alt="Creative Mark Agency Team and Culture"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -158,21 +165,21 @@ const About = () => {
               <div className="flex items-center animate-scroll-slow whitespace-nowrap w-max gap-12 md:gap-20 lg:gap-32">
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex gap-12 md:gap-20 lg:gap-32 items-center">
-                    <img src={mikesPlaceLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={pgMomoWalaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={rangeeloRajasthanLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={tspLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={mikesPlaceLogo} alt="Mike's Place" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={pgMomoWalaLogo} alt="PG Momo Wala" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={rangeeloRajasthanLogo} alt="Rangeelo Rajasthan" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={tspLogo} alt="TSP" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
 
-                    <img src={modernChineseLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={happinessLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={dishaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={silkRouteLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={poonawalaNewLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={domLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={keyStylishLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={shwetaLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={galaxyLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
-                    <img src={metacraftLogo} className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={modernChineseLogo} alt="Modern Chinese" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={happinessLogo} alt="Happiness Forever" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={dishaLogo} alt="Disha Astrology" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={silkRouteLogo} alt="Silk Route" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={poonawalaNewLogo} alt="Poonawala Travels" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={domLogo} alt="DOM" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={keyStylishLogo} alt="Key Stylish Interiors" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={shwetaLogo} alt="Shweta's Nail Art" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={galaxyLogo} alt="Galaxy Path Lab" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
+                    <img src={metacraftLogo} alt="Metacraft" loading="lazy" decoding="async" className="h-28 md:h-40 lg:h-52 w-auto object-contain" />
 
                   </div>
                 ))}

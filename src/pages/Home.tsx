@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import { RevealText } from "@/components/ui/RevealText";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { useLanguage } from "@/context/LanguageContext";
-import { Helmet } from 'react-helmet-async';
+import SEO from "@/components/layout/SEO";
 
 import projectBranding from "@/assets/project-branding.png";
 import heroEnglish from "@/assets/hero-english.png";
@@ -65,33 +65,10 @@ const Home = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{language === 'en' ? 'Creative Mark | Advertising & Political Campaign Agency Pune' : 'क्रिएटिव्ह मार्क | जाहिरात आणि राजकीय मोहीम एजन्सी पुणे'}</title>
-        <meta name="description" content={language === 'en' ? 'Creative Mark is a premier advertising agency in Pune specializing in branding, digital marketing, and end-to-end political campaign management.' : 'क्रिएटिव्ह मार्क ही पुण्यातील एक अग्रगण्य जाहिरात संस्था आहे जी ब्रँडिंग, डिजिटल मार्केटिंग आणि राजकीय मोहीम व्यवस्थापनात तज्ञ आहे.'} />
-        <meta property="og:title" content="Creative Mark - Your Growth, Our Creative Power" />
-        <meta property="og:description" content="Strategic advertising and political campaign management that delivers measurable results." />
-        {/* Schema Markup for Local Business */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Creative Mark Advertising", // Using English/Brand name or localized if suitable
-            "alternateName": "क्रिएटिव्ह मार्क जाहिरात",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Lord's Residency, B-Wing, 2nd Floor, Kedari Nagar, Wanowrie",
-              "addressLocality": "Pune",
-              "postalCode": "411040",
-              "addressRegion": "Maharashtra",
-              "addressCountry": "IN"
-            },
-            "telephone": "+91-7447332829",
-            "url": `https://creative-mark.vercel.app/?lang=${language}`,
-            "inLanguage": language,
-            "areaServed": ["IN", "Pune", "Maharashtra"]
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title={language === 'en' ? 'Home' : 'मुख्यपृष्ठ'}
+        description={language === 'en' ? 'Creative Mark is a premier advertising agency in Pune specializing in branding, digital marketing, and end-to-end political campaign management.' : 'क्रिएटिव्ह मार्क ही पुण्यातील एक अग्रगण्य जाहिरात संस्था आहे जी ब्रँडिंग, डिजिटल मार्केटिंग आणि राजकीय मोहीम व्यवस्थापनात तज्ञ आहे.'}
+      />
 
 
       {/* 2. HERO SECTION */}
@@ -356,8 +333,9 @@ const Home = () => {
               <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gradient-to-br from-secondary to-white p-4 md:p-6">
                 <img
                   loading="lazy"
+                  decoding="async"
                   src={magicQrProduct}
-                  alt="Creative Mark Magic QR Standee - Improve Google Reviews"
+                  alt="Creative Mark Magic QR Standee - Improve Google Reviews for Local Businesses"
                   className="w-full h-auto rounded-xl object-contain"
                 />
               </div>
