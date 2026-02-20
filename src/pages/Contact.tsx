@@ -4,6 +4,8 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { useLanguage } from "@/context/LanguageContext";
 import { toast } from "sonner";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -23,8 +25,9 @@ const Contact = () => {
     e.preventDefault();
 
     // Basic Validation
-    if (!/^\d{10}$/.test(formData.phone.replace(/[^0-9]/g, ""))) {
-      toast.error("Please enter a valid 10-digit phone number");
+    const phoneDigits = formData.phone.replace(/[^0-9]/g, "");
+    if (phoneDigits.length < 8) {
+      toast.error("Please enter a valid phone number");
       return;
     }
 
@@ -145,14 +148,16 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t('contact.form.phone')} <span className="text-accent">*</span></label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      required
+                    <PhoneInput
+                      defaultCountry="in"
                       value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full bg-secondary border-none rounded-xl px-4 md:px-6 py-4 min-h-[48px] focus:ring-2 focus:ring-accent transition-all outline-none font-medium text-base"
-                      placeholder={t('contact.form.placeholders.phone') || "+91 9999999999"}
+                      onChange={(phone) => setFormData(prev => ({ ...prev, phone }))}
+                      className="w-full !bg-secondary !rounded-xl !px-4 !md:px-6 !py-1 !min-h-[56px] !flex !items-center !border-none focus-within:ring-2 focus-within:ring-accent !transition-all"
+                      inputClassName="flex-1 !bg-transparent !border-none !outline-none !text-base !font-medium !h-full !p-0 !min-h-[48px]"
+                      countrySelectorStyleProps={{
+                        buttonClassName: "!bg-transparent !border-none !p-0 !mr-2",
+                        dropdownArrowClassName: "!hidden"
+                      }}
                     />
                   </div>
                   <div className="space-y-2">

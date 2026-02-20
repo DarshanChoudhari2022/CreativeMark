@@ -308,7 +308,7 @@ export const translations = {
                 sending: "Sending...",
                 placeholders: {
                     name: "Your Name",
-                    phone: "+91 - 10 digit number",
+                    phone: "Your Phone Number",
                     email: "your@email.com",
                     message: "Tell us about your project requirements, timeline & budget...",
                     service: "Select Your Service Interest"
@@ -653,7 +653,7 @@ export const translations = {
                 sending: "पाठवत आहे...",
                 placeholders: {
                     name: "तुमचे नाव",
-                    phone: "+९१ - १० अंकी नंबर",
+                    phone: "तुमचा फोन नंबर",
                     email: "tumcha@email.com",
                     message: "तुमच्या प्रकल्पाच्या गरजा, वेळ आणि बजेट सांगा...",
                     service: "तुमची पसंती निवडा"
